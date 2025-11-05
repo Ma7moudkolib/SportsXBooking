@@ -9,37 +9,35 @@ namespace Domain.Entities
         public int PlaygroundId { get; set; }
 
         [Required]
+        public int OwnerId { get; set; }
+
+        [Required]
         [MaxLength(100)]
         public string Name { get; set; }
 
-        [Required]
         [MaxLength(255)]
-        public string Address { get; set; }
+        public string Location { get; set; }
 
         [Required]
         [MaxLength(50)]
-        public string City { get; set; }
-
-        public string Description { get; set; }
-
-        [MaxLength(255)]
-        public string ImageUrl { get; set; }
+        public string SportType { get; set; } // Football, Tennis, Basketball...
 
         [Column(TypeName = "decimal(10,2)")]
         public decimal PricePerHour { get; set; }
 
-        public TimeSpan OpeningTime { get; set; }
+        [MaxLength(255)]
+        public string ImageUrl { get; set; }   // ✅ Single image column
 
-        public TimeSpan ClosingTime { get; set; }
-
-        public int Capacity { get; set; } = 20;
-
-        public bool IsActive { get; set; } = true;
+        public bool IsAvailable { get; set; } = true;
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-        // Navigation Properties
-        public ICollection<Reservation> Reservations { get; set; }
+        // Navigation
+        [ForeignKey("OwnerId")]
+        public User Owner { get; set; }
+
+        public ICollection<Booking> Bookings { get; set; }
         public ICollection<Review> Reviews { get; set; }
     }
 }
+

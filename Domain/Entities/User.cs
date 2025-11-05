@@ -7,29 +7,20 @@ namespace Domain.Entities
         [Key]
         public int UserId { get; set; }
 
-        [Required]
-        [MaxLength(50)]
-        public string FirstName { get; set; }
+        [Required, MaxLength(100)]
+        public string FullName { get; set; }
 
-        [Required]
-        [MaxLength(50)]
-        public string LastName { get; set; }
-
-        [Required]
-        [EmailAddress]
-        [MaxLength(100)]
+        [Required, EmailAddress, MaxLength(100)]
         public string Email { get; set; }
 
-        [Phone]
-        [MaxLength(20)]
+        [Phone, MaxLength(20)]
         public string Phone { get; set; }
 
         [Required]
         public string PasswordHash { get; set; }
 
-        [Required]
-        [MaxLength(20)]
-        public string Role { get; set; } = "Customer"; // Admin, Customer
+        [Required, MaxLength(20)]
+        public string Role { get; set; } = "Player"; // Player, Owner, Admin
 
         public bool IsActive { get; set; } = true;
 
@@ -37,8 +28,9 @@ namespace Domain.Entities
 
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
-        // Navigation Properties
-        public ICollection<Reservation> Reservations { get; set; }
+        // Navigation
+        public ICollection<Playground> Playgrounds { get; set; }
+        public ICollection<Booking> Bookings { get; set; }
         public ICollection<Review> Reviews { get; set; }
     }
 }

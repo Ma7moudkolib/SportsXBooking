@@ -7,16 +7,16 @@ namespace Domain.Entities
     public class Booking
     {
         [Key]
-        public int ReservationId { get; set; }
+        public int BookingId { get; set; }
 
         [Required]
-        public int UserId { get; set; }
+        public int PlayerId { get; set; }
 
         [Required]
         public int PlaygroundId { get; set; }
 
         [Required]
-        public DateTime ReservationDate { get; set; }
+        public DateTime BookingDate { get; set; }
 
         [Required]
         public TimeSpan StartTime { get; set; }
@@ -24,20 +24,18 @@ namespace Domain.Entities
         [Required]
         public TimeSpan EndTime { get; set; }
 
-        [Required]
-        [MaxLength(20)]
+        [Column(TypeName = "decimal(10,2)")]
+        public decimal TotalPrice { get; set; }
+
+        [Required, MaxLength(20)]
         public string Status { get; set; } = "Pending"; // Pending, Confirmed, Cancelled, Completed
 
-        [Column(TypeName = "decimal(10,2)")]
-        public decimal TotalAmount { get; set; }
-
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
-        // Navigation Properties
-        [ForeignKey("UserId")]
-        public User User { get; set; }
+        // Navigation
+        [ForeignKey("PlayerId")]
+        public User Player { get; set; }
 
         [ForeignKey("PlaygroundId")]
         public Playground Playground { get; set; }
