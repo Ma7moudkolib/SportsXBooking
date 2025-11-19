@@ -9,6 +9,8 @@ namespace Infrastructure.Repositories
     {
         public ReviewRepository(RepositoryContext repositoryContext) : base(repositoryContext) { }
 
+        public void AddReviewForPlayground(Review review) => Create(review);
+
         public async Task<IEnumerable<Review>> GetReviewsForPlaygroundAsync(int playgroundId, bool trackChanges) =>
            await FindByCondition(r => r.PlaygroundId == playgroundId, trackChanges).ToListAsync();
        

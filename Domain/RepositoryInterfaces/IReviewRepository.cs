@@ -5,6 +5,7 @@ namespace Domain.RepositoryInterfaces
     public interface IReviewRepository
     {
         Task<IEnumerable<Review>> GetReviewsForPlaygroundAsync(int playgroundId, bool trackChanges);
-        
+        void AddReviewForPlayground(Review review);
+
     }
 }

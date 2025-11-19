@@ -11,7 +11,7 @@ namespace Infrastructure.Repositories
             : base(repositoryContext) { }
 
         public async Task<Payment> GetPaymentByBookingIdAsync(int bookingId, bool trackChanges) =>
-            await FindByCondition(b=>b.BookingId == bookingId, trackChanges).SingleOrDefaultAsync();
+            await FindByCondition(b=>b.BookingId == bookingId, trackChanges).SingleOrDefaultAsync()!;
     }
     
 }
