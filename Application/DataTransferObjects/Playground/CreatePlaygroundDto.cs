@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 namespace Application.DataTransferObjects.Playground
 {
-    internal class CreatePlaygroundDto
+    public class CreatePlaygroundDto
     {
         [Required]
         public int OwnerId { get; set; }
