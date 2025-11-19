@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 namespace Application.DataTransferObjects.User
 {
-    public class CreateUserDto
+    public class UserForRegistrationDto
     {
         [Required]
         public string FullName { get; set; }
