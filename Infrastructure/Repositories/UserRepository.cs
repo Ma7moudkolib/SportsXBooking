@@ -11,7 +11,6 @@ namespace Infrastructure.Repositories
 
         public void CreateUser(User user)=>Create(user);
 
-        public void DeleteUser(User user)=> Delete(user);
 
         public async Task<IEnumerable<User>> GetAllUsers(bool trackChanges)=>await FindAll(trackChanges).ToListAsync();
 
