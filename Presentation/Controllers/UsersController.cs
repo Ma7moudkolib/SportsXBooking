@@ -26,12 +26,7 @@ namespace Presentation.Controllers
             var user = await _serviceManager.User.GetUserByIdAsync(id, trackChanges: false);
             return Ok(user);
         }
-        [HttpPost]
-        public async Task<IActionResult> CreateUser([FromBody] UserForRegistrationDto createUser)
-        {
-           var User= await _serviceManager.User.CreateUserAsync(createUser);
-            return CreatedAtRoute("UserById", new { id = User.UserId }, User);
-        }
+       
         [HttpDelete("{id}")]
         public IActionResult DeleteUser(int id) 
         {
