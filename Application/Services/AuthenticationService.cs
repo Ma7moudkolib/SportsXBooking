@@ -77,7 +77,7 @@ namespace Application.Services
 
         private SigningCredentials GetSigningCredentials()
         {
-            var key = Encoding.UTF8.GetBytes(_configuration["Authentication:SecretForKey"]!);
+            var key = Encoding.UTF8.GetBytes(_configuration["SecretKey"]!);
             var secret = new SymmetricSecurityKey(key);
             return new SigningCredentials(secret, SecurityAlgorithms.HmacSha256);
         }
@@ -94,10 +94,10 @@ namespace Application.Services
         private JwtSecurityToken GenerateTokenOptions(SigningCredentials signingCredentials, List<Claim> claims)
         {
             var tokenOptions = new JwtSecurityToken(
-                issuer: _configuration["Authentication:Issuer"],
-                audience: _configuration["Authentication:Audience"],
+                issuer: _configuration["JwtSettings:Issuer"],
+                audience: _configuration["JwtSettings:Audience"],
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(Convert.ToDouble(_configuration["Authentication:ExpiryInMinutes"])),
+                expires: DateTime.Now.AddMinutes(Convert.ToDouble(_configuration["JwtSettings:expires"])),
                 signingCredentials: signingCredentials);
             return tokenOptions;
         }
