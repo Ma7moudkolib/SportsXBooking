@@ -1,6 +1,7 @@
 ﻿using Application.DataTransferObjects.Payment;
 using Application.ServiceInterfaces;
 using AutoMapper;
+using Domain.Exceptions;
 using Infrastructure.Repositories;
 
 namespace Application.Services
@@ -19,7 +20,7 @@ namespace Application.Services
         {
             var bookingIdExists = await _repositoryManager.Booking.GetBookingByIdAsync(bookingId, trackChanges);
             if (bookingIdExists == null)
-                throw new KeyNotFoundException($"Booking with id: {bookingId} does not exist.");
+                throw new NotFoundException($"Booking with id: {bookingId} does not exist.");
 
             var paymentEntity = await _repositoryManager.Payment.GetPaymentByBookingIdAsync(bookingId, trackChanges);
             var paymentDto = _mapper.Map<GetPaymentDto>(paymentEntity);

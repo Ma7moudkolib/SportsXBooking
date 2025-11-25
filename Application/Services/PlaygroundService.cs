@@ -2,6 +2,7 @@
 using Application.ServiceInterfaces;
 using AutoMapper;
 using Domain.Entities;
+using Domain.Exceptions;
 using Infrastructure.Repositories;
 
 namespace Application.Services
@@ -29,7 +30,7 @@ namespace Application.Services
         {
            var playground = await _repositoryManager.Playground.GetPlaygroundByIdAsync(id, trackChanges);
             if (playground == null)
-                throw new Exception($"Playground with id {id} not found.");
+                throw new NotFoundException($"Playground with id {id} not found.");
             _repositoryManager.Playground.DeletePlayground(playground);
             await _repositoryManager.SaveAsync();
         }
@@ -45,7 +46,7 @@ namespace Application.Services
         {
             var playground =await _repositoryManager.Playground.GetPlaygroundByIdAsync(id, trackChanges);
             if(playground == null)
-                throw new Exception($"Playground with id {id} not found.");
+                throw new NotFoundException($"Playground with id {id} not found.");
             var playgroundDto = _mapper.Map<GetPlaygroundDto>(playground);
             return playgroundDto;
         }
@@ -54,7 +55,7 @@ namespace Application.Services
         {
            var playgrounds =await _repositoryManager.Playground.GetPlaygroundsByOwnerAsync(ownerId, trackChanges);
            if (!playgrounds.Any())
-                throw new Exception($"No playgrounds found for owner with id {ownerId}.");
+                throw new NotFoundException($"No playgrounds found for owner with id {ownerId}.");
             var playgroundsDto = _mapper.Map<IEnumerable<GetPlaygroundDto>>(playgrounds);
             return playgroundsDto;
         }
@@ -63,7 +64,7 @@ namespace Application.Services
         {
             var playgrounds = await _repositoryManager.Playground.SearchAsync(sportType, city, trackChanges);
             if (!playgrounds.Any())
-                throw new Exception($"No playgrounds found for sport type {sportType} in city {city}.");
+                throw new NotFoundException($"No playgrounds found for sport type {sportType} in city {city}.");
             var playgroundsDto = _mapper.Map<IEnumerable<GetPlaygroundDto>>(playgrounds);
             return playgroundsDto;
         }
@@ -72,7 +73,7 @@ namespace Application.Services
         {
            var playgroundEntity = await _repositoryManager.Playground.GetPlaygroundByIdAsync(id, trackChanges);
             if (playgroundEntity == null)
-                throw new Exception($"Playground with id {id} not found.");
+                throw new NotFoundException($"Playground with id {id} not found.");
             _mapper.Map(updatePlayground, playgroundEntity);
             _repositoryManager.Playground.UpdatePlayground(playgroundEntity);
             await _repositoryManager.SaveAsync();

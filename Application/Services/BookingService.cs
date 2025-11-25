@@ -22,7 +22,7 @@ namespace Application.Services
         {
             var booking = await _repositoryManager.Booking.GetBookingByIdAsync(id, trackChanges);
             if (booking is null)
-                throw new Exception($"Booking with id: {id} not found");
+                throw new NotFoundException($"Booking with id: {id} not found");
             booking.Status = "Cancelled";
             await _repositoryManager.SaveAsync();
         }
@@ -54,7 +54,7 @@ namespace Application.Services
         {
            var booking = await _repositoryManager.Booking.GetBookingByIdAsync(id, trackChanges);
             if(booking is null)
-                throw new BookingNotFoundException($"Booking with id: {id} not found");
+                throw new NotFoundException($"Booking with id: {id} not found");
 
             var bookingDto = _mapper.Map<GetBookingDto>(booking);
             return bookingDto;

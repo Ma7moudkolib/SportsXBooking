@@ -3,6 +3,7 @@ using Application.DataTransferObjects.User;
 using Application.ServiceInterfaces;
 using AutoMapper;
 using Domain.Entities;
+using Domain.Exceptions;
 using Infrastructure.Repositories;
 
 namespace Application.Services
@@ -21,7 +22,7 @@ namespace Application.Services
         {
             var user = await _repositoryManager.User.GetUser(id, trackChanges);
             if (user is null)
-                throw new Exception("No user found");
+                throw new NotFoundException("No user found");
             _repositoryManager.User.DeleteUser(user);
             await _repositoryManager.SaveAsync();
         }
@@ -31,7 +32,7 @@ namespace Application.Services
             var userEntitie = await _repositoryManager.User.GetUser(id,trackChanges);
 
             if (userEntitie is null)
-                throw new Exception("No user found");
+                throw new NotFoundException("No user found");
             var userDto = _mapper.Map<GetUserDto>(userEntitie);
             return userDto;
         }
@@ -41,7 +42,7 @@ namespace Application.Services
             var usersEntities = await _repositoryManager.User.GetAllUsers(trackChanges);
             
             if (!usersEntities.Any())
-                throw new Exception("No users found");
+                throw new NotFoundException("No users found");
             var usersDto = _mapper.Map<IEnumerable<GetUserDto>>(usersEntities);
             return usersDto;
         }
@@ -50,7 +51,7 @@ namespace Application.Services
         {
             var userEntity = await _repositoryManager.User.GetUser(id, trackChanges);
             if (userEntity is null)
-                throw new Exception("No user found");
+                throw new NotFoundException("No user found");
             _mapper.Map(updateUser, userEntity);
             await _repositoryManager.SaveAsync();
         }
