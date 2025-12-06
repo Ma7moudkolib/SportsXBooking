@@ -1,5 +1,6 @@
 ﻿using Application.DataTransferObjects.Playground;
 using Application.ServiceInterfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Presentation.Controllers
@@ -32,18 +33,24 @@ namespace Presentation.Controllers
             return Ok(playgrounds);
         }
         [HttpPost]
+        [Authorize(Roles = "Owner")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreatePlayground([FromBody] CreatePlaygroundDto createPlayground)
         {
             var playgroundResponse = await _serviceManager.Playground.CreatePlaygroundAsync(createPlayground);
             return Ok(playgroundResponse);
         }
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Owner")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeletePlayground(int id)
         {
             var result =  await _serviceManager.Playground.DeletePlaygroundAsync(id, trackChanges: false);
             return Ok(result);
         }
         [HttpPut("{id}")]
+        [Authorize(Roles = "Owner")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdatePlayground(int id, [FromBody] UpdatePlaygroundDto updatePlayground)
         {
            var result = await _serviceManager.Playground.UpdatePlaygroundAsync(id, updatePlayground, trackChanges: true);

@@ -1,12 +1,14 @@
 ﻿using Application.DataTransferObjects;
 using Application.DataTransferObjects.Booking;
 using Application.ServiceInterfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class BookingsController : ControllerBase
     {
         private readonly IServiceManager _serviceManager;

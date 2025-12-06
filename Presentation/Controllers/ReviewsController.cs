@@ -1,5 +1,6 @@
 ﻿using Application.DataTransferObjects.Review;
 using Application.ServiceInterfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Presentation.Controllers
@@ -20,6 +21,7 @@ namespace Presentation.Controllers
             return Ok(reviews);
         }
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> AddReview([FromBody] ReviewDto review)
         {
             var createdReview = await _serviceManager.Review.AddReviewAsync(review);
