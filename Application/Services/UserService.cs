@@ -1,4 +1,5 @@
 ﻿
+using Application.DataTransferObjects;
 using Application.DataTransferObjects.User;
 using Application.ServiceInterfaces;
 using AutoMapper;
@@ -18,13 +19,14 @@ namespace Application.Services
             _mapper = mapper;
         }
 
-        public async Task DeleteUserAsync(int id,bool trackChanges)
+        public async Task<ServiceResponse> DeleteUserAsync(int id,bool trackChanges)
         {
             var user = await _repositoryManager.User.GetUser(id, trackChanges);
             if (user is null)
-                throw new NotFoundException("No user found");
+               return new ServiceResponse(false, "No user found");
             _repositoryManager.User.DeleteUser(user);
             await _repositoryManager.SaveAsync();
+            return new ServiceResponse(true, "User deleted successfully");
         }
 
         public async Task<GetUserDto> GetUserByIdAsync(int id, bool trackChanges)
@@ -47,13 +49,14 @@ namespace Application.Services
             return usersDto;
         }
 
-        public async Task UpdateUserAsync(int id, UpdateUserDto updateUser,bool trackChanges)
+        public async Task<ServiceResponse> UpdateUserAsync(int id, UpdateUserDto updateUser,bool trackChanges)
         {
             var userEntity = await _repositoryManager.User.GetUser(id, trackChanges);
             if (userEntity is null)
-                throw new NotFoundException("No user found");
+               return new ServiceResponse(false, "No user found");
             _mapper.Map(updateUser, userEntity);
             await _repositoryManager.SaveAsync();
+            return new ServiceResponse(true, "User updated successfully");
         }
     }
 }

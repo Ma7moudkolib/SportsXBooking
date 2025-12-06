@@ -18,10 +18,10 @@ namespace Presentation.Controllers
         public async Task<IActionResult> Register([FromBody] UserForRegistrationDto userForRegistration)
         {
             var result = await _serviceManager.Authentication.RegisterUser(userForRegistration);
-            if (!result)
+            if (!result.Success)
                 return BadRequest(ModelState);
             
-            return StatusCode(201);
+            return Ok(result);
         }
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] UserForLoginDto userForAuthentication)
@@ -31,7 +31,7 @@ namespace Presentation.Controllers
                 return Unauthorized();
 
             var token = _serviceManager.Authentication.CreateToken();
-            return Ok(new { Token = token });
+            return Ok(new LoginResponse(true,"Login Successfull",token));
         }
     }
 }

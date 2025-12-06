@@ -1,4 +1,5 @@
-﻿using Application.DataTransferObjects.User;
+﻿using Application.DataTransferObjects;
+using Application.DataTransferObjects.User;
 using Application.ServiceInterfaces;
 using AutoMapper;
 using Domain.Entities;
@@ -38,7 +39,7 @@ namespace Application.Services
             return token;
         }
 
-        public async Task<bool> RegisterUser(UserForRegistrationDto userForRegistration)
+        public async Task<ServiceResponse> RegisterUser(UserForRegistrationDto userForRegistration)
         {
             var user = _mapper.Map<User>(userForRegistration);
 
@@ -47,7 +48,7 @@ namespace Application.Services
             if (existingUser != null)
             {
                 _loggerManager.LogInfo($"User with email {user.Email} already exists.");
-                return false; 
+                return new ServiceResponse(false, "User with this email already exists.");
             }
 
             user.PasswordHash = passwordHasher.HashPassword(user, userForRegistration.Password);
@@ -56,7 +57,7 @@ namespace Application.Services
             await _repositoryManager.SaveAsync();
 
             _loggerManager.LogInfo($"User with email {user.Email} registered successfully.");
-            return true;
+            return new ServiceResponse(true, "User registered successfully.");
 
         }
 

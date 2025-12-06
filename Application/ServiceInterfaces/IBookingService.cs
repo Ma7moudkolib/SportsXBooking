@@ -1,4 +1,5 @@
-﻿using Application.DataTransferObjects.Booking;
+﻿using Application.DataTransferObjects;
+using Application.DataTransferObjects.Booking;
 
 namespace Application.ServiceInterfaces
 {
@@ -6,7 +7,7 @@ namespace Application.ServiceInterfaces
     {
         Task<IEnumerable<GetBookingDto>> GetAllBookingAsync(bool trackChanges);
         Task<GetBookingDto> GetBookingByIdAsync(int id, bool trackChanges);
-        Task<GetBookingDto> CreateBookingAsync(CreateBooking createBooking);
-        Task CancelBookingAsync(int id,bool trackChanges);
+        Task<ServiceResponse> CreateBookingAsync(CreateBooking createBooking);
+        Task<ServiceResponse> CancelBookingAsync(int id,bool trackChanges);
     }
 }

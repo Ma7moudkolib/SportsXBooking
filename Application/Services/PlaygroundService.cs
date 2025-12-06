@@ -1,4 +1,5 @@
-﻿using Application.DataTransferObjects.Playground;
+﻿using Application.DataTransferObjects;
+using Application.DataTransferObjects.Playground;
 using Application.ServiceInterfaces;
 using AutoMapper;
 using Domain.Entities;
@@ -17,22 +18,23 @@ namespace Application.Services
             _repositoryManager = repositoryManager;
         }
 
-        public async Task<GetPlaygroundDto> CreatePlaygroundAsync(CreatePlaygroundDto createPlayground)
+        public async Task<ServiceResponse> CreatePlaygroundAsync(CreatePlaygroundDto createPlayground)
         {
            var playgroundEntity = _mapper.Map<Playground>(createPlayground);
             _repositoryManager.Playground.CreatePlayground(playgroundEntity);
           await  _repositoryManager.SaveAsync();
-            var playgroundDto = _mapper.Map<GetPlaygroundDto>(playgroundEntity);
-            return playgroundDto;
+          
+            return new ServiceResponse(true, "Playground created successfully");
         }
 
-        public async Task DeletePlaygroundAsync(int id,bool trackChanges)
+        public async Task<ServiceResponse> DeletePlaygroundAsync(int id,bool trackChanges)
         {
            var playground = await _repositoryManager.Playground.GetPlaygroundByIdAsync(id, trackChanges);
             if (playground == null)
-                throw new NotFoundException($"Playground with id {id} not found.");
+               return new ServiceResponse(false, $"Playground with id {id} not found.");
             _repositoryManager.Playground.DeletePlayground(playground);
             await _repositoryManager.SaveAsync();
+            return new ServiceResponse(true, "Playground deleted successfully");
         }
 
         public async Task<IEnumerable<GetPlaygroundDto>> GetAllPlaygroundAsync(bool trackChanges)
@@ -69,14 +71,14 @@ namespace Application.Services
             return playgroundsDto;
         }
 
-        public async Task UpdatePlaygroundAsync(int id, UpdatePlaygroundDto updatePlayground , bool trackChanges)
+        public async Task<ServiceResponse> UpdatePlaygroundAsync(int id, UpdatePlaygroundDto updatePlayground , bool trackChanges)
         {
            var playgroundEntity = await _repositoryManager.Playground.GetPlaygroundByIdAsync(id, trackChanges);
-            if (playgroundEntity == null)
-                throw new NotFoundException($"Playground with id {id} not found.");
+            if (playgroundEntity is null)
+               return new ServiceResponse(false, $"Playground with id {id} not found.");
             _mapper.Map(updatePlayground, playgroundEntity);
-            _repositoryManager.Playground.UpdatePlayground(playgroundEntity);
             await _repositoryManager.SaveAsync();
+            return new ServiceResponse(true, "Playground updated successfully");
         }
     }
 }

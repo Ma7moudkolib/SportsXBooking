@@ -23,7 +23,7 @@ namespace Presentation.Controllers
         public async Task<IActionResult> AddReview([FromBody] ReviewDto review)
         {
             var createdReview = await _serviceManager.Review.AddReviewAsync(review);
-            return CreatedAtRoute("ReviewById", new { id = createdReview.PlayerId }, createdReview);
+            return Ok(createdReview);
         }
     }
 }

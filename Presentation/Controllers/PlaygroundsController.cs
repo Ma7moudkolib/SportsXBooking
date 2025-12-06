@@ -34,20 +34,20 @@ namespace Presentation.Controllers
         [HttpPost]
         public async Task<IActionResult> CreatePlayground([FromBody] CreatePlaygroundDto createPlayground)
         {
-            var playground = await _serviceManager.Playground.CreatePlaygroundAsync(createPlayground);
-            return CreatedAtRoute("Playground", new { id = playground.PlaygroundId }, playground);
+            var playgroundResponse = await _serviceManager.Playground.CreatePlaygroundAsync(createPlayground);
+            return Ok(playgroundResponse);
         }
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePlayground(int id)
         {
-            await _serviceManager.Playground.DeletePlaygroundAsync(id, trackChanges: false);
-            return NoContent();
+            var result =  await _serviceManager.Playground.DeletePlaygroundAsync(id, trackChanges: false);
+            return Ok(result);
         }
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdatePlayground(int id, [FromBody] UpdatePlaygroundDto updatePlayground)
         {
-            await _serviceManager.Playground.UpdatePlaygroundAsync(id, updatePlayground, trackChanges: true);
-            return NoContent();
+           var result = await _serviceManager.Playground.UpdatePlaygroundAsync(id, updatePlayground, trackChanges: true);
+            return Ok(result);
         }
     }
 }

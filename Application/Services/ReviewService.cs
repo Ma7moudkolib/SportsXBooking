@@ -1,4 +1,5 @@
-﻿using Application.DataTransferObjects.Review;
+﻿using Application.DataTransferObjects;
+using Application.DataTransferObjects.Review;
 using Application.ServiceInterfaces;
 using AutoMapper;
 using Infrastructure.Repositories;
@@ -14,13 +15,13 @@ namespace Application.Services
             _mapper = mapper;
             _repositoryManager = repositoryManager;
         }
-        public async Task<ReviewDto> AddReviewAsync(ReviewDto review)
+        public async Task<ServiceResponse> AddReviewAsync(ReviewDto review)
         {
             var reviewEntity = _mapper.Map<Domain.Entities.Review>(review);
             _repositoryManager.Review.AddReviewForPlayground(reviewEntity);
             await _repositoryManager.SaveAsync();
-            var reviewDto = _mapper.Map<ReviewDto>(reviewEntity);
-            return reviewDto;
+           
+            return new ServiceResponse(true, "Review added successfully");
         }
 
         public async Task<IEnumerable<ReviewDto>> GetForPlaygroundAsync(int playgroundId, bool trackChanges)

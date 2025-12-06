@@ -1,4 +1,5 @@
-﻿using Application.DataTransferObjects.Booking;
+﻿using Application.DataTransferObjects;
+using Application.DataTransferObjects.Booking;
 using Application.ServiceInterfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,13 +32,13 @@ namespace Presentation.Controllers
         public async Task<IActionResult> CreateBooking([FromBody] CreateBooking createBooking)
         {
             var booking = await _serviceManager.Booking.CreateBookingAsync(createBooking);
-            return CreatedAtRoute("GetBookingById", new { id = booking.BookingId }, booking);
+            return Ok(booking);
         }
         [HttpPut("cancel/{id}")]
         public async Task<IActionResult> CancelBooking(int id)
         {
-            await _serviceManager.Booking.CancelBookingAsync(id, trackChanges: true);
-            return NoContent();
+          var result =  await _serviceManager.Booking.CancelBookingAsync(id, trackChanges: true);
+            return Ok(result);
         }
     }
 }

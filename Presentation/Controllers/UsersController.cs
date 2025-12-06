@@ -30,14 +30,14 @@ namespace Presentation.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteUser(int id) 
         {
-            _serviceManager.User.DeleteUserAsync(id,trackChanges:false);
-            return NoContent();
+          var result = _serviceManager.User.DeleteUserAsync(id,trackChanges:false);
+            return Ok(result);
         }
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser(int id , [FromBody] UpdateUserDto updateUser)
         {
-            await _serviceManager.User.UpdateUserAsync(id ,updateUser,true);
-            return NoContent();
+          var result= await _serviceManager.User.UpdateUserAsync(id ,updateUser,true);
+            return Ok(result);
         }
 
 

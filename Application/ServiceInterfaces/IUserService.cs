@@ -1,4 +1,5 @@
-﻿using Application.DataTransferObjects.User;
+﻿using Application.DataTransferObjects;
+using Application.DataTransferObjects.User;
 using System.Numerics;
 
 namespace Application.ServiceInterfaces
@@ -7,7 +8,7 @@ namespace Application.ServiceInterfaces
     {
         Task<IEnumerable<GetUserDto>> GetUsersAsync(bool trackChanges);
         Task<GetUserDto> GetUserByIdAsync(int id, bool trackChanges);
-        Task UpdateUserAsync(int id, UpdateUserDto updateUser,bool trackChanges);
-        Task DeleteUserAsync(int id,bool trackChanges); 
+        Task<ServiceResponse> UpdateUserAsync(int id, UpdateUserDto updateUser,bool trackChanges);
+        Task<ServiceResponse> DeleteUserAsync(int id,bool trackChanges); 
     }
 }
