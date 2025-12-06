@@ -1,8 +1,4 @@
 ﻿namespace Application.DataTransferObjects
 {
-    public record ServiceResponse
-    {
-        public bool Success { get; set; }
-        public string Message { get; set; }
-    }
+    public record ServiceResponse(bool Success, string? Message);
 }
