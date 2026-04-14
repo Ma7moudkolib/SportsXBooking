@@ -1,0 +1,40 @@
+version: '3.8'
+
+# ─────────────────────────────────────────────
+# Development overrides
+# Use with: docker compose -f docker-compose.yml -f docker-compose.override.yml up
+# (Docker Compose merges this file automatically when both are present)
+# ─────────────────────────────────────────────
+
+services:
+  db:
+    ports:
+      # Keep SQL Server port accessible from host for local management tools
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "YourStrong@Password123"   # dev-only password; never commit prod secrets
+
+  atm-api:
+    build:
+      target: development                      # ← switch to the development stage
+    container_name: sports-booking-api-dev
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      Database__Server: "db"
+      Database__Name: "SportsBookingDB"
+      Database__User: "sa"
+      Database__Password: "YourStrong@Password123"
+      Database__Port: "1433"
+      Database__TrustServerCertificate: "true"
+    volumes:
+      # Mount source code so dotnet watch picks up changes without rebuilding
+      - ./Backend:/src
+      # Anonymous volumes prevent host's empty bin/obj from shadowing container's
+      - /src/Presentation/bin
+      - /src/Presentation/obj
+      - /src/Domain/bin
+      - /src/Domain/obj
+      - /src/Application/bin
+      - /src/Application/obj
+      - /src/Infrastructure/bin
+      - /src/Infrastructure/obj
