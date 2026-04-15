@@ -4,6 +4,7 @@ using Application.Services;
 using AutoFixture;
 using AutoMapper;
 using Domain.Entities;
+using Domain.RepositoryInterfaces;
 using Infrastructure.Repositories;
 using Moq;
 using Xunit;
@@ -13,6 +14,7 @@ namespace Application.Tests.Services
     public class ReviewServiceTests
     {
         private readonly Mock<IRepositoryManager> _repositoryManagerMock;
+         private readonly Mock<IReviewRepository> _reviewRepositoryMock;
         private readonly Mock<IMapper> _mapperMock;
         private readonly IFixture _fixture;
         private readonly ReviewService _sut;
@@ -20,11 +22,14 @@ namespace Application.Tests.Services
         public ReviewServiceTests()
         {
             _repositoryManagerMock = new Mock<IRepositoryManager>();
+            _reviewRepositoryMock = new Mock<IReviewRepository>();
             _mapperMock = new Mock<IMapper>();
             _fixture = new Fixture();
             _fixture.Behaviors.OfType<ThrowingRecursionBehavior>().ToList()
                 .ForEach(b => _fixture.Behaviors.Remove(b));
-            _fixture.Behaviors.Add(new OmitOnRecursionBehavior());          
+            _fixture.Behaviors.Add(new OmitOnRecursionBehavior()); 
+            _repositoryManagerMock.Setup(r => r.Review)
+                .Returns(_reviewRepositoryMock.Object);         
             
             _sut = new ReviewService(
                 _repositoryManagerMock.Object,
@@ -45,6 +50,7 @@ namespace Application.Tests.Services
 
             _repositoryManagerMock.Setup(r => r.SaveAsync())
                 .Returns(Task.CompletedTask);
+            
 
             // Act
             var result = await _sut.AddReviewAsync(reviewDto);

@@ -4,6 +4,7 @@ using AutoFixture;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Exceptions;
+using Domain.RepositoryInterfaces;
 using Infrastructure.Repositories;
 using Moq;
 using Xunit;
@@ -13,6 +14,8 @@ namespace Application.Tests.Services
     public class PlaygroundServiceTests
     {
         private readonly Mock<IRepositoryManager> _repositoryManagerMock;
+        private readonly Mock<IUserRepository> _userRepositoryMock;        // ← NEW
+        private readonly Mock<IPlaygroundRepository> _playgroundRepositoryMock;
         private readonly Mock<IMapper> _mapperMock;
         private readonly IFixture _fixture;
         private readonly PlaygroundService _sut;
@@ -20,43 +23,88 @@ namespace Application.Tests.Services
         public PlaygroundServiceTests()
         {
             _repositoryManagerMock = new Mock<IRepositoryManager>();
+            _userRepositoryMock = new Mock<IUserRepository>();            // ← NEW
+            _playgroundRepositoryMock = new Mock<IPlaygroundRepository>();
             _mapperMock = new Mock<IMapper>();
             _fixture = new Fixture();
             _fixture.Behaviors.OfType<ThrowingRecursionBehavior>().ToList()
                 .ForEach(b => _fixture.Behaviors.Remove(b));
             _fixture.Behaviors.Add(new OmitOnRecursionBehavior());
+            _repositoryManagerMock.Setup(r => r.User)
+            .Returns(_userRepositoryMock.Object);
+            _repositoryManagerMock.Setup(r => r.Playground)
+            .Returns(_playgroundRepositoryMock.Object);
             _sut = new PlaygroundService(
                 _repositoryManagerMock.Object,
                 _mapperMock.Object);
         }
 
-        #region CreatePlaygroundAsync Tests
+        // #region CreatePlaygroundAsync Tests
 
+        // [Fact]
+        // public async Task CreatePlaygroundAsync_WithValidData_ShouldCreatePlayground()
+        // {
+        //     // Arrange
+        //     var createPlaygroundDto = _fixture.Create<CreatePlaygroundDto>();
+        //     var playgroundEntity = _fixture.Create<Playground>();
+
+        //     _mapperMock.Setup(m => m.Map<Playground>(createPlaygroundDto))
+        //         .Returns(playgroundEntity);
+
+        //     _repositoryManagerMock.Setup(r => r.SaveAsync())
+        //         .Returns(Task.CompletedTask);
+
+        //     // Act
+        //     var result = await _sut.CreatePlaygroundAsync(createPlaygroundDto);
+
+        //     // Assert
+        //     Assert.True(result.Success);
+        //     Assert.Equal("Playground created successfully", result.Message);
+        //     _repositoryManagerMock.Verify(r => r.Playground.CreatePlayground(playgroundEntity), Times.Once);
+        //     _repositoryManagerMock.Verify(r => r.SaveAsync(), Times.Once);
+        // }
+
+        // #endregion
+
+        #region CreatePlaygroundAsync Tests
+ 
         [Fact]
         public async Task CreatePlaygroundAsync_WithValidData_ShouldCreatePlayground()
         {
             // Arrange
-            var createPlaygroundDto = _fixture.Create<CreatePlaygroundDto>();
-            var playgroundEntity = _fixture.Create<Playground>();
-
+            var createPlaygroundDto = new CreatePlaygroundDto
+            {
+                Name = "Central Park Court",
+                Location = "Downtown",
+                SportType = "Basketball",
+                OwnerId = 1
+            };
+ 
+            var playgroundEntity = new Playground
+            {
+                PlaygroundId = 1,
+                Name = createPlaygroundDto.Name,
+                Location = createPlaygroundDto.Location,
+                SportType = createPlaygroundDto.SportType,
+                OwnerId = createPlaygroundDto.OwnerId
+            };
+ 
             _mapperMock.Setup(m => m.Map<Playground>(createPlaygroundDto))
                 .Returns(playgroundEntity);
-
             _repositoryManagerMock.Setup(r => r.SaveAsync())
                 .Returns(Task.CompletedTask);
-
+ 
             // Act
             var result = await _sut.CreatePlaygroundAsync(createPlaygroundDto);
-
+ 
             // Assert
             Assert.True(result.Success);
             Assert.Equal("Playground created successfully", result.Message);
             _repositoryManagerMock.Verify(r => r.Playground.CreatePlayground(playgroundEntity), Times.Once);
             _repositoryManagerMock.Verify(r => r.SaveAsync(), Times.Once);
         }
-
+ 
         #endregion
-
         #region DeletePlaygroundAsync Tests
 
         [Fact]
