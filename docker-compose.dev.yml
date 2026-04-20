@@ -2,7 +2,7 @@ version: '3.8'
 
 # ─────────────────────────────────────────────
 # Development overrides
-# Use with: docker compose -f docker-compose.yml -f docker-compose.override.yml up
+# Use with: docker compose -f docker-compose.yml -f docker-compose.dev.yml up
 # (Docker Compose merges this file automatically when both are present)
 # ─────────────────────────────────────────────
 
@@ -14,7 +14,7 @@ services:
     environment:
       SA_PASSWORD: "YourStrong@Password123"   # dev-only password; never commit prod secrets
 
-  atm-api:
+  sports-booking-api:
     build:
       target: development                      # ← switch to the development stage
     container_name: sports-booking-api-dev

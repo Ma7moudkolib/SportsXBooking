@@ -41,8 +41,18 @@ services:
       Database__Password: "${SA_PASSWORD}"
       Database__TrustServerCertificate: "true"
     depends_on:
-      - db
-#        condition: healthcheck
+      - db      #        condition: healthcheck
+    networks:
+      - sports-network
+  sports-booking-frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    container_name: sports-booking-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - sports-booking-api
     networks:
       - sports-network
 
