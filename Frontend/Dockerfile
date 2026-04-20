@@ -23,7 +23,7 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copy the build output from Stage 1 to the Nginx html folder
 # The Angular 21+ application builder outputs client files in the browser folder
-COPY --from=build /app/dist/hr-frontend/browser /usr/share/nginx/html
+COPY --from=build /app/dist/sports-x-booking/browser /usr/share/nginx/html
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
