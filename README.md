@@ -1,131 +1,142 @@
-# Sports Playground Booking API
+# SportsXBooking
+> **The Elite Engine for Sports Facility Management & Athletic Reservations.**
 
-A production-ready ASP.NET Core 9 Web API for managing sports playground bookings, payments, and user management with enterprise-grade architecture.
+[![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)]()
+[![Platform](https://img.shields.io/badge/.NET-9.0-blue.svg)]()
+[![Frontend](https://img.shields.io/badge/Angular-19%2B-red.svg)]()
+[![State Management](https://img.shields.io/badge/Signals-Reactive-orange.svg)]()
+[![Design](https://img.shields.io/badge/Design-Stitch-7E22CE.svg)]()
 
-## Overview
-
-This API provides a complete solution for sports facility management, enabling playground owners to list their venues, players to book time slots, and administrators to oversee operations. Built with Clean Architecture principles, the system ensures scalability, maintainability, and testability.
-
-## Key Features
-
-- **User Management** - Role-based access control (Player, Owner, Admin) with JWT authentication
-- **Playground Management** - Owners can create, update, and manage their sports facilities
-- **Booking System** - Real-time availability checking and slot reservation
-- **Payment Processing** - Integrated payment handling and transaction management
-- **Admin Dashboard** - System oversight and user management capabilities
-
-## Architecture
-
-The project follows Clean Architecture with clear separation of concerns:
-
-```
-├── Domain          # Core business entities and interfaces
-├── Application     # Business logic and use cases
-├── Infrastructure  # Data access and external services
-└── API             # Presentation layer and HTTP endpoints
-```
-
-## Technology Stack
-
-- **Framework**: ASP.NET Core 9
-- **Database**: SQL Server with Entity Framework Core
-- **Authentication**: JWT Bearer tokens
-- **Patterns**: Repository Pattern, Unite of Worke
-- **Mapping**: AutoMapper
-- **Architecture**: Clean Architecture
-
-## Getting Started
-
-### Prerequisites
-
-- .NET 9 SDK
-- SQL Server
-- Visual Studio 2022 
-
-### Installation
-
-1. Clone the repository
-```bash
-git clone https://github.com/yourusername/sports-playground-booking-api.git
-cd sports-playground-booking-api
-```
-
-2. Update the connection string in `appsettings.json`
-```json
-"ConnectionStrings": {
-  "DefaultConnection": "Server=.;Database=SportsBookingDB;Trusted_Connection=True;"
-}
-```
-
-3. Apply database migrations
-```bash
-dotnet ef database update
-```
-
-4. Run the application
-```bash
-dotnet run --project API
-```
-
-The API will be available at `https://localhost:5001`
-
-## API Documentation
-
-Once running, access the Swagger documentation at:
-```
-https://localhost:5001/swagger
-```
-
-### Core Endpoints
-
-- **Authentication**: `/api/auth/login`, `/api/auth/register`
-- **Playgrounds**: `/api/playgrounds`
-- **Bookings**: `/api/bookings`
-- **Payments**: `/api/payments`
-- **Admin**: `/api/admin`
-
-## User Roles
-
-| Role | Permissions |
-|------|-------------|
-| **Player** | Browse playgrounds, create bookings, manage own bookings |
-| **Owner** | Manage own playgrounds, view bookings, handle availability |
-| **Admin** | Full system access, user management, oversight |
-
-## Configuration
-
-Key configuration options in `appsettings.json`:
-
-```json
-{
-  "JwtSettings": {
-    "Secret": "your-secret-key",
-    "ExpirationInMinutes": 60
-  },
-  "ConnectionStrings": {
-    "DefaultConnection": "your-connection-string"
-  }
-}
-```
-
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For questions or support, please open an issue on GitHub.
+**SportsXBooking** is a high-performance, full-stack SaaS platform designed to bridge the gap between sports facility owners and athletes. Built with enterprise-grade architecture and a modern reactive frontend, it provides a seamless end-to-end experience for booking, managing, and reviewing sports playgrounds.
 
 ---
 
-**Built with ❤️ using Clean Architecture and ASP.NET Core 9**
+## 🏗️ Technical Architecture
+
+### Backend: .NET 9 Web API
+Implementing **Clean Architecture** to ensure high decoupling, testability, and scalability.
+- **Domain Layer**: Core entities, value objects, and domain logic.
+- **Application Layer**: Use cases, DTOs, and interface definitions.
+- **Infrastructure Layer**: EF Core implementation, JWT identity services, and external integrations.
+- **Presentation Layer**: RESTful API nodes with structured response handling.
+
+### Frontend: Angular 19+
+A cutting-edge client-side application focused on performance and developer velocity.
+- **Signal-Based State Management**: Real-time reactive updates without the overhead of Zone.js.
+- **Standalone Components**: Modular and lightweight architecture.
+- **Stitch Design System**: High-fidelity UI using **Deep Navy** and **Action Green** "Sports Performance" theme.
+- **Tailwind CSS**: Utility-first styling integrated with custom design tokens.
+
+---
+
+## 🛠️ Tech Stack
+
+### Backend
+| Technology | Usage |
+| :--- | :--- |
+| **ASP.NET Core 9** | High-performance API framework |
+| **EF Core** | Modern Object-Database Mapper |
+| **Identity / JWT** | Secure authentication and authorization |
+| **Repository Pattern** | Data access abstraction |
+| **MS SQL Server** | Reliable relational data storage |
+
+### Frontend
+| Technology | Usage |
+| :--- | :--- |
+| **Angular 19/20** | Component-based web framework |
+| **Signals** | Fine-grained reactivity |
+| **RxJS** | Reactive extensions for async operations |
+| **Tailwind CSS** | Premium styling and layout |
+| **Stitch Tokens** | Design system consistency |
+
+---
+
+## 🌟 Core Features
+
+- 🔐 **Secure Authentication**: Robust Identity-based registration and login with JWT-secured endpoints.
+- 🏟️ **Playground Management**: Comprehensive CRUD operations for facility owners and system administrators.
+- 📅 **Advanced Booking Engine**: Intelligent scheduling with real-time availability checks and conflict resolution.
+- 🚫 **Cancellation Logic**: Automated rules for booking modifications and status transitions.
+- 💬 **Review & Feedback**: Dual-sided feedback loop for quality assurance and community trust.
+- 💳 **Payment Orchestration**: Secure status tracking for transactions and financial reporting.
+
+---
+
+## 📡 API Overview
+
+The API is architected around specialized domain modules:
+
+| Module | Responsibility |
+| :--- | :--- |
+| **`Auth`** | Identity management, token issuance, and password security. |
+| **`Playgrounds`** | Venue discovery, facility details, and owner management. |
+| **`Bookings`** | Reservation lifecycle, time-slot allocation, and scheduling. |
+| **`Users`** | Profile management and role assignment. |
+| **`Payments`** | Transaction verification and status tracking. |
+| **`Reviews`** | Rating systems and community feedback moderation. |
+
+---
+
+## 🛡️ Role-Based Access Control (RBAC)
+
+The system enforces strict permission sets defined by user roles:
+
+| Feature | Player | Owner | Admin |
+| :--- | :---: | :---: | :---: |
+| Search & View Playgrounds | ✅ | ✅ | ✅ |
+| Create Bookings | ✅ | ❌ | ❌ |
+| Manage Own Facilities | ❌ | ✅ | ✅ |
+| Manage All System Users | ❌ | ❌ | ✅ |
+| Cancel Bookings | ✅ | ✅ | ✅ |
+| Financial Overview | ❌ | ✅ | ✅ |
+
+---
+
+## 🚀 Installation & Setup
+
+### Prerequisites
+- .NET 9.0 SDK
+- Node.js (v20+) & Angular CLI
+- SQL Server
+
+### Backend Setup
+1. Navigate to the Backend directory:
+   ```bash
+   cd Backend
+   ```
+2. Update `appsettings.json` with your Connection String.
+3. Apply database migrations:
+   ```bash
+   dotnet ef database update --project Infrastructure --startup-project Presentation
+   ```
+4. Launch the API:
+   ```bash
+   dotnet run --project Presentation
+   ```
+
+### Frontend Setup
+1. Navigate to the Frontend directory:
+   ```bash
+   cd Frontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   ng serve
+   ```
+4. Access the application at `http://localhost:4200`.
+
+---
+
+## 🎨 Design Language
+Designed via **Stitch**, the platform adopts a **"Sports Performance"** aesthetic:
+- **Primary Color**: Deep Navy (#0F172A)
+- **Action Color**: Action Green (#22C55E)
+- **Typography**: Precision-focused sans-serif fonts optimization for readability at high speed.
+
+---
+
+**SportsXBooking** — *Empowering the next generation of athletic coordination.*
