@@ -1,4 +1,5 @@
-import { Component, inject, computed } from '@angular/core';
+import { Component, HostListener, computed, inject, signal } from '@angular/core';
+import { NgClass } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
 import { ToastContainerComponent } from '../toast-container/toast-container.component';
@@ -6,38 +7,56 @@ import { ToastContainerComponent } from '../toast-container/toast-container.comp
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, ToastContainerComponent],
+  imports: [NgClass, RouterLink, RouterLinkActive, ToastContainerComponent],
   template: `
-    <header class="navbar glass">
-      <div class="container navbar-inner">
-        <!-- Logo -->
-        <a routerLink="/" class="logo">
-          Sports<span>X</span>Booking
+    <header
+      class="fixed inset-x-0 top-0 z-[1000] h-18 border-b transition-all duration-300"
+      [ngClass]="navbarClasses()"
+    >
+      <div class="container flex h-full items-center justify-between">
+        <a routerLink="/" class="font-display text-xl font-extrabold tracking-tight text-secondary">
+          Sports<span class="text-accent">X</span>Booking
         </a>
 
-        <!-- Nav Links -->
-        <nav class="nav-links" role="navigation">
-          <a routerLink="/" routerLinkActive="nav-active" [routerLinkActiveOptions]="{exact:true}" class="nav-link">Playgrounds</a>
+        <nav class="flex items-center gap-3 md:gap-6" role="navigation">
+          <a
+            routerLink="/"
+            routerLinkActive="text-accent border-accent"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="border-b-2 border-transparent pb-1 text-sm font-medium text-slate-100 transition hover:text-secondary"
+          >Playgrounds</a>
 
           @if (auth.isAuthenticated()) {
-            <a routerLink="/my-bookings" routerLinkActive="nav-active" class="nav-link">My Bookings</a>
+            <a
+              routerLink="/my-bookings"
+              routerLinkActive="text-accent border-accent"
+              class="border-b-2 border-transparent pb-1 text-sm font-medium text-slate-100 transition hover:text-secondary"
+            >My Bookings</a>
 
             @if (auth.isOwnerOrAdmin()) {
-              <a routerLink="/management/playgrounds" routerLinkActive="nav-active" class="nav-link">Manage</a>
+              <a
+                routerLink="/management/playgrounds"
+                routerLinkActive="text-accent border-accent"
+                class="border-b-2 border-transparent pb-1 text-sm font-medium text-slate-100 transition hover:text-secondary"
+              >Manage</a>
             }
 
             @if (auth.userRole() === 'Admin') {
-              <a routerLink="/management/users" routerLinkActive="nav-active" class="nav-link">Admin</a>
+              <a
+                routerLink="/management/users"
+                routerLinkActive="text-accent border-accent"
+                class="border-b-2 border-transparent pb-1 text-sm font-medium text-slate-100 transition hover:text-secondary"
+              >Admin</a>
             }
 
-            <div class="user-pill">
-              <span class="user-name">{{ auth.currentUser()?.firstName }}</span>
-              <span class="role-chip">{{ auth.userRole() }}</span>
+            <div class="hidden items-center gap-3 border-l border-slate-300/40 pl-4 sm:flex">
+              <span class="text-sm font-semibold text-secondary">{{ auth.currentUser()?.firstName }}</span>
+              <span class="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-primary">{{ auth.userRole() }}</span>
               <button class="btn btn-secondary btn-sm" (click)="logout()">Logout</button>
             </div>
           } @else {
-            <a routerLink="/login"    class="btn btn-secondary btn-sm">Login</a>
-            <a routerLink="/register" class="btn btn-primary   btn-sm">Sign Up</a>
+            <a routerLink="/login" class="btn btn-secondary btn-sm">Login</a>
+            <a routerLink="/register" class="btn btn-primary btn-sm">Sign Up</a>
           }
         </nav>
       </div>
@@ -45,86 +64,24 @@ import { ToastContainerComponent } from '../toast-container/toast-container.comp
 
     <app-toast-container />
   `,
-  styles: [`
-    .navbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: var(--nav-height);
-      z-index: 1000;
-      border-bottom: 1px solid rgba(196,198,207,0.18);
-    }
-
-    .navbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 100%;
-    }
-
-    .logo {
-      font-family: var(--font-display);
-      font-size: 1.375rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--color-primary);
-      text-decoration: none;
-    }
-    .logo span { color: var(--color-primary-fixed); }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.75rem;
-    }
-
-    .nav-link {
-      font-size: 0.9375rem;
-      font-weight: 500;
-      color: var(--on-surface-variant);
-      text-decoration: none;
-      position: relative;
-      transition: color 0.2s;
-    }
-    .nav-link:hover { color: var(--on-surface); }
-    .nav-active {
-      color: var(--color-primary);
-      font-weight: 600;
-    }
-    .nav-active::after {
-      content: '';
-      position: absolute;
-      bottom: -4px; left: 0; right: 0;
-      height: 2px;
-      background: var(--color-primary-fixed);
-      border-radius: 2px;
-    }
-
-    .user-pill {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding-left: 1.25rem;
-      border-left: 1px solid rgba(196,198,207,0.25);
-    }
-    .user-name {
-      font-weight: 600;
-      font-size: 0.875rem;
-      color: var(--color-primary);
-    }
-    .role-chip {
-      padding: 0.2rem 0.6rem;
-      border-radius: var(--radius-full);
-      background: var(--surface-container);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--on-surface-variant);
-    }
-  `]
+  styles: []
 })
 export class NavbarComponent {
   auth = inject(AuthService);
+  private scrolled = signal(false);
+
+  navbarClasses = computed(() => {
+    if (this.scrolled()) {
+      return 'border-primary/40 bg-primary/95 shadow-lg backdrop-blur-xl';
+    }
+
+    return 'border-white/15 bg-primary/30 backdrop-blur-md';
+  });
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    this.scrolled.set(window.scrollY > 16);
+  }
 
   logout() {
     this.auth.logout();

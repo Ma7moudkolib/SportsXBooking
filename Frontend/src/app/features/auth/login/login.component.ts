@@ -9,47 +9,51 @@ import { ToastService } from '../../../core/services/toast.service';
   standalone: true,
   imports: [ReactiveFormsModule, RouterLink],
   template: `
-    <div class="auth-page">
-      <div class="auth-panel surface-card">
-        <!-- Header -->
-        <div class="auth-header mb-8">
-          <a routerLink="/" class="back-logo">Sports<span>X</span>Booking</a>
-          <h1 class="mt-4 mb-1">Welcome Back</h1>
+    <div class="auth-layout">
+      <div class="surface-card w-full max-w-[460px] rounded-2xl p-10">
+        <div class="mb-8">
+          <a routerLink="/" class="font-display text-xl font-extrabold tracking-tight text-primary">Sports<span class="text-accent">X</span>Booking</a>
+          <h1 class="mb-1 mt-4 text-4xl">Welcome Back</h1>
           <p class="text-muted">Sign in to access your performance grid.</p>
         </div>
 
-        <!-- Demo hint -->
-        <div class="demo-hint mb-6">
-          <p class="text-xs font-semi mb-1">🎯 Demo Mode</p>
+        <div class="mb-6 rounded-xl border border-accent/20 bg-accent/10 px-4 py-3">
+          <p class="mb-1 text-xs font-semibold">Demo Mode</p>
           <p class="text-xs text-muted">Tip: Add <strong>admin</strong> or <strong>owner</strong> to your email to log in with those roles (e.g. admin&#64;test.com)</p>
         </div>
 
         <form [formGroup]="form" (ngSubmit)="submit()" id="login-form">
           <div class="form-group">
             <label class="form-label" for="login-email">Email Address</label>
-            <input
-              id="login-email" type="email"
-              formControlName="email"
-              class="form-control"
-              placeholder="coach&#64;example.com"
-              autocomplete="email"
-            />
+            <div class="group rounded-xl border border-slate-300 bg-white/90 px-3 py-2 transition focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/25">
+              <input
+                id="login-email"
+                type="email"
+                formControlName="email"
+                class="w-full border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none"
+                placeholder="coach&#64;example.com"
+                autocomplete="email"
+              />
+            </div>
             @if (form.get('email')?.invalid && form.get('email')?.touched) {
-              <p class="field-error">Please enter a valid email address.</p>
+              <p class="mt-1.5 text-xs text-rose-700">Please enter a valid email address.</p>
             }
           </div>
 
           <div class="form-group">
             <label class="form-label" for="login-password">Password</label>
-            <input
-              id="login-password" type="password"
-              formControlName="password"
-              class="form-control"
-              placeholder="••••••••"
-              autocomplete="current-password"
-            />
+            <div class="group rounded-xl border border-slate-300 bg-white/90 px-3 py-2 transition focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/25">
+              <input
+                id="login-password"
+                type="password"
+                formControlName="password"
+                class="w-full border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none"
+                placeholder="••••••••"
+                autocomplete="current-password"
+              />
+            </div>
             @if (form.get('password')?.invalid && form.get('password')?.touched) {
-              <p class="field-error">Password is required.</p>
+              <p class="mt-1.5 text-xs text-rose-700">Password is required.</p>
             }
           </div>
 
@@ -57,81 +61,36 @@ import { ToastService } from '../../../core/services/toast.service';
             <div class="alert alert-error mb-4">{{ error() }}</div>
           }
 
-          <button
-            id="login-submit"
-            type="submit"
-            class="btn btn-primary btn-full btn-lg"
-            [disabled]="loading()"
-          >
+          <button id="login-submit" type="submit" class="btn btn-primary btn-full btn-lg" [disabled]="loading()">
             {{ loading() ? 'Authenticating...' : 'Access System' }}
           </button>
         </form>
 
         <div class="divider"></div>
         <p class="text-center text-sm text-muted">
-          No account? <a routerLink="/register" class="text-accent font-semi">Register for access</a>
+          No account? <a routerLink="/register" class="font-semibold text-accent">Register for access</a>
         </p>
       </div>
     </div>
   `,
-  styles: [`
-    .auth-page {
-      min-height: 100vh;
-      background: linear-gradient(160deg, var(--color-primary) 0%, #002d5c 60%, var(--surface) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1rem;
-    }
-
-    .auth-panel {
-      width: 100%;
-      max-width: 460px;
-      padding: 2.5rem;
-      box-shadow: var(--shadow-ambient);
-    }
-
-    .auth-header {}
-    .back-logo {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: var(--color-primary);
-      text-decoration: none;
-      letter-spacing: -0.02em;
-    }
-    .back-logo span { color: var(--color-primary-fixed); }
-
-    .demo-hint {
-      background: rgba(50,205,50,0.08);
-      border-radius: var(--radius-md);
-      padding: 0.875rem 1rem;
-    }
-
-    .field-error {
-      font-size: 0.8rem;
-      color: var(--color-error);
-      margin-top: 0.375rem;
-    }
-  `]
+  styles: []
 })
 export class LoginComponent implements OnInit {
-  private fb     = inject(FormBuilder);
-  private auth   = inject(AuthService);
+  private fb = inject(FormBuilder);
+  private auth = inject(AuthService);
   private router = inject(Router);
-  private toast  = inject(ToastService);
+  private toast = inject(ToastService);
 
   form!: FormGroup;
   loading = signal(false);
-  error   = signal<string | null>(null);
+  error = signal<string | null>(null);
 
   ngOnInit() {
     this.form = this.fb.group({
-      email:    ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
 
-    // Redirect if already logged in
     if (this.auth.isAuthenticated()) this.router.navigate(['/']);
   }
 

@@ -63,7 +63,7 @@ import { ToastService } from '../../../core/services/toast.service';
             <button
               type="submit"
               id="confirm-booking-btn"
-              class="btn btn-primary flex-1"
+              class="btn btn-primary btn-action flex-1"
               [disabled]="loading()"
             >
               {{ loading() ? 'Confirming...' : 'Confirm Booking' }}

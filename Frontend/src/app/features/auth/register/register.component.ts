@@ -10,53 +10,64 @@ import { UserRole } from '../../../models/types';
   standalone: true,
   imports: [ReactiveFormsModule, RouterLink],
   template: `
-    <div class="auth-page">
-      <div class="auth-panel surface-card">
-        <div class="auth-header mb-8">
-          <a routerLink="/" class="back-logo">Sports<span>X</span>Booking</a>
-          <h1 class="mt-4 mb-1">Create Account</h1>
+    <div class="auth-layout">
+      <div class="surface-card w-full max-w-[520px] rounded-2xl p-10">
+        <div class="mb-8">
+          <a routerLink="/" class="font-display text-xl font-extrabold tracking-tight text-primary">Sports<span class="text-accent">X</span>Booking</a>
+          <h1 class="mb-1 mt-4 text-4xl">Create Account</h1>
           <p class="text-muted">Join thousands of athletes and venue owners.</p>
         </div>
 
         <form [formGroup]="form" (ngSubmit)="submit()" id="register-form">
-          <div class="form-row">
-            <div class="form-group">
+          <div class="mb-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
               <label class="form-label" for="reg-firstName">First Name</label>
-              <input id="reg-firstName" type="text" formControlName="firstName" class="form-control" placeholder="John" />
+              <div class="group rounded-xl border border-slate-300 bg-white/90 px-3 py-2 transition focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/25">
+                <input id="reg-firstName" type="text" formControlName="firstName" class="w-full border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none" placeholder="John" />
+              </div>
               @if (form.get('firstName')?.invalid && form.get('firstName')?.touched) {
-                <p class="field-error">First name is required.</p>
+                <p class="mt-1.5 text-xs text-rose-700">First name is required.</p>
               }
             </div>
-            <div class="form-group">
+
+            <div>
               <label class="form-label" for="reg-lastName">Last Name</label>
-              <input id="reg-lastName" type="text" formControlName="lastName" class="form-control" placeholder="Smith" />
+              <div class="group rounded-xl border border-slate-300 bg-white/90 px-3 py-2 transition focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/25">
+                <input id="reg-lastName" type="text" formControlName="lastName" class="w-full border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none" placeholder="Smith" />
+              </div>
               @if (form.get('lastName')?.invalid && form.get('lastName')?.touched) {
-                <p class="field-error">Last name is required.</p>
+                <p class="mt-1.5 text-xs text-rose-700">Last name is required.</p>
               }
             </div>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="reg-email">Email Address</label>
-            <input id="reg-email" type="email" formControlName="email" class="form-control" placeholder="you@example.com" autocomplete="email" />
+            <div class="group rounded-xl border border-slate-300 bg-white/90 px-3 py-2 transition focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/25">
+              <input id="reg-email" type="email" formControlName="email" class="w-full border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none" placeholder="you@example.com" autocomplete="email" />
+            </div>
             @if (form.get('email')?.invalid && form.get('email')?.touched) {
-              <p class="field-error">A valid email is required.</p>
+              <p class="mt-1.5 text-xs text-rose-700">A valid email is required.</p>
             }
           </div>
 
           <div class="form-group">
             <label class="form-label" for="reg-role">Account Type</label>
-            <select id="reg-role" formControlName="role" class="form-control">
-              <option value="User">Player / Athlete</option>
-              <option value="Owner">Venue Owner</option>
-            </select>
+            <div class="group rounded-xl border border-slate-300 bg-white/90 px-3 py-2 transition focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/25">
+              <select id="reg-role" formControlName="role" class="w-full cursor-pointer border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none">
+                <option value="User">Player / Athlete</option>
+                <option value="Owner">Venue Owner</option>
+              </select>
+            </div>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="reg-password">Password</label>
-            <input id="reg-password" type="password" formControlName="password" class="form-control" placeholder="Min. 8 characters" autocomplete="new-password" />
+            <div class="group rounded-xl border border-slate-300 bg-white/90 px-3 py-2 transition focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/25">
+              <input id="reg-password" type="password" formControlName="password" class="w-full border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none" placeholder="Min. 8 characters" autocomplete="new-password" />
+            </div>
             @if (form.get('password')?.invalid && form.get('password')?.touched) {
-              <p class="field-error">Password must be at least 8 characters.</p>
+              <p class="mt-1.5 text-xs text-rose-700">Password must be at least 8 characters.</p>
             }
           </div>
 
@@ -71,65 +82,30 @@ import { UserRole } from '../../../models/types';
 
         <div class="divider"></div>
         <p class="text-center text-sm text-muted">
-          Already have an account? <a routerLink="/login" class="text-accent font-semi">Log in</a>
+          Already have an account? <a routerLink="/login" class="font-semibold text-accent">Log in</a>
         </p>
       </div>
     </div>
   `,
-  styles: [`
-    .auth-page {
-      min-height: 100vh;
-      background: linear-gradient(160deg, var(--color-primary) 0%, #002d5c 60%, var(--surface) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1rem;
-    }
-    .auth-panel {
-      width: 100%;
-      max-width: 520px;
-      padding: 2.5rem;
-      box-shadow: var(--shadow-ambient);
-    }
-    .back-logo {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: var(--color-primary);
-      text-decoration: none;
-      letter-spacing: -0.02em;
-    }
-    .back-logo span { color: var(--color-primary-fixed); }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    .field-error {
-      font-size: 0.8rem;
-      color: var(--color-error);
-      margin-top: 0.375rem;
-    }
-    select.form-control { cursor: pointer; }
-  `]
+  styles: []
 })
 export class RegisterComponent implements OnInit {
-  private fb     = inject(FormBuilder);
-  private auth   = inject(AuthService);
+  private fb = inject(FormBuilder);
+  private auth = inject(AuthService);
   private router = inject(Router);
-  private toast  = inject(ToastService);
+  private toast = inject(ToastService);
 
   form!: FormGroup;
   loading = signal(false);
-  error   = signal<string | null>(null);
+  error = signal<string | null>(null);
 
   ngOnInit() {
     this.form = this.fb.group({
       firstName: ['', Validators.required],
-      lastName:  ['', Validators.required],
-      email:     ['', [Validators.required, Validators.email]],
-      role:      ['User' as UserRole],
-      password:  ['', [Validators.required, Validators.minLength(8)]]
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      role: ['User' as UserRole],
+      password: ['', [Validators.required, Validators.minLength(8)]]
     });
     if (this.auth.isAuthenticated()) this.router.navigate(['/']);
   }

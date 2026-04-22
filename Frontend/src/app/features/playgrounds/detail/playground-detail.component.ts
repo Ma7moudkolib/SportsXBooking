@@ -102,11 +102,11 @@ import { CreateBookingModalComponent } from '../../bookings/create-booking-modal
                 <div class="divider"></div>
 
                 @if (auth.isAuthenticated()) {
-                  <button id="open-booking-btn" class="btn btn-primary btn-full btn-lg mb-3" (click)="showBooking.set(true)">
+                  <button id="open-booking-btn" class="btn btn-primary btn-action btn-full btn-lg mb-3" (click)="showBooking.set(true)">
                     🗓 Book This Venue
                   </button>
                 } @else {
-                  <a routerLink="/login" class="btn btn-primary btn-full btn-lg mb-3">
+                  <a routerLink="/login" class="btn btn-primary btn-action btn-full btn-lg mb-3">
                     Log In to Book
                   </a>
                 }
