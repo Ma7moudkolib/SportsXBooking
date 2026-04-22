@@ -26,10 +26,7 @@ services:
       - sports-network
 
   sports-booking-api:
-    build:
-      context: ./Backend
-      dockerfile: Dockerfile
-      target: production          # ← explicit production stage
+    image: mahmoud1242002/sportsxbooking-api:latest    # ← explicit production stage
     container_name: sports-booking-api
     ports:
       - "8080:8080"
@@ -45,9 +42,7 @@ services:
     networks:
       - sports-network
   sports-booking-frontend:
-    build:
-      context: ./Frontend
-      dockerfile: Dockerfile
+    image: mahmoud1242002/sportsxbooking-frontend:latest    # ← explicit production stage
     container_name: sports-booking-frontend
     ports:
       - "80:80"
