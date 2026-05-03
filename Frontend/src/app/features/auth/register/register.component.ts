@@ -55,7 +55,7 @@ import { UserRole } from '../../../models/types';
             <label class="form-label" for="reg-role">Account Type</label>
             <div class="group rounded-xl border border-slate-300 bg-white/90 px-3 py-2 transition focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/25">
               <select id="reg-role" formControlName="role" class="w-full cursor-pointer border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none">
-                <option value="User">Player / Athlete</option>
+                <option value="Player">Player / Athlete</option>
                 <option value="Owner">Venue Owner</option>
               </select>
             </div>
@@ -104,7 +104,7 @@ export class RegisterComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      role: ['User' as UserRole],
+      role: ['Player' as UserRole],
       password: ['', [Validators.required, Validators.minLength(8)]]
     });
     if (this.auth.isAuthenticated()) this.router.navigate(['/']);

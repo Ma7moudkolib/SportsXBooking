@@ -1,8 +1,7 @@
-export type UserRole = 'Guest' | 'User' | 'Owner' | 'Admin';
+export type UserRole = 'Guest' | 'User' | 'Player' | 'Owner' | 'Admin';
 export type BookingStatus = 'Confirmed' | 'Pending' | 'Cancelled';
 export type PaymentStatus = 'Completed' | 'Failed' | 'Refunded';
 
-// ── Auth DTOs (matches AuthenticationController) ──
 export interface UserForLoginDto {
   email: string;
   password: string;
@@ -22,7 +21,6 @@ export interface LoginResponse {
   user: User;
 }
 
-// ── Domain Models ──
 export interface User {
   id: string;
   firstName: string;
@@ -46,7 +44,7 @@ export interface Review {
   id: string;
   playgroundId: string;
   userId: string;
-  rating: number; // 1–5
+  rating: number;
   comment: string;
   date: string;
   userName: string;

@@ -153,7 +153,7 @@ export class AdminUsersComponent implements OnInit {
   }
 
   computeSummary(users: User[]) {
-    const roles = ['Admin', 'Owner', 'User'];
+    const roles = ['Admin', 'Owner', 'Player'];
     this.roleSummary.set(
       roles.map(role => ({ role, count: users.filter(u => u.role === role).length }))
     );
