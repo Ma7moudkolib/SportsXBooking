@@ -1,17 +1,22 @@
-import { Injectable, signal, computed } from '@angular/core';
-import { Observable, of, delay, tap } from 'rxjs';
+import { Injectable, signal, computed, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, tap, switchMap, map } from 'rxjs';
 import { User, UserForLoginDto, UserForRegistrationDto, LoginResponse, UserRole } from '../../models/types';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private _user   = signal<User | null>(this._loadUser());
-  private _token  = signal<string | null>(this._loadToken());
+  private readonly http = inject(HttpClient);
+  private readonly apiUrl = `${environment.apiUrl}/Authentication`;
 
-  readonly currentUser      = computed(() => this._user());
-  readonly isAuthenticated  = computed(() => !!this._token());
-  readonly token            = computed(() => this._token());
-  readonly userRole         = computed<UserRole>(() => this._user()?.role ?? 'Guest');
-  readonly isOwnerOrAdmin   = computed(() => {
+  private _user = signal<User | null>(this._loadUser());
+  private _token = signal<string | null>(this._loadToken());
+
+  readonly currentUser = computed(() => this._user());
+  readonly isAuthenticated = computed(() => !!this._token());
+  readonly token = computed(() => this._token());
+  readonly userRole = computed<UserRole>(() => this._user()?.role ?? 'Guest');
+  readonly isOwnerOrAdmin = computed(() => {
     const r = this.userRole();
     return r === 'Owner' || r === 'Admin';
   });
@@ -20,45 +25,43 @@ export class AuthService {
     try { return JSON.parse(localStorage.getItem('sx_user') ?? 'null'); }
     catch { return null; }
   }
+
   private _loadToken(): string | null {
     return localStorage.getItem('sx_token');
   }
 
   login(dto: UserForLoginDto): Observable<LoginResponse> {
-    const role: UserRole = dto.email.toLowerCase().includes('admin')
-      ? 'Admin'
-      : dto.email.toLowerCase().includes('owner')
-        ? 'Owner'
-        : 'User';
-
-    const mockUser: User = {
-      id: role === 'Admin' ? 'admin1' : role === 'Owner' ? 'u_owner1' : 'u1',
-      firstName: role === 'Admin' ? 'Admin' : 'Test',
-      lastName:  role === 'Admin' ? 'Super' : 'User',
-      email: dto.email,
-      role
-    };
-    const mockToken = `eyJ.mock-jwt-${Date.now()}.signature`;
-
-    return of<LoginResponse>({ message: 'Login Successful', token: mockToken, user: mockUser }).pipe(
-      delay(800),
+    return this.http.post<any>(`${this.apiUrl}/login`, dto).pipe(
+      map(res => {
+        const [firstName, ...rest] = (res.user.fullName as string).split(' ');
+        const role = (res.user.role === 'Player' ? 'User' : res.user.role) as UserRole;
+        return {
+          message: res.message,
+          token: res.token,
+          user: {
+            id: String(res.user.id),
+            firstName,
+            lastName: rest.join(' ') || '',
+            email: res.user.email,
+            role
+          }
+        } as LoginResponse;
+      }),
       tap(res => this._persist(res.token, res.user))
     );
   }
 
   register(dto: UserForRegistrationDto): Observable<LoginResponse> {
-    const mockUser: User = {
-      id: `u_${Date.now()}`,
-      firstName: dto.firstName,
-      lastName:  dto.lastName,
-      email:     dto.email,
-      role:      dto.role
+    const payload = {
+      fullName: `${dto.firstName} ${dto.lastName}`.trim(),
+      email: dto.email,
+      phone: '01000000000',
+      password: dto.password,
+      role: dto.role === 'User' ? 'Player' : dto.role
     };
-    const mockToken = `eyJ.mock-jwt-reg-${Date.now()}.signature`;
 
-    return of<LoginResponse>({ message: 'Registration Successful', token: mockToken, user: mockUser }).pipe(
-      delay(1000),
-      tap(res => this._persist(res.token, res.user))
+    return this.http.post(`${this.apiUrl}/register`, payload).pipe(
+      switchMap(() => this.login({ email: dto.email, password: dto.password }))
     );
   }
 

@@ -1,22 +1,29 @@
-import { Injectable, signal } from '@angular/core';
-import { Observable, of, delay } from 'rxjs';
+import { Injectable, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, map } from 'rxjs';
 import { Payment } from '../../models/types';
-
-const MOCK_PAYMENTS: Payment[] = [
-  { id: 'pay1', bookingId: 'b1', amount: 45,  status: 'Completed', transactionDate: '2026-04-18T10:15:00Z' },
-  { id: 'pay2', bookingId: 'b2', amount: 120, status: 'Completed', transactionDate: '2026-04-19T14:20:00Z' },
-  { id: 'pay3', bookingId: 'b3', amount: 110, status: 'Refunded',  transactionDate: '2026-04-16T09:05:00Z' },
-];
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class PaymentService {
-  private _store = signal<Payment[]>(MOCK_PAYMENTS);
+  private readonly http = inject(HttpClient);
+  private readonly apiUrl = `${environment.apiUrl}/Payments`;
 
   getById(id: string): Observable<Payment | undefined> {
-    return of(this._store().find(p => p.id === id)).pipe(delay(300));
+    return this.http.get<any>(`${this.apiUrl}/${id}`).pipe(map((p) => this.mapPayment(p)));
   }
 
   getByBookingId(bookingId: string): Observable<Payment | undefined> {
-    return of(this._store().find(p => p.bookingId === bookingId)).pipe(delay(300));
+    return this.http.get<any>(`${this.apiUrl}/${bookingId}`).pipe(map((p) => this.mapPayment(p)));
+  }
+
+  private mapPayment(p: any): Payment {
+    return {
+      id: String(p.paymentId),
+      bookingId: String(p.bookingId),
+      amount: p.amount,
+      status: p.paymentStatus === 'Paid' ? 'Completed' : p.paymentStatus,
+      transactionDate: new Date().toISOString()
+    };
   }
 }
