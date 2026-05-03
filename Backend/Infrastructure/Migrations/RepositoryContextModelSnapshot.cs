@@ -72,15 +72,717 @@ namespace Infrastructure.Migrations
                         new
                         {
                             BookingId = 1,
-                            BookingDate = new DateTime(2025, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedAt = new DateTime(2025, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndTime = new TimeSpan(0, 16, 0, 0, 0),
-                            PlayerId = 3,
+                            BookingDate = new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 9, 0, 0, 0),
+                            PlayerId = 14,
                             PlaygroundId = 1,
+                            StartTime = new TimeSpan(0, 8, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 198m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 2,
+                            BookingDate = new DateTime(2026, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 11, 0, 0, 0),
+                            PlayerId = 15,
+                            PlaygroundId = 2,
+                            StartTime = new TimeSpan(0, 9, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 146m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 3,
+                            BookingDate = new DateTime(2026, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 11, 0, 0, 0),
+                            PlayerId = 16,
+                            PlaygroundId = 3,
+                            StartTime = new TimeSpan(0, 10, 0, 0, 0),
+                            Status = "Confirmed",
+                            TotalPrice = 214m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 4,
+                            BookingDate = new DateTime(2026, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 13, 0, 0, 0),
+                            PlayerId = 17,
+                            PlaygroundId = 4,
+                            StartTime = new TimeSpan(0, 11, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 162m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 5,
+                            BookingDate = new DateTime(2026, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 13, 0, 0, 0),
+                            PlayerId = 18,
+                            PlaygroundId = 5,
+                            StartTime = new TimeSpan(0, 12, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 230m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 6,
+                            BookingDate = new DateTime(2026, 2, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 15, 0, 0, 0),
+                            PlayerId = 19,
+                            PlaygroundId = 6,
+                            StartTime = new TimeSpan(0, 13, 0, 0, 0),
+                            Status = "Confirmed",
+                            TotalPrice = 178m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 7,
+                            BookingDate = new DateTime(2026, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 15, 0, 0, 0),
+                            PlayerId = 20,
+                            PlaygroundId = 7,
+                            StartTime = new TimeSpan(0, 14, 0, 0, 0),
+                            Status = "Cancelled",
+                            TotalPrice = 246m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 8,
+                            BookingDate = new DateTime(2026, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 17, 0, 0, 0),
+                            PlayerId = 21,
+                            PlaygroundId = 8,
+                            StartTime = new TimeSpan(0, 15, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 194m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 9,
+                            BookingDate = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 17, 0, 0, 0),
+                            PlayerId = 22,
+                            PlaygroundId = 9,
+                            StartTime = new TimeSpan(0, 16, 0, 0, 0),
+                            Status = "Confirmed",
+                            TotalPrice = 262m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 10,
+                            BookingDate = new DateTime(2026, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 19, 0, 0, 0),
+                            PlayerId = 23,
+                            PlaygroundId = 10,
+                            StartTime = new TimeSpan(0, 17, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 210m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 11,
+                            BookingDate = new DateTime(2026, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 9, 0, 0, 0),
+                            PlayerId = 24,
+                            PlaygroundId = 11,
+                            StartTime = new TimeSpan(0, 8, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 278m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 12,
+                            BookingDate = new DateTime(2026, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 11, 0, 0, 0),
+                            PlayerId = 25,
+                            PlaygroundId = 12,
+                            StartTime = new TimeSpan(0, 9, 0, 0, 0),
+                            Status = "Confirmed",
+                            TotalPrice = 226m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 13,
+                            BookingDate = new DateTime(2026, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 11, 0, 0, 0),
+                            PlayerId = 26,
+                            PlaygroundId = 13,
+                            StartTime = new TimeSpan(0, 10, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 294m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 14,
+                            BookingDate = new DateTime(2026, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 13, 0, 0, 0),
+                            PlayerId = 27,
+                            PlaygroundId = 14,
+                            StartTime = new TimeSpan(0, 11, 0, 0, 0),
+                            Status = "Cancelled",
+                            TotalPrice = 242m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 15,
+                            BookingDate = new DateTime(2026, 2, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 13, 0, 0, 0),
+                            PlayerId = 28,
+                            PlaygroundId = 15,
+                            StartTime = new TimeSpan(0, 12, 0, 0, 0),
+                            Status = "Confirmed",
+                            TotalPrice = 310m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 16,
+                            BookingDate = new DateTime(2026, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 15, 0, 0, 0),
+                            PlayerId = 29,
+                            PlaygroundId = 1,
+                            StartTime = new TimeSpan(0, 13, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 138m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 17,
+                            BookingDate = new DateTime(2026, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 15, 0, 0, 0),
+                            PlayerId = 30,
+                            PlaygroundId = 2,
+                            StartTime = new TimeSpan(0, 14, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 206m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 18,
+                            BookingDate = new DateTime(2026, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 17, 0, 0, 0),
+                            PlayerId = 31,
+                            PlaygroundId = 3,
+                            StartTime = new TimeSpan(0, 15, 0, 0, 0),
+                            Status = "Confirmed",
+                            TotalPrice = 154m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 19,
+                            BookingDate = new DateTime(2026, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 17, 0, 0, 0),
+                            PlayerId = 32,
+                            PlaygroundId = 4,
+                            StartTime = new TimeSpan(0, 16, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 222m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 20,
+                            BookingDate = new DateTime(2026, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 19, 0, 0, 0),
+                            PlayerId = 33,
+                            PlaygroundId = 5,
+                            StartTime = new TimeSpan(0, 17, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 170m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 21,
+                            BookingDate = new DateTime(2026, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 9, 0, 0, 0),
+                            PlayerId = 34,
+                            PlaygroundId = 6,
+                            StartTime = new TimeSpan(0, 8, 0, 0, 0),
+                            Status = "Cancelled",
+                            TotalPrice = 238m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 22,
+                            BookingDate = new DateTime(2026, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 11, 0, 0, 0),
+                            PlayerId = 35,
+                            PlaygroundId = 7,
+                            StartTime = new TimeSpan(0, 9, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 186m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 23,
+                            BookingDate = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 11, 0, 0, 0),
+                            PlayerId = 36,
+                            PlaygroundId = 8,
+                            StartTime = new TimeSpan(0, 10, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 254m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 24,
+                            BookingDate = new DateTime(2026, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 13, 0, 0, 0),
+                            PlayerId = 37,
+                            PlaygroundId = 9,
+                            StartTime = new TimeSpan(0, 11, 0, 0, 0),
+                            Status = "Confirmed",
+                            TotalPrice = 202m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 25,
+                            BookingDate = new DateTime(2026, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 13, 0, 0, 0),
+                            PlayerId = 38,
+                            PlaygroundId = 10,
+                            StartTime = new TimeSpan(0, 12, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 270m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 26,
+                            BookingDate = new DateTime(2026, 2, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 15, 0, 0, 0),
+                            PlayerId = 39,
+                            PlaygroundId = 11,
+                            StartTime = new TimeSpan(0, 13, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 218m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 27,
+                            BookingDate = new DateTime(2026, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 15, 0, 0, 0),
+                            PlayerId = 40,
+                            PlaygroundId = 12,
                             StartTime = new TimeSpan(0, 14, 0, 0, 0),
                             Status = "Confirmed",
-                            TotalPrice = 300m,
-                            UpdatedAt = new DateTime(2025, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                            TotalPrice = 286m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 28,
+                            BookingDate = new DateTime(2026, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 17, 0, 0, 0),
+                            PlayerId = 41,
+                            PlaygroundId = 13,
+                            StartTime = new TimeSpan(0, 15, 0, 0, 0),
+                            Status = "Cancelled",
+                            TotalPrice = 234m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 29,
+                            BookingDate = new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 17, 0, 0, 0),
+                            PlayerId = 42,
+                            PlaygroundId = 14,
+                            StartTime = new TimeSpan(0, 16, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 302m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 30,
+                            BookingDate = new DateTime(2026, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 19, 0, 0, 0),
+                            PlayerId = 43,
+                            PlaygroundId = 15,
+                            StartTime = new TimeSpan(0, 17, 0, 0, 0),
+                            Status = "Confirmed",
+                            TotalPrice = 250m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 31,
+                            BookingDate = new DateTime(2026, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 9, 0, 0, 0),
+                            PlayerId = 44,
+                            PlaygroundId = 1,
+                            StartTime = new TimeSpan(0, 8, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 198m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 32,
+                            BookingDate = new DateTime(2026, 2, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 11, 0, 0, 0),
+                            PlayerId = 45,
+                            PlaygroundId = 2,
+                            StartTime = new TimeSpan(0, 9, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 146m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 33,
+                            BookingDate = new DateTime(2026, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 11, 0, 0, 0),
+                            PlayerId = 46,
+                            PlaygroundId = 3,
+                            StartTime = new TimeSpan(0, 10, 0, 0, 0),
+                            Status = "Confirmed",
+                            TotalPrice = 214m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 34,
+                            BookingDate = new DateTime(2026, 2, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 13, 0, 0, 0),
+                            PlayerId = 47,
+                            PlaygroundId = 4,
+                            StartTime = new TimeSpan(0, 11, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 162m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 35,
+                            BookingDate = new DateTime(2026, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 13, 0, 0, 0),
+                            PlayerId = 48,
+                            PlaygroundId = 5,
+                            StartTime = new TimeSpan(0, 12, 0, 0, 0),
+                            Status = "Cancelled",
+                            TotalPrice = 230m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 36,
+                            BookingDate = new DateTime(2026, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 15, 0, 0, 0),
+                            PlayerId = 49,
+                            PlaygroundId = 6,
+                            StartTime = new TimeSpan(0, 13, 0, 0, 0),
+                            Status = "Confirmed",
+                            TotalPrice = 178m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 37,
+                            BookingDate = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 15, 0, 0, 0),
+                            PlayerId = 50,
+                            PlaygroundId = 7,
+                            StartTime = new TimeSpan(0, 14, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 246m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 38,
+                            BookingDate = new DateTime(2026, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 17, 0, 0, 0),
+                            PlayerId = 51,
+                            PlaygroundId = 8,
+                            StartTime = new TimeSpan(0, 15, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 194m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 39,
+                            BookingDate = new DateTime(2026, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 17, 0, 0, 0),
+                            PlayerId = 52,
+                            PlaygroundId = 9,
+                            StartTime = new TimeSpan(0, 16, 0, 0, 0),
+                            Status = "Confirmed",
+                            TotalPrice = 262m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 40,
+                            BookingDate = new DateTime(2026, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 19, 0, 0, 0),
+                            PlayerId = 53,
+                            PlaygroundId = 10,
+                            StartTime = new TimeSpan(0, 17, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 210m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 41,
+                            BookingDate = new DateTime(2026, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 9, 0, 0, 0),
+                            PlayerId = 54,
+                            PlaygroundId = 11,
+                            StartTime = new TimeSpan(0, 8, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 278m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 42,
+                            BookingDate = new DateTime(2026, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 11, 0, 0, 0),
+                            PlayerId = 55,
+                            PlaygroundId = 12,
+                            StartTime = new TimeSpan(0, 9, 0, 0, 0),
+                            Status = "Cancelled",
+                            TotalPrice = 226m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 43,
+                            BookingDate = new DateTime(2026, 2, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 11, 0, 0, 0),
+                            PlayerId = 56,
+                            PlaygroundId = 13,
+                            StartTime = new TimeSpan(0, 10, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 294m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 44,
+                            BookingDate = new DateTime(2026, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 13, 0, 0, 0),
+                            PlayerId = 57,
+                            PlaygroundId = 14,
+                            StartTime = new TimeSpan(0, 11, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 242m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 45,
+                            BookingDate = new DateTime(2026, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 13, 0, 0, 0),
+                            PlayerId = 58,
+                            PlaygroundId = 15,
+                            StartTime = new TimeSpan(0, 12, 0, 0, 0),
+                            Status = "Confirmed",
+                            TotalPrice = 310m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 46,
+                            BookingDate = new DateTime(2026, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 15, 0, 0, 0),
+                            PlayerId = 59,
+                            PlaygroundId = 1,
+                            StartTime = new TimeSpan(0, 13, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 138m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 47,
+                            BookingDate = new DateTime(2026, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 15, 0, 0, 0),
+                            PlayerId = 60,
+                            PlaygroundId = 2,
+                            StartTime = new TimeSpan(0, 14, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 206m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 48,
+                            BookingDate = new DateTime(2026, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 17, 0, 0, 0),
+                            PlayerId = 61,
+                            PlaygroundId = 3,
+                            StartTime = new TimeSpan(0, 15, 0, 0, 0),
+                            Status = "Confirmed",
+                            TotalPrice = 154m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 49,
+                            BookingDate = new DateTime(2026, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 17, 0, 0, 0),
+                            PlayerId = 62,
+                            PlaygroundId = 4,
+                            StartTime = new TimeSpan(0, 16, 0, 0, 0),
+                            Status = "Cancelled",
+                            TotalPrice = 222m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 50,
+                            BookingDate = new DateTime(2026, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 19, 0, 0, 0),
+                            PlayerId = 63,
+                            PlaygroundId = 5,
+                            StartTime = new TimeSpan(0, 17, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 170m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 51,
+                            BookingDate = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 9, 0, 0, 0),
+                            PlayerId = 14,
+                            PlaygroundId = 6,
+                            StartTime = new TimeSpan(0, 8, 0, 0, 0),
+                            Status = "Confirmed",
+                            TotalPrice = 238m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 52,
+                            BookingDate = new DateTime(2026, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 11, 0, 0, 0),
+                            PlayerId = 15,
+                            PlaygroundId = 7,
+                            StartTime = new TimeSpan(0, 9, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 186m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 53,
+                            BookingDate = new DateTime(2026, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 11, 0, 0, 0),
+                            PlayerId = 16,
+                            PlaygroundId = 8,
+                            StartTime = new TimeSpan(0, 10, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 254m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 54,
+                            BookingDate = new DateTime(2026, 2, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 13, 0, 0, 0),
+                            PlayerId = 17,
+                            PlaygroundId = 9,
+                            StartTime = new TimeSpan(0, 11, 0, 0, 0),
+                            Status = "Confirmed",
+                            TotalPrice = 202m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            BookingId = 55,
+                            BookingDate = new DateTime(2026, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new TimeSpan(0, 13, 0, 0, 0),
+                            PlayerId = 18,
+                            PlaygroundId = 10,
+                            StartTime = new TimeSpan(0, 12, 0, 0, 0),
+                            Status = "Pending",
+                            TotalPrice = 270m,
+                            UpdatedAt = new DateTime(2026, 1, 10, 10, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -128,12 +830,552 @@ namespace Infrastructure.Migrations
                         new
                         {
                             PaymentId = 1,
-                            Amount = 300m,
+                            Amount = 206m,
                             BookingId = 1,
-                            PaymentMethod = "Cash",
+                            PaymentMethod = "CreditCard",
                             PaymentStatus = "Paid",
-                            TransactionDate = new DateTime(2025, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            TransactionId = "TXN-DEMO-111"
+                            TransactionDate = new DateTime(2026, 2, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0001"
+                        },
+                        new
+                        {
+                            PaymentId = 2,
+                            Amount = 154m,
+                            BookingId = 2,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 2, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0002"
+                        },
+                        new
+                        {
+                            PaymentId = 3,
+                            Amount = 222m,
+                            BookingId = 3,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 3, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0003"
+                        },
+                        new
+                        {
+                            PaymentId = 4,
+                            Amount = 170m,
+                            BookingId = 4,
+                            PaymentMethod = "Wallet",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 4, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0004"
+                        },
+                        new
+                        {
+                            PaymentId = 5,
+                            Amount = 238m,
+                            BookingId = 5,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 5, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0005"
+                        },
+                        new
+                        {
+                            PaymentId = 6,
+                            Amount = 186m,
+                            BookingId = 6,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 6, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0006"
+                        },
+                        new
+                        {
+                            PaymentId = 7,
+                            Amount = 254m,
+                            BookingId = 7,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 7, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0007"
+                        },
+                        new
+                        {
+                            PaymentId = 8,
+                            Amount = 202m,
+                            BookingId = 8,
+                            PaymentMethod = "Wallet",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 8, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0008"
+                        },
+                        new
+                        {
+                            PaymentId = 9,
+                            Amount = 270m,
+                            BookingId = 9,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Failed",
+                            TransactionDate = new DateTime(2026, 2, 9, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0009"
+                        },
+                        new
+                        {
+                            PaymentId = 10,
+                            Amount = 218m,
+                            BookingId = 10,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 10, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0010"
+                        },
+                        new
+                        {
+                            PaymentId = 11,
+                            Amount = 286m,
+                            BookingId = 11,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 11, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0011"
+                        },
+                        new
+                        {
+                            PaymentId = 12,
+                            Amount = 234m,
+                            BookingId = 12,
+                            PaymentMethod = "Wallet",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 12, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0012"
+                        },
+                        new
+                        {
+                            PaymentId = 13,
+                            Amount = 302m,
+                            BookingId = 13,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 13, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0013"
+                        },
+                        new
+                        {
+                            PaymentId = 14,
+                            Amount = 250m,
+                            BookingId = 14,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 14, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0014"
+                        },
+                        new
+                        {
+                            PaymentId = 15,
+                            Amount = 198m,
+                            BookingId = 15,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 15, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0015"
+                        },
+                        new
+                        {
+                            PaymentId = 16,
+                            Amount = 146m,
+                            BookingId = 16,
+                            PaymentMethod = "Wallet",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 16, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0016"
+                        },
+                        new
+                        {
+                            PaymentId = 17,
+                            Amount = 214m,
+                            BookingId = 17,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 17, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0017"
+                        },
+                        new
+                        {
+                            PaymentId = 18,
+                            Amount = 162m,
+                            BookingId = 18,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Failed",
+                            TransactionDate = new DateTime(2026, 2, 18, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0018"
+                        },
+                        new
+                        {
+                            PaymentId = 19,
+                            Amount = 230m,
+                            BookingId = 19,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 19, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0019"
+                        },
+                        new
+                        {
+                            PaymentId = 20,
+                            Amount = 178m,
+                            BookingId = 20,
+                            PaymentMethod = "Wallet",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 20, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0020"
+                        },
+                        new
+                        {
+                            PaymentId = 21,
+                            Amount = 246m,
+                            BookingId = 21,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 21, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0021"
+                        },
+                        new
+                        {
+                            PaymentId = 22,
+                            Amount = 194m,
+                            BookingId = 22,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 22, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0022"
+                        },
+                        new
+                        {
+                            PaymentId = 23,
+                            Amount = 262m,
+                            BookingId = 23,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 23, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0023"
+                        },
+                        new
+                        {
+                            PaymentId = 24,
+                            Amount = 210m,
+                            BookingId = 24,
+                            PaymentMethod = "Wallet",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 24, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0024"
+                        },
+                        new
+                        {
+                            PaymentId = 25,
+                            Amount = 278m,
+                            BookingId = 25,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 25, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0025"
+                        },
+                        new
+                        {
+                            PaymentId = 26,
+                            Amount = 226m,
+                            BookingId = 26,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 26, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0026"
+                        },
+                        new
+                        {
+                            PaymentId = 27,
+                            Amount = 294m,
+                            BookingId = 27,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Failed",
+                            TransactionDate = new DateTime(2026, 2, 27, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0027"
+                        },
+                        new
+                        {
+                            PaymentId = 28,
+                            Amount = 242m,
+                            BookingId = 28,
+                            PaymentMethod = "Wallet",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 28, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0028"
+                        },
+                        new
+                        {
+                            PaymentId = 29,
+                            Amount = 310m,
+                            BookingId = 29,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0029"
+                        },
+                        new
+                        {
+                            PaymentId = 30,
+                            Amount = 138m,
+                            BookingId = 30,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 2, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0030"
+                        },
+                        new
+                        {
+                            PaymentId = 31,
+                            Amount = 206m,
+                            BookingId = 31,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 3, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0031"
+                        },
+                        new
+                        {
+                            PaymentId = 32,
+                            Amount = 154m,
+                            BookingId = 32,
+                            PaymentMethod = "Wallet",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 4, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0032"
+                        },
+                        new
+                        {
+                            PaymentId = 33,
+                            Amount = 222m,
+                            BookingId = 33,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 5, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0033"
+                        },
+                        new
+                        {
+                            PaymentId = 34,
+                            Amount = 170m,
+                            BookingId = 34,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 6, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0034"
+                        },
+                        new
+                        {
+                            PaymentId = 35,
+                            Amount = 238m,
+                            BookingId = 35,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 7, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0035"
+                        },
+                        new
+                        {
+                            PaymentId = 36,
+                            Amount = 186m,
+                            BookingId = 36,
+                            PaymentMethod = "Wallet",
+                            PaymentStatus = "Failed",
+                            TransactionDate = new DateTime(2026, 2, 8, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0036"
+                        },
+                        new
+                        {
+                            PaymentId = 37,
+                            Amount = 254m,
+                            BookingId = 37,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 9, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0037"
+                        },
+                        new
+                        {
+                            PaymentId = 38,
+                            Amount = 202m,
+                            BookingId = 38,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 10, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0038"
+                        },
+                        new
+                        {
+                            PaymentId = 39,
+                            Amount = 270m,
+                            BookingId = 39,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 11, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0039"
+                        },
+                        new
+                        {
+                            PaymentId = 40,
+                            Amount = 218m,
+                            BookingId = 40,
+                            PaymentMethod = "Wallet",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 12, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0040"
+                        },
+                        new
+                        {
+                            PaymentId = 41,
+                            Amount = 286m,
+                            BookingId = 41,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 13, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0041"
+                        },
+                        new
+                        {
+                            PaymentId = 42,
+                            Amount = 234m,
+                            BookingId = 42,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 14, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0042"
+                        },
+                        new
+                        {
+                            PaymentId = 43,
+                            Amount = 302m,
+                            BookingId = 43,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 15, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0043"
+                        },
+                        new
+                        {
+                            PaymentId = 44,
+                            Amount = 250m,
+                            BookingId = 44,
+                            PaymentMethod = "Wallet",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 16, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0044"
+                        },
+                        new
+                        {
+                            PaymentId = 45,
+                            Amount = 198m,
+                            BookingId = 45,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Failed",
+                            TransactionDate = new DateTime(2026, 2, 17, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0045"
+                        },
+                        new
+                        {
+                            PaymentId = 46,
+                            Amount = 146m,
+                            BookingId = 46,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 18, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0046"
+                        },
+                        new
+                        {
+                            PaymentId = 47,
+                            Amount = 214m,
+                            BookingId = 47,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 19, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0047"
+                        },
+                        new
+                        {
+                            PaymentId = 48,
+                            Amount = 162m,
+                            BookingId = 48,
+                            PaymentMethod = "Wallet",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 20, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0048"
+                        },
+                        new
+                        {
+                            PaymentId = 49,
+                            Amount = 230m,
+                            BookingId = 49,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 21, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0049"
+                        },
+                        new
+                        {
+                            PaymentId = 50,
+                            Amount = 178m,
+                            BookingId = 50,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 22, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0050"
+                        },
+                        new
+                        {
+                            PaymentId = 51,
+                            Amount = 246m,
+                            BookingId = 51,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 23, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0051"
+                        },
+                        new
+                        {
+                            PaymentId = 52,
+                            Amount = 194m,
+                            BookingId = 52,
+                            PaymentMethod = "Wallet",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 24, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0052"
+                        },
+                        new
+                        {
+                            PaymentId = 53,
+                            Amount = 262m,
+                            BookingId = 53,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 25, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0053"
+                        },
+                        new
+                        {
+                            PaymentId = 54,
+                            Amount = 210m,
+                            BookingId = 54,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Failed",
+                            TransactionDate = new DateTime(2026, 2, 26, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0054"
+                        },
+                        new
+                        {
+                            PaymentId = 55,
+                            Amount = 278m,
+                            BookingId = 55,
+                            PaymentMethod = "CreditCard",
+                            PaymentStatus = "Paid",
+                            TransactionDate = new DateTime(2026, 2, 27, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            TransactionId = "TXN-2026-0055"
                         });
                 });
 
@@ -188,26 +1430,182 @@ namespace Infrastructure.Migrations
                         new
                         {
                             PlaygroundId = 1,
-                            CreatedAt = new DateTime(2025, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://example.com/green-field.jpg",
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground1/1200/700",
                             IsAvailable = true,
                             Location = "Cairo, Nasr City",
-                            Name = "Green Field Playground",
-                            OwnerId = 2,
+                            Name = "Padel Arena 1",
+                            OwnerId = 4,
+                            PricePerHour = 130m,
+                            SportType = "Padel"
+                        },
+                        new
+                        {
+                            PlaygroundId = 2,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground2/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Maadi",
+                            Name = "Tennis Arena 2",
+                            OwnerId = 5,
+                            PricePerHour = 140m,
+                            SportType = "Tennis"
+                        },
+                        new
+                        {
+                            PlaygroundId = 3,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground3/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Zamalek",
+                            Name = "Football Arena 3",
+                            OwnerId = 6,
                             PricePerHour = 150m,
                             SportType = "Football"
                         },
                         new
                         {
-                            PlaygroundId = 2,
-                            CreatedAt = new DateTime(2025, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://example.com/tennis-court.jpg",
+                            PlaygroundId = 4,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground4/1200/700",
                             IsAvailable = true,
                             Location = "Alexandria, Smouha",
-                            Name = "Elite Tennis Court",
-                            OwnerId = 2,
+                            Name = "Padel Arena 4",
+                            OwnerId = 7,
+                            PricePerHour = 160m,
+                            SportType = "Padel"
+                        },
+                        new
+                        {
+                            PlaygroundId = 5,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground5/1200/700",
+                            IsAvailable = true,
+                            Location = "Giza, 6th October",
+                            Name = "Tennis Arena 5",
+                            OwnerId = 8,
+                            PricePerHour = 170m,
+                            SportType = "Tennis"
+                        },
+                        new
+                        {
+                            PlaygroundId = 6,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground6/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Nasr City",
+                            Name = "Football Arena 6",
+                            OwnerId = 9,
+                            PricePerHour = 180m,
+                            SportType = "Football"
+                        },
+                        new
+                        {
+                            PlaygroundId = 7,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground7/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Maadi",
+                            Name = "Padel Arena 7",
+                            OwnerId = 10,
+                            PricePerHour = 190m,
+                            SportType = "Padel"
+                        },
+                        new
+                        {
+                            PlaygroundId = 8,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground8/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Zamalek",
+                            Name = "Tennis Arena 8",
+                            OwnerId = 11,
                             PricePerHour = 200m,
                             SportType = "Tennis"
+                        },
+                        new
+                        {
+                            PlaygroundId = 9,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground9/1200/700",
+                            IsAvailable = true,
+                            Location = "Alexandria, Smouha",
+                            Name = "Football Arena 9",
+                            OwnerId = 12,
+                            PricePerHour = 210m,
+                            SportType = "Football"
+                        },
+                        new
+                        {
+                            PlaygroundId = 10,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground10/1200/700",
+                            IsAvailable = true,
+                            Location = "Giza, 6th October",
+                            Name = "Padel Arena 10",
+                            OwnerId = 13,
+                            PricePerHour = 220m,
+                            SportType = "Padel"
+                        },
+                        new
+                        {
+                            PlaygroundId = 11,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground11/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Nasr City",
+                            Name = "Tennis Arena 11",
+                            OwnerId = 4,
+                            PricePerHour = 230m,
+                            SportType = "Tennis"
+                        },
+                        new
+                        {
+                            PlaygroundId = 12,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground12/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Maadi",
+                            Name = "Football Arena 12",
+                            OwnerId = 5,
+                            PricePerHour = 240m,
+                            SportType = "Football"
+                        },
+                        new
+                        {
+                            PlaygroundId = 13,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground13/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Zamalek",
+                            Name = "Padel Arena 13",
+                            OwnerId = 6,
+                            PricePerHour = 250m,
+                            SportType = "Padel"
+                        },
+                        new
+                        {
+                            PlaygroundId = 14,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground14/1200/700",
+                            IsAvailable = true,
+                            Location = "Alexandria, Smouha",
+                            Name = "Tennis Arena 14",
+                            OwnerId = 7,
+                            PricePerHour = 260m,
+                            SportType = "Tennis"
+                        },
+                        new
+                        {
+                            PlaygroundId = 15,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground15/1200/700",
+                            IsAvailable = true,
+                            Location = "Giza, 6th October",
+                            Name = "Football Arena 15",
+                            OwnerId = 8,
+                            PricePerHour = 270m,
+                            SportType = "Football"
                         });
                 });
 
@@ -250,11 +1648,351 @@ namespace Infrastructure.Migrations
                         new
                         {
                             ReviewId = 1,
-                            Comment = "Amazing playground, very clean!",
-                            CreatedAt = new DateTime(2025, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            Comment = "Great experience at venue 1. Review #1",
+                            CreatedAt = new DateTime(2026, 2, 1, 15, 0, 0, 0, DateTimeKind.Unspecified),
                             IsApproved = true,
-                            PlayerId = 3,
+                            PlayerId = 14,
                             PlaygroundId = 1,
+                            Rating = 4
+                        },
+                        new
+                        {
+                            ReviewId = 2,
+                            Comment = "Great experience at venue 2. Review #2",
+                            CreatedAt = new DateTime(2026, 2, 2, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 15,
+                            PlaygroundId = 2,
+                            Rating = 5
+                        },
+                        new
+                        {
+                            ReviewId = 3,
+                            Comment = "Great experience at venue 3. Review #3",
+                            CreatedAt = new DateTime(2026, 2, 3, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 16,
+                            PlaygroundId = 3,
+                            Rating = 3
+                        },
+                        new
+                        {
+                            ReviewId = 4,
+                            Comment = "Great experience at venue 4. Review #4",
+                            CreatedAt = new DateTime(2026, 2, 4, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 17,
+                            PlaygroundId = 4,
+                            Rating = 4
+                        },
+                        new
+                        {
+                            ReviewId = 5,
+                            Comment = "Great experience at venue 5. Review #5",
+                            CreatedAt = new DateTime(2026, 2, 5, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 18,
+                            PlaygroundId = 5,
+                            Rating = 5
+                        },
+                        new
+                        {
+                            ReviewId = 6,
+                            Comment = "Great experience at venue 6. Review #6",
+                            CreatedAt = new DateTime(2026, 2, 6, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 19,
+                            PlaygroundId = 6,
+                            Rating = 3
+                        },
+                        new
+                        {
+                            ReviewId = 7,
+                            Comment = "Great experience at venue 7. Review #7",
+                            CreatedAt = new DateTime(2026, 2, 7, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 20,
+                            PlaygroundId = 7,
+                            Rating = 4
+                        },
+                        new
+                        {
+                            ReviewId = 8,
+                            Comment = "Great experience at venue 8. Review #8",
+                            CreatedAt = new DateTime(2026, 2, 8, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 21,
+                            PlaygroundId = 8,
+                            Rating = 5
+                        },
+                        new
+                        {
+                            ReviewId = 9,
+                            Comment = "Great experience at venue 9. Review #9",
+                            CreatedAt = new DateTime(2026, 2, 9, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 22,
+                            PlaygroundId = 9,
+                            Rating = 3
+                        },
+                        new
+                        {
+                            ReviewId = 10,
+                            Comment = "Great experience at venue 10. Review #10",
+                            CreatedAt = new DateTime(2026, 2, 10, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 23,
+                            PlaygroundId = 10,
+                            Rating = 4
+                        },
+                        new
+                        {
+                            ReviewId = 11,
+                            Comment = "Great experience at venue 11. Review #11",
+                            CreatedAt = new DateTime(2026, 2, 11, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 24,
+                            PlaygroundId = 11,
+                            Rating = 5
+                        },
+                        new
+                        {
+                            ReviewId = 12,
+                            Comment = "Great experience at venue 12. Review #12",
+                            CreatedAt = new DateTime(2026, 2, 12, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 25,
+                            PlaygroundId = 12,
+                            Rating = 3
+                        },
+                        new
+                        {
+                            ReviewId = 13,
+                            Comment = "Great experience at venue 13. Review #13",
+                            CreatedAt = new DateTime(2026, 2, 13, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 26,
+                            PlaygroundId = 13,
+                            Rating = 4
+                        },
+                        new
+                        {
+                            ReviewId = 14,
+                            Comment = "Great experience at venue 14. Review #14",
+                            CreatedAt = new DateTime(2026, 2, 14, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 27,
+                            PlaygroundId = 14,
+                            Rating = 5
+                        },
+                        new
+                        {
+                            ReviewId = 15,
+                            Comment = "Great experience at venue 15. Review #15",
+                            CreatedAt = new DateTime(2026, 2, 15, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 28,
+                            PlaygroundId = 15,
+                            Rating = 3
+                        },
+                        new
+                        {
+                            ReviewId = 16,
+                            Comment = "Great experience at venue 1. Review #16",
+                            CreatedAt = new DateTime(2026, 2, 16, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 29,
+                            PlaygroundId = 1,
+                            Rating = 4
+                        },
+                        new
+                        {
+                            ReviewId = 17,
+                            Comment = "Great experience at venue 2. Review #17",
+                            CreatedAt = new DateTime(2026, 2, 17, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 30,
+                            PlaygroundId = 2,
+                            Rating = 5
+                        },
+                        new
+                        {
+                            ReviewId = 18,
+                            Comment = "Great experience at venue 3. Review #18",
+                            CreatedAt = new DateTime(2026, 2, 18, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 31,
+                            PlaygroundId = 3,
+                            Rating = 3
+                        },
+                        new
+                        {
+                            ReviewId = 19,
+                            Comment = "Great experience at venue 4. Review #19",
+                            CreatedAt = new DateTime(2026, 2, 19, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 32,
+                            PlaygroundId = 4,
+                            Rating = 4
+                        },
+                        new
+                        {
+                            ReviewId = 20,
+                            Comment = "Great experience at venue 5. Review #20",
+                            CreatedAt = new DateTime(2026, 2, 20, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 33,
+                            PlaygroundId = 5,
+                            Rating = 5
+                        },
+                        new
+                        {
+                            ReviewId = 21,
+                            Comment = "Great experience at venue 6. Review #21",
+                            CreatedAt = new DateTime(2026, 2, 21, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 34,
+                            PlaygroundId = 6,
+                            Rating = 3
+                        },
+                        new
+                        {
+                            ReviewId = 22,
+                            Comment = "Great experience at venue 7. Review #22",
+                            CreatedAt = new DateTime(2026, 2, 22, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 35,
+                            PlaygroundId = 7,
+                            Rating = 4
+                        },
+                        new
+                        {
+                            ReviewId = 23,
+                            Comment = "Great experience at venue 8. Review #23",
+                            CreatedAt = new DateTime(2026, 2, 23, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 36,
+                            PlaygroundId = 8,
+                            Rating = 5
+                        },
+                        new
+                        {
+                            ReviewId = 24,
+                            Comment = "Great experience at venue 9. Review #24",
+                            CreatedAt = new DateTime(2026, 2, 24, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 37,
+                            PlaygroundId = 9,
+                            Rating = 3
+                        },
+                        new
+                        {
+                            ReviewId = 25,
+                            Comment = "Great experience at venue 10. Review #25",
+                            CreatedAt = new DateTime(2026, 2, 25, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 38,
+                            PlaygroundId = 10,
+                            Rating = 4
+                        },
+                        new
+                        {
+                            ReviewId = 26,
+                            Comment = "Great experience at venue 11. Review #26",
+                            CreatedAt = new DateTime(2026, 2, 26, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 39,
+                            PlaygroundId = 11,
+                            Rating = 5
+                        },
+                        new
+                        {
+                            ReviewId = 27,
+                            Comment = "Great experience at venue 12. Review #27",
+                            CreatedAt = new DateTime(2026, 2, 27, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 40,
+                            PlaygroundId = 12,
+                            Rating = 3
+                        },
+                        new
+                        {
+                            ReviewId = 28,
+                            Comment = "Great experience at venue 13. Review #28",
+                            CreatedAt = new DateTime(2026, 2, 28, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 41,
+                            PlaygroundId = 13,
+                            Rating = 4
+                        },
+                        new
+                        {
+                            ReviewId = 29,
+                            Comment = "Great experience at venue 14. Review #29",
+                            CreatedAt = new DateTime(2026, 2, 1, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 42,
+                            PlaygroundId = 14,
+                            Rating = 5
+                        },
+                        new
+                        {
+                            ReviewId = 30,
+                            Comment = "Great experience at venue 15. Review #30",
+                            CreatedAt = new DateTime(2026, 2, 2, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 43,
+                            PlaygroundId = 15,
+                            Rating = 3
+                        },
+                        new
+                        {
+                            ReviewId = 31,
+                            Comment = "Great experience at venue 1. Review #31",
+                            CreatedAt = new DateTime(2026, 2, 3, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 44,
+                            PlaygroundId = 1,
+                            Rating = 4
+                        },
+                        new
+                        {
+                            ReviewId = 32,
+                            Comment = "Great experience at venue 2. Review #32",
+                            CreatedAt = new DateTime(2026, 2, 4, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 45,
+                            PlaygroundId = 2,
+                            Rating = 5
+                        },
+                        new
+                        {
+                            ReviewId = 33,
+                            Comment = "Great experience at venue 3. Review #33",
+                            CreatedAt = new DateTime(2026, 2, 5, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 46,
+                            PlaygroundId = 3,
+                            Rating = 3
+                        },
+                        new
+                        {
+                            ReviewId = 34,
+                            Comment = "Great experience at venue 4. Review #34",
+                            CreatedAt = new DateTime(2026, 2, 6, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 47,
+                            PlaygroundId = 4,
+                            Rating = 4
+                        },
+                        new
+                        {
+                            ReviewId = 35,
+                            Comment = "Great experience at venue 5. Review #35",
+                            CreatedAt = new DateTime(2026, 2, 7, 15, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsApproved = true,
+                            PlayerId = 48,
+                            PlaygroundId = 5,
                             Rating = 5
                         });
                 });
@@ -313,38 +2051,758 @@ namespace Infrastructure.Migrations
                         new
                         {
                             UserId = 1,
-                            CreatedAt = new DateTime(2025, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "admin@example.com",
-                            FullName = "Admin User",
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "admin1@sportsx.local",
+                            FullName = "Admin User 1",
                             IsActive = true,
-                            PasswordHash = "admin123hashed",
-                            Phone = "0100000000",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAdminSeedHash1",
+                            Phone = "0101000001",
                             Role = "Admin",
-                            UpdatedAt = new DateTime(2025, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             UserId = 2,
-                            CreatedAt = new DateTime(2025, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "owner@example.com",
-                            FullName = "Playground Owner",
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "admin2@sportsx.local",
+                            FullName = "Admin User 2",
                             IsActive = true,
-                            PasswordHash = "owner123hashed",
-                            Phone = "0101111111",
-                            Role = "Owner",
-                            UpdatedAt = new DateTime(2025, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                            PasswordHash = "AQAAAAEAACcQAAAAEAdminSeedHash2",
+                            Phone = "0101000002",
+                            Role = "Admin",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             UserId = 3,
-                            CreatedAt = new DateTime(2025, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player@example.com",
-                            FullName = "Regular Player",
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "admin3@sportsx.local",
+                            FullName = "Admin User 3",
                             IsActive = true,
-                            PasswordHash = "player123hashed",
-                            Phone = "0102222222",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAdminSeedHash3",
+                            Phone = "0101000003",
+                            Role = "Admin",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 4,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "owner1@sportsx.local",
+                            FullName = "Owner User 1",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash1",
+                            Phone = "0102000001",
+                            Role = "Owner",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 5,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "owner2@sportsx.local",
+                            FullName = "Owner User 2",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash2",
+                            Phone = "0102000002",
+                            Role = "Owner",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 6,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "owner3@sportsx.local",
+                            FullName = "Owner User 3",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash3",
+                            Phone = "0102000003",
+                            Role = "Owner",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 7,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "owner4@sportsx.local",
+                            FullName = "Owner User 4",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash4",
+                            Phone = "0102000004",
+                            Role = "Owner",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 8,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "owner5@sportsx.local",
+                            FullName = "Owner User 5",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash5",
+                            Phone = "0102000005",
+                            Role = "Owner",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 9,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "owner6@sportsx.local",
+                            FullName = "Owner User 6",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash6",
+                            Phone = "0102000006",
+                            Role = "Owner",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 10,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "owner7@sportsx.local",
+                            FullName = "Owner User 7",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash7",
+                            Phone = "0102000007",
+                            Role = "Owner",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 11,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "owner8@sportsx.local",
+                            FullName = "Owner User 8",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash8",
+                            Phone = "0102000008",
+                            Role = "Owner",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 12,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "owner9@sportsx.local",
+                            FullName = "Owner User 9",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash9",
+                            Phone = "0102000009",
+                            Role = "Owner",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 13,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "owner10@sportsx.local",
+                            FullName = "Owner User 10",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash10",
+                            Phone = "0102000010",
+                            Role = "Owner",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 14,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player1@sportsx.local",
+                            FullName = "Player User 1",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash1",
+                            Phone = "0103000001",
                             Role = "Player",
-                            UpdatedAt = new DateTime(2025, 1, 1, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 15,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player2@sportsx.local",
+                            FullName = "Player User 2",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash2",
+                            Phone = "0103000002",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 16,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player3@sportsx.local",
+                            FullName = "Player User 3",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash3",
+                            Phone = "0103000003",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 17,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player4@sportsx.local",
+                            FullName = "Player User 4",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash4",
+                            Phone = "0103000004",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 18,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player5@sportsx.local",
+                            FullName = "Player User 5",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash5",
+                            Phone = "0103000005",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 19,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player6@sportsx.local",
+                            FullName = "Player User 6",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash6",
+                            Phone = "0103000006",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 20,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player7@sportsx.local",
+                            FullName = "Player User 7",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash7",
+                            Phone = "0103000007",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 21,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player8@sportsx.local",
+                            FullName = "Player User 8",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash8",
+                            Phone = "0103000008",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 22,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player9@sportsx.local",
+                            FullName = "Player User 9",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash9",
+                            Phone = "0103000009",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 23,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player10@sportsx.local",
+                            FullName = "Player User 10",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash10",
+                            Phone = "0103000010",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 24,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player11@sportsx.local",
+                            FullName = "Player User 11",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash11",
+                            Phone = "0103000011",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 25,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player12@sportsx.local",
+                            FullName = "Player User 12",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash12",
+                            Phone = "0103000012",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 26,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player13@sportsx.local",
+                            FullName = "Player User 13",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash13",
+                            Phone = "0103000013",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 27,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player14@sportsx.local",
+                            FullName = "Player User 14",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash14",
+                            Phone = "0103000014",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 28,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player15@sportsx.local",
+                            FullName = "Player User 15",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash15",
+                            Phone = "0103000015",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 29,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player16@sportsx.local",
+                            FullName = "Player User 16",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash16",
+                            Phone = "0103000016",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 30,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player17@sportsx.local",
+                            FullName = "Player User 17",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash17",
+                            Phone = "0103000017",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 31,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player18@sportsx.local",
+                            FullName = "Player User 18",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash18",
+                            Phone = "0103000018",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 32,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player19@sportsx.local",
+                            FullName = "Player User 19",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash19",
+                            Phone = "0103000019",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 33,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player20@sportsx.local",
+                            FullName = "Player User 20",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash20",
+                            Phone = "0103000020",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 34,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player21@sportsx.local",
+                            FullName = "Player User 21",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash21",
+                            Phone = "0103000021",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 35,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player22@sportsx.local",
+                            FullName = "Player User 22",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash22",
+                            Phone = "0103000022",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 36,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player23@sportsx.local",
+                            FullName = "Player User 23",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash23",
+                            Phone = "0103000023",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 37,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player24@sportsx.local",
+                            FullName = "Player User 24",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash24",
+                            Phone = "0103000024",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 38,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player25@sportsx.local",
+                            FullName = "Player User 25",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash25",
+                            Phone = "0103000025",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 39,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player26@sportsx.local",
+                            FullName = "Player User 26",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash26",
+                            Phone = "0103000026",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 40,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player27@sportsx.local",
+                            FullName = "Player User 27",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash27",
+                            Phone = "0103000027",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 41,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player28@sportsx.local",
+                            FullName = "Player User 28",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash28",
+                            Phone = "0103000028",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 42,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player29@sportsx.local",
+                            FullName = "Player User 29",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash29",
+                            Phone = "0103000029",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 43,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player30@sportsx.local",
+                            FullName = "Player User 30",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash30",
+                            Phone = "0103000030",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 44,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player31@sportsx.local",
+                            FullName = "Player User 31",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash31",
+                            Phone = "0103000031",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 45,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player32@sportsx.local",
+                            FullName = "Player User 32",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash32",
+                            Phone = "0103000032",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 46,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player33@sportsx.local",
+                            FullName = "Player User 33",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash33",
+                            Phone = "0103000033",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 47,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player34@sportsx.local",
+                            FullName = "Player User 34",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash34",
+                            Phone = "0103000034",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 48,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player35@sportsx.local",
+                            FullName = "Player User 35",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash35",
+                            Phone = "0103000035",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 49,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player36@sportsx.local",
+                            FullName = "Player User 36",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash36",
+                            Phone = "0103000036",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 50,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player37@sportsx.local",
+                            FullName = "Player User 37",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash37",
+                            Phone = "0103000037",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 51,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player38@sportsx.local",
+                            FullName = "Player User 38",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash38",
+                            Phone = "0103000038",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 52,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player39@sportsx.local",
+                            FullName = "Player User 39",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash39",
+                            Phone = "0103000039",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 53,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player40@sportsx.local",
+                            FullName = "Player User 40",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash40",
+                            Phone = "0103000040",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 54,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player41@sportsx.local",
+                            FullName = "Player User 41",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash41",
+                            Phone = "0103000041",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 55,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player42@sportsx.local",
+                            FullName = "Player User 42",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash42",
+                            Phone = "0103000042",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 56,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player43@sportsx.local",
+                            FullName = "Player User 43",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash43",
+                            Phone = "0103000043",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 57,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player44@sportsx.local",
+                            FullName = "Player User 44",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash44",
+                            Phone = "0103000044",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 58,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player45@sportsx.local",
+                            FullName = "Player User 45",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash45",
+                            Phone = "0103000045",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 59,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player46@sportsx.local",
+                            FullName = "Player User 46",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash46",
+                            Phone = "0103000046",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 60,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player47@sportsx.local",
+                            FullName = "Player User 47",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash47",
+                            Phone = "0103000047",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 61,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player48@sportsx.local",
+                            FullName = "Player User 48",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash48",
+                            Phone = "0103000048",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 62,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player49@sportsx.local",
+                            FullName = "Player User 49",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash49",
+                            Phone = "0103000049",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 63,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "player50@sportsx.local",
+                            FullName = "Player User 50",
+                            IsActive = true,
+                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash50",
+                            Phone = "0103000050",
+                            Role = "Player",
+                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
