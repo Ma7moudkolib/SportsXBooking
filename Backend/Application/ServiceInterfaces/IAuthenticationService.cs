@@ -6,7 +6,8 @@ namespace Application.ServiceInterfaces
     public interface IAuthenticationService
     {
         Task<ServiceResponse> RegisterUser(UserForRegistrationDto userForRegistration);
-        Task<bool> ValidateUser(UserForLoginDto userForLogin );
-        public string CreateToken();
+        Task<bool> ValidateUser(UserForLoginDto userForLogin);
+        string CreateToken();
+        AuthUser GetAuthenticatedUser();
     }
 }
