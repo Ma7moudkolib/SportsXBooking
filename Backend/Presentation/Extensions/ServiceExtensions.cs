@@ -15,10 +15,11 @@ namespace Presentation.Extensions
         public static void ConfigureCors(this IServiceCollection services) => services.AddCors(options =>
         {
             options.AddPolicy("CorsPolicy", builder =>
-                builder.AllowAnyOrigin()
+                builder.WithOrigins("http://localhost:8082", "https://localhost:8082")
                 .AllowAnyMethod()
                 .AllowAnyHeader());
         });
+
         public static void ConfigureIISIntegration(this IServiceCollection services) =>
             services.Configure<IISOptions>(options => { });
 
@@ -27,8 +28,9 @@ namespace Presentation.Extensions
 
         public static void ConfigureRepositoryManager(this IServiceCollection services) =>
            services.AddScoped<IRepositoryManager, RepositoryManager>();
+
         public static void ConfigureServiceManager(this IServiceCollection services) =>
-        services.AddScoped<IServiceManager, ServiceManager>();
+            services.AddScoped<IServiceManager, ServiceManager>();
 
         public static void ConfigureSqlContext(this IServiceCollection services, IConfiguration configuration) =>
            services.AddDbContext<RepositoryContext>(opts => opts.UseSqlServer(configuration.GetConnectionString("sqlConnection")));
@@ -36,25 +38,25 @@ namespace Presentation.Extensions
         public static void ConfigureJWT(this IServiceCollection services, IConfiguration configuration)
         {
             var jwtSettings = configuration.GetSection("JwtSettings");
-            var secretKey = configuration.GetSection("secretKey").Value;
+            var secretKey = configuration["SecretKey"];
 
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(options => {
-                options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+            }).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateAudience = true,
                     ValidateIssuer = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-
-                    ValidAudience = jwtSettings["validAudience"],
-                    ValidIssuer = jwtSettings["validIssuer"],
+                    ValidAudience = jwtSettings["Audience"],
+                    ValidIssuer = jwtSettings["Issuer"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey!))
                 };
             });
-        } 
+        }
     }
 }
