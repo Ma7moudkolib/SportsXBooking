@@ -24,7 +24,7 @@ COPY . .
 # ─────────────────────────────────────────────
 FROM restore AS build
 
-RUN dotnet publish ./SportsXBooking.sln \
+RUN dotnet publish ./Presentation/Presentation.csproj \
     -c Release \
     -o /app/publish \
     --no-restore
@@ -51,7 +51,7 @@ ENV ASPNETCORE_ENVIRONMENT=Development
 ENV DOTNET_USE_POLLING_FILE_WATCHER=true
 ENV DOTNET_WATCH_RESTART_ON_RUDE_EDIT=true
 
-ENTRYPOINT ["dotnet", "watch", "--project", "SportsXBooking.sln", "run", "--no-launch-profile"]
+ENTRYPOINT ["dotnet", "watch", "--project", "Presentation/Presentation.csproj", "run", "--no-launch-profile"]
 
 
 # ─────────────────────────────────────────────
