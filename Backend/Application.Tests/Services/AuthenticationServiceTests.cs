@@ -17,6 +17,7 @@ namespace Application.Tests.Services
         private readonly Mock<ILoggerManager> _loggerManagerMock;
         private readonly Mock<IMapper> _mapperMock;
         private readonly Mock<IConfiguration> _configurationMock;
+        private readonly Mock<UserManager<User>> _userManagerMock;
         private readonly IFixture _fixture;
         private readonly AuthenticationService _sut;
 
@@ -24,6 +25,8 @@ namespace Application.Tests.Services
         {
             _repositoryManagerMock = new Mock<IRepositoryManager>();
             _loggerManagerMock = new Mock<ILoggerManager>();
+            _userManagerMock = new Mock<UserManager<User>>(
+                Mock.Of<IUserStore<User>>());
             _mapperMock = new Mock<IMapper>();
             _configurationMock = new Mock<IConfiguration>();
             _fixture = new Fixture();
@@ -32,6 +35,7 @@ namespace Application.Tests.Services
             _fixture.Behaviors.Add(new OmitOnRecursionBehavior());
             _sut = new AuthenticationService(
                 _repositoryManagerMock.Object,
+                _userManagerMock.Object,
                 _loggerManagerMock.Object,
                 _mapperMock.Object,
                 _configurationMock.Object);
@@ -95,7 +99,8 @@ namespace Application.Tests.Services
             {
                 Email = "test@example.com",
                 Password = "SecurePassword123",
-                FullName = "Test User"
+                FirstName = "Test ",
+                LastName = "User",
             };
             var userEntity = new User { Email = userForRegistration.Email };
 
@@ -130,7 +135,8 @@ namespace Application.Tests.Services
             {
                 Email = userForLogin.Email,
                 PasswordHash = hashedPassword,
-                FullName = "Test User"
+                FirstName = "Test ",
+                LastName = "User",
             };
 
             _repositoryManagerMock.Setup(r => r.User.GetByEmailAsync(userForLogin.Email, false))
@@ -139,7 +145,7 @@ namespace Application.Tests.Services
             // Act - we need a real password hasher to test this properly
             var passwordHasher = new PasswordHasher<User>();
             user.PasswordHash = passwordHasher.HashPassword(user, "TestPassword123");
-            var result = await _sut.ValidateUser(new UserForLoginDto 
+            var result = await _sut.LoginUser(new UserForLoginDto 
             { 
                 Email = userForLogin.Email, 
                 Password = "TestPassword123" 
@@ -159,10 +165,10 @@ namespace Application.Tests.Services
                 .ReturnsAsync((User)null);
 
             // Act
-            var result = await _sut.ValidateUser(userForLogin);
+            var result = await _sut.LoginUser(userForLogin);
 
             // Assert
-            Assert.False(result);
+            Assert.False(result.Success);
             _loggerManagerMock.Verify(l => l.LogInfo(It.IsAny<string>()), Times.Once);
         }
 
