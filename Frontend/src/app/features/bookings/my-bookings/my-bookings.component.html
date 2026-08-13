@@ -1,0 +1,92 @@
+ <div class="main-layout bg-surface-low">
+      <div class="container py-10">
+        <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h1 class="mb-1">My Bookings</h1>
+            <p class="text-muted">Manage your upcoming and past reservations.</p>
+          </div>
+          <a routerLink="/" class="btn btn-primary btn-action">+ Book a Venue</a>
+        </div>
+
+        <div class="mb-8 grid gap-4 md:grid-cols-3">
+          @for (stat of stats(); track stat.label) {
+            <div class="surface-card p-6 text-center">
+              <span class="mb-1 block font-display text-4xl font-bold text-primary">{{ stat.value }}</span>
+              <span class="text-sm text-muted">{{ stat.label }}</span>
+            </div>
+          }
+        </div>
+
+        @if (loading()) {
+          <div class="text-center text-muted">Loading bookings...</div>
+        } @else if (bookings().length === 0) {
+          <div class="surface-card p-8 text-center">
+            <p class="mb-4 text-5xl">📅</p>
+            <h3 class="mb-2">No bookings yet</h3>
+            <p class="mb-6 text-muted">Head to the gallery to find and book your next venue.</p>
+            <a routerLink="/" class="btn btn-primary">Browse Playgrounds</a>
+          </div>
+        } @else {
+          <div class="flex flex-col gap-4">
+            @for (b of bookings(); track b.id) {
+              <div class="surface-card p-6">
+                <div class="mb-5 flex flex-wrap items-start justify-between gap-4">
+                  <div>
+                    <h4 class="mb-1">{{ b.playgroundName }}</h4>
+                    <p class="text-sm text-muted">
+                      📅 {{ formatDate(b.startTime) }} — {{ formatTime(b.startTime) }} to {{ formatTime(b.endTime) }}
+                    </p>
+                  </div>
+                  <span [class]="statusBadgeClass(b.status)">{{ b.status }}</span>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 pt-4">
+                  <div class="flex items-center gap-4 font-display text-primary">
+                    <b class="text-2xl">{{ b.totalPrice }}</b> EGP
+                    <button class="btn btn-ghost btn-sm text-muted" (click)="viewPayment(b.id)" id="view-payment-{{ b.id }}">View Transaction</button>
+                  </div>
+
+                  @if (b.status !== 'Cancelled') {
+                    <button class="btn btn-danger btn-sm" id="cancel-booking-{{ b.id }}" [disabled]="cancelling() === b.id" (click)="cancelBooking(b.id)">
+                      {{ cancelling() === b.id ? 'Cancelling...' : 'Cancel Booking' }}
+                    </button>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+
+    @if (activePayment()) {
+      <div class="modal-overlay" (click)="closePayment($event)">
+        <div class="modal-box">
+          <div class="mb-6 flex items-center justify-between">
+            <h3>Transaction Details</h3>
+            <button class="btn btn-ghost btn-sm" (click)="activePayment.set(null)">✕</button>
+          </div>
+
+          <div class="flex items-center justify-between border-b border-slate-200 py-3.5">
+            <span class="text-sm text-muted">Transaction ID</span>
+            <span class="text-sm font-semibold" style="font-family:monospace;">{{ activePayment()!.id }}</span>
+          </div>
+          <div class="flex items-center justify-between border-b border-slate-200 py-3.5">
+            <span class="text-sm text-muted">Booking ID</span>
+            <span class="text-sm font-semibold" style="font-family:monospace;">{{ activePayment()!.bookingId }}</span>
+          </div>
+          <div class="flex items-center justify-between border-b border-slate-200 py-3.5">
+            <span class="text-sm text-muted">Amount</span>
+            <span class="font-semibold text-accent">{{ activePayment()!.amount }} EGP</span>
+          </div>
+          <div class="flex items-center justify-between border-b border-slate-200 py-3.5">
+            <span class="text-sm text-muted">Status</span>
+            <span [class]="paymentStatusBadgeClass(activePayment()!.status)">{{ activePayment()!.status }}</span>
+          </div>
+          <div class="flex items-center justify-between py-3.5">
+            <span class="text-sm text-muted">Date</span>
+            <span class="text-sm">{{ formatDate(activePayment()!.transactionDate) }}</span>
+          </div>
+        </div>
+      </div>
+    }

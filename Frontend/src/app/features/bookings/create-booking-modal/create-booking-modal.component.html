@@ -1,0 +1,62 @@
+<div class="modal-overlay" (click)="onClose($event)">
+      <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="book-modal-title">
+        <div class="flex items-center justify-between mb-6">
+          <h3 id="book-modal-title">Book: {{ playground.name }}</h3>
+          <button class="btn btn-ghost btn-sm" (click)="close.emit()" aria-label="Close">✕</button>
+        </div>
+
+        <div class="venue-summary mb-6">
+          <p class="text-sm text-muted mb-1">📍 {{ playground.location }}</p>
+          <p class="text-sm font-semi" style="color:var(--color-primary-fixed);">
+            {{ playground.pricePerHour }} EGP / hour
+          </p>
+        </div>
+
+        <form [formGroup]="form" (ngSubmit)="submit()" id="create-booking-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="booking-date">Date</label>
+              <input id="booking-date" type="date" formControlName="date" class="form-control" [min]="today" />
+              @if (form.get('date')?.invalid && form.get('date')?.touched) {
+                <p class="field-error">Please pick a date.</p>
+              }
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="booking-start">Start Time</label>
+              <input id="booking-start" type="time" formControlName="startTime" class="form-control" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="booking-hours">Duration (hours)</label>
+            <select id="booking-hours" formControlName="hours" class="form-control">
+              <option value="1">1 hour</option>
+              <option value="2">2 hours</option>
+              <option value="3">3 hours</option>
+              <option value="4">4 hours</option>
+            </select>
+          </div>
+
+          <div class="total-row mb-4">
+            <span class="text-muted">Estimated Total</span>
+            <span class="total-price font-display">{{ estimatedTotal() }} EGP</span>
+          </div>
+
+          @if (error()) {
+            <div class="alert alert-error mb-4">{{ error() }}</div>
+          }
+
+          <div class="flex gap-3">
+            <button type="button" class="btn btn-secondary flex-1" (click)="close.emit()">Cancel</button>
+            <button
+              type="submit"
+              id="confirm-booking-btn"
+              class="btn btn-primary btn-action flex-1"
+              [disabled]="loading()"
+            >
+              {{ loading() ? 'Confirming...' : 'Confirm Booking' }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
