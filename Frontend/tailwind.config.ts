@@ -14,9 +14,9 @@ const config: Config = {
     },
     extend: {
       colors: {
-        primary: '#0B132B',
-        secondary: '#F8FAFC',
-        accent: '#70E000',
+        primary: '#001C3A',
+        secondary: '#D4E4F6',
+        accent: '#32CD32',
         surface: {
           DEFAULT: '#F8FAFC',
           low: '#EEF2F8',

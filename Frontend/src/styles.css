@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --color-primary: #0b132b;
-    --color-primary-fixed: #70e000;
+    --color-primary-fixed: #32CD32;
     --surface: #f8fafc;
     --surface-container-low: #eef2f8;
     --surface-container: #e8edf5;
@@ -93,11 +93,12 @@
   }
 
   .auth-layout {
-    @apply flex min-h-screen items-center justify-center bg-gradient-to-br from-primary via-primary/95 to-primary/70 px-4 py-10;
+    @apply flex min-h-screen items-center justify-center bg-gradient-to-br from-primary via-primary/95 to-primary/70 px-10 py-10;
+
   }
 
   .surface-card {
-    @apply rounded-xl bg-white shadow-ambient;
+    @apply rounded-xl max-h-fit bg-white shadow-ambient;
   }
 
   .glass {
