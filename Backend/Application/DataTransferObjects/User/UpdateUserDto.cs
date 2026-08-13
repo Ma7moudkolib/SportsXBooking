@@ -4,12 +4,15 @@ namespace Application.DataTransferObjects.User
     public class UpdateUserDto
     {
         [Required]
-        public string FullName { get; set; }
+        public string FirstName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
 
         [Required, EmailAddress]
         public string Email { get; set; }
         [Required, Phone]
-        public string Phone { get; set; }
+        public string PhoneNumber { get; set; }
 
         [Required]
         public string Password { get; set; }
