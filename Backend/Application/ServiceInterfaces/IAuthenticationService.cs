@@ -1,13 +1,12 @@
 ﻿using Application.DataTransferObjects;
 using Application.DataTransferObjects.User;
+using Domain.Entities;
 
 namespace Application.ServiceInterfaces
 {
     public interface IAuthenticationService
     {
         Task<ServiceResponse> RegisterUser(UserForRegistrationDto userForRegistration);
-        Task<bool> ValidateUser(UserForLoginDto userForLogin);
-        string CreateToken();
-        AuthUser GetAuthenticatedUser();
+        Task<LoginResponse> LoginUser(UserForLoginDto userLogin);
     }
 }

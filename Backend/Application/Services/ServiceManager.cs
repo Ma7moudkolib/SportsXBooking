@@ -1,7 +1,9 @@
 ﻿
 using Application.ServiceInterfaces;
 using AutoMapper;
+using Domain.Entities;
 using Infrastructure.Repositories;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 
 namespace Application.Services
@@ -10,6 +12,7 @@ namespace Application.Services
     {
         private readonly IRepositoryManager _repositoryManager;
         private readonly IMapper _mapper;
+        private readonly UserManager<User> _userManager;
         private readonly Lazy<IUserService> _userService;
         private readonly Lazy<IPlaygroundService> _playgroundService;
         private readonly Lazy<IBookingService> _bookingService;
@@ -17,16 +20,17 @@ namespace Application.Services
         private readonly Lazy<IPaymentService> _paymentService;
         private readonly Lazy<IAuthenticationService> _authenticationService;
 
-        public ServiceManager(IRepositoryManager repositoryManager , IMapper mapper,ILoggerManager logger ,IConfiguration configuration )
+        public ServiceManager(IRepositoryManager repositoryManager,UserManager<User> userManager , IMapper mapper,ILoggerManager logger ,IConfiguration configuration )
         {
             _mapper = mapper;
             _repositoryManager = repositoryManager;
+            _userManager = userManager;
             _userService = new Lazy<IUserService>(() => new UserService(_repositoryManager, _mapper));
             _playgroundService = new Lazy<IPlaygroundService>(() => new PlaygroundService(_repositoryManager, _mapper));
             _bookingService = new Lazy<IBookingService>(() => new BookingService(_repositoryManager, _mapper));
             _reviewService = new Lazy<IReviewService>(() => new ReviewService(_repositoryManager, _mapper));
             _paymentService = new Lazy<IPaymentService>(() => new PaymentService(_repositoryManager, _mapper));
-            _authenticationService = new Lazy<IAuthenticationService>(() => new AuthenticationService(_repositoryManager,logger, _mapper,configuration));
+            _authenticationService = new Lazy<IAuthenticationService>(() => new AuthenticationService(_repositoryManager, _userManager, logger, _mapper,configuration));
 
         }
         public IUserService User => _userService.Value;
