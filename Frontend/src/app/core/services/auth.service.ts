@@ -22,6 +22,7 @@ export class AuthService {
   });
 
   private _loadUser(): User | null {
+    console.log(localStorage.getItem('sx_user'));
     try { return JSON.parse(localStorage.getItem('sx_user') ?? 'null'); }
     catch { return null; }
   }
@@ -33,27 +34,27 @@ export class AuthService {
   login(dto: UserForLoginDto): Observable<LoginResponse> {
     return this.http.post<any>(`${this.apiUrl}/login`, dto).pipe(
       map(res => {
-        const [firstName, ...rest] = (res.user.fullName as string).split(' ');
         const role = (res.user.role === 'Player' ? 'User' : res.user.role) as UserRole;
         return {
           message: res.message,
           token: res.token,
           user: {
             id: String(res.user.id),
-            firstName,
-            lastName: rest.join(' ') || '',
+            firstName: res.user.firstname,
+            lastName: res.user.lastName,
             email: res.user.email,
             role
           }
         } as LoginResponse;
       }),
-      tap(res => this._persist(res.token, res.user))
+      tap(res => this._persist(res.token, {id:String(res.user.id),firstName:res.user.firstName,lastName:res.user.lastName,email:res.user.email,role:res.user.role} as User))
     );
   }
 
   register(dto: UserForRegistrationDto): Observable<LoginResponse> {
     const payload = {
-      fullName: `${dto.firstName} ${dto.lastName}`.trim(),
+      firstName:dto.firstName,
+      lastName:dto.lastName,
       email: dto.email,
       phone: '01000000000',
       password: dto.password,
