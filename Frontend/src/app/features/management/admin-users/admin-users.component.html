@@ -1,0 +1,82 @@
+ <div class="dashboard-layout" style="margin-top:var(--nav-height);">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-logo mb-6">
+          <p class="text-xs text-muted font-semi mb-1" style="text-transform:uppercase;letter-spacing:.08em;">Admin Panel</p>
+          <h4 style="margin:0;color:var(--color-primary);">Operations</h4>
+        </div>
+        <button class="sidebar-item active">👥 User Management</button>
+        <a routerLink="/management/playgrounds" class="sidebar-item">🏟️ All Venues</a>
+        <a routerLink="/" class="sidebar-item">← Front-End</a>
+      </aside>
+
+      <!-- Content -->
+      <main class="sidebar-content">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h2 class="mb-1">User Management</h2>
+            <p class="text-muted">{{ users().length }} registered accounts across all roles.</p>
+          </div>
+        </div>
+
+        <!-- Role Summary -->
+        <div class="role-summary mb-8">
+          @for (rs of roleSummary(); track rs.role) {
+            <div class="role-stat surface-card">
+              <span class="badge" [class]="'badge-' + rs.role.toLowerCase()">{{ rs.role }}</span>
+              <span class="role-count font-display">{{ rs.count }}</span>
+            </div>
+          }
+        </div>
+
+        @if (loading()) {
+          <p class="text-muted">Loading users...</p>
+        } @else {
+          <div class="table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>ID</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for (u of users(); track u.id) {
+                  <tr>
+                    <td>
+                      <div class="flex items-center gap-3">
+                        <div class="user-avatar">{{ u.firstName.charAt(0) }}{{ u.lastName.charAt(0) }}</div>
+                        <span class="font-semi">{{ u.firstName }} {{ u.lastName }}</span>
+                      </div>
+                    </td>
+                    <td class="text-muted text-sm">{{ u.email }}</td>
+                    <td>
+                      <span class="badge" [class]="'badge-' + u.role.toLowerCase()">{{ u.role }}</span>
+                    </td>
+                    <td class="text-xs text-muted" style="font-family:monospace;">{{ u.id }}</td>
+                    <td>
+                      @if (u.role !== 'Admin') {
+                        <button
+                          class="btn btn-danger btn-sm"
+                          [id]="'delete-user-' + u.id"
+                          [disabled]="deleting() === u.id"
+                          (click)="deleteUser(u)"
+                        >
+                          {{ deleting() === u.id ? '...' : 'Delete' }}
+                        </button>
+                      } @else {
+                        <span class="text-xs text-muted">—</span>
+                      }
+                    </td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        }
+      </main>
+    </div>

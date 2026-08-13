@@ -1,0 +1,11 @@
+ .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    textarea.form-control {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .pg-table-wrapper { overflow-x: auto; }
+    .sidebar-logo { padding: 0 1rem; }
