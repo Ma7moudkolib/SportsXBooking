@@ -188,6 +188,306 @@ namespace Infrastructure.Configuration
                     ImageUrl = "https://picsum.photos/seed/playground15/1200/700",
                     IsAvailable = true,
                     CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 16,
+                    OwnerId = 9,
+                    Name = "Padel Arena 16",
+                    Location = "Cairo, Nasr City",
+                    SportType = "Padel",
+                    PricePerHour = 280,
+                    ImageUrl = "https://picsum.photos/seed/playground16/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 17,
+                    OwnerId = 10,
+                    Name = "Tennis Arena 17",
+                    Location = "Cairo, Maadi",
+                    SportType = "Tennis",
+                    PricePerHour = 290,
+                    ImageUrl = "https://picsum.photos/seed/playground17/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 18,
+                    OwnerId = 11,
+                    Name = "Football Arena 18",
+                    Location = "Cairo, Zamalek",
+                    SportType = "Football",
+                    PricePerHour = 300,
+                    ImageUrl = "https://picsum.photos/seed/playground18/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 19,
+                    OwnerId = 12,
+                    Name = "Padel Arena 19",
+                    Location = "Alexandria, Smouha",
+                    SportType = "Padel",
+                    PricePerHour = 310,
+                    ImageUrl = "https://picsum.photos/seed/playground19/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 20,
+                    OwnerId = 13,
+                    Name = "Tennis Arena 20",
+                    Location = "Giza, 6th October",
+                    SportType = "Tennis",
+                    PricePerHour = 320,
+                    ImageUrl = "https://picsum.photos/seed/playground20/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 21,
+                    OwnerId = 4,
+                    Name = "Football Arena 21",
+                    Location = "Cairo, Nasr City",
+                    SportType = "Football",
+                    PricePerHour = 330,
+                    ImageUrl = "https://picsum.photos/seed/playground21/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 22,
+                    OwnerId = 5,
+                    Name = "Padel Arena 22",
+                    Location = "Cairo, Maadi",
+                    SportType = "Padel",
+                    PricePerHour = 340,
+                    ImageUrl = "https://picsum.photos/seed/playground22/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 23,
+                    OwnerId = 6,
+                    Name = "Tennis Arena 23",
+                    Location = "Cairo, Zamalek",
+                    SportType = "Tennis",
+                    PricePerHour = 350,
+                    ImageUrl = "https://picsum.photos/seed/playground23/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 24,
+                    OwnerId = 7,
+                    Name = "Football Arena 24",
+                    Location = "Alexandria, Smouha",
+                    SportType = "Football",
+                    PricePerHour = 360,
+                    ImageUrl = "https://picsum.photos/seed/playground24/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 25,
+                    OwnerId = 8,
+                    Name = "Padel Arena 25",
+                    Location = "Giza, 6th October",
+                    SportType = "Padel",
+                    PricePerHour = 370,
+                    ImageUrl = "https://picsum.photos/seed/playground25/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 26,
+                    OwnerId = 9,
+                    Name = "Tennis Arena 26",
+                    Location = "Cairo, Nasr City",
+                    SportType = "Tennis",
+                    PricePerHour = 380,
+                    ImageUrl = "https://picsum.photos/seed/playground26/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 27,
+                    OwnerId = 10,
+                    Name = "Football Arena 27",
+                    Location = "Cairo, Maadi",
+                    SportType = "Football",
+                    PricePerHour = 390,
+                    ImageUrl = "https://picsum.photos/seed/playground27/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 28,
+                    OwnerId = 11,
+                    Name = "Padel Arena 28",
+                    Location = "Cairo, Zamalek",
+                    SportType = "Padel",
+                    PricePerHour = 400,
+                    ImageUrl = "https://picsum.photos/seed/playground28/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 29,
+                    OwnerId = 12,
+                    Name = "Tennis Arena 29",
+                    Location = "Alexandria, Smouha",
+                    SportType = "Tennis",
+                    PricePerHour = 410,
+                    ImageUrl = "https://picsum.photos/seed/playground29/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 30,
+                    OwnerId = 13,
+                    Name = "Football Arena 30",
+                    Location = "Giza, 6th October",
+                    SportType = "Football",
+                    PricePerHour = 420,
+                    ImageUrl = "https://picsum.photos/seed/playground30/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 31,
+                    OwnerId = 4,
+                    Name = "Padel Arena 31",
+                    Location = "Cairo, Nasr City",
+                    SportType = "Padel",
+                    PricePerHour = 430,
+                    ImageUrl = "https://picsum.photos/seed/playground31/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 32,
+                    OwnerId = 5,
+                    Name = "Tennis Arena 32",
+                    Location = "Cairo, Maadi",
+                    SportType = "Tennis",
+                    PricePerHour = 440,
+                    ImageUrl = "https://picsum.photos/seed/playground32/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 33,
+                    OwnerId = 6,
+                    Name = "Football Arena 33",
+                    Location = "Cairo, Zamalek",
+                    SportType = "Football",
+                    PricePerHour = 450,
+                    ImageUrl = "https://picsum.photos/seed/playground33/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 34,
+                    OwnerId = 7,
+                    Name = "Padel Arena 34",
+                    Location = "Alexandria, Smouha",
+                    SportType = "Padel",
+                    PricePerHour = 460,
+                    ImageUrl = "https://picsum.photos/seed/playground34/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 35,
+                    OwnerId = 8,
+                    Name = "Tennis Arena 35",
+                    Location = "Giza, 6th October",
+                    SportType = "Tennis",
+                    PricePerHour = 470,
+                    ImageUrl = "https://picsum.photos/seed/playground35/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 36,
+                    OwnerId = 9,
+                    Name = "Football Arena 36",
+                    Location = "Cairo, Nasr City",
+                    SportType = "Football",
+                    PricePerHour = 480,
+                    ImageUrl = "https://picsum.photos/seed/playground36/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 37,
+                    OwnerId = 10,
+                    Name = "Padel Arena 37",
+                    Location = "Cairo, Maadi",
+                    SportType = "Padel",
+                    PricePerHour = 490,
+                    ImageUrl = "https://picsum.photos/seed/playground37/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 38,
+                    OwnerId = 11,
+                    Name = "Tennis Arena 38",
+                    Location = "Cairo, Zamalek",
+                    SportType = "Tennis",
+                    PricePerHour = 500,
+                    ImageUrl = "https://picsum.photos/seed/playground38/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 39,
+                    OwnerId = 12,
+                    Name = "Football Arena 39",
+                    Location = "Alexandria, Smouha",
+                    SportType = "Football",
+                    PricePerHour = 510,
+                    ImageUrl = "https://picsum.photos/seed/playground39/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
+                },
+                new Playground
+                {
+                    PlaygroundId = 40,
+                    OwnerId = 13,
+                    Name = "Padel Arena 40",
+                    Location = "Giza, 6th October",
+                    SportType = "Padel",
+                    PricePerHour = 520,
+                    ImageUrl = "https://picsum.photos/seed/playground40/1200/700",
+                    IsAvailable = true,
+                    CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0)
                 }
             );
         }

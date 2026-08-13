@@ -17,7 +17,7 @@ namespace Infrastructure.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.10")
+                .HasAnnotation("ProductVersion", "9.0.18")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -1606,6 +1606,306 @@ namespace Infrastructure.Migrations
                             OwnerId = 8,
                             PricePerHour = 270m,
                             SportType = "Football"
+                        },
+                        new
+                        {
+                            PlaygroundId = 16,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground16/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Nasr City",
+                            Name = "Padel Arena 16",
+                            OwnerId = 9,
+                            PricePerHour = 280m,
+                            SportType = "Padel"
+                        },
+                        new
+                        {
+                            PlaygroundId = 17,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground17/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Maadi",
+                            Name = "Tennis Arena 17",
+                            OwnerId = 10,
+                            PricePerHour = 290m,
+                            SportType = "Tennis"
+                        },
+                        new
+                        {
+                            PlaygroundId = 18,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground18/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Zamalek",
+                            Name = "Football Arena 18",
+                            OwnerId = 11,
+                            PricePerHour = 300m,
+                            SportType = "Football"
+                        },
+                        new
+                        {
+                            PlaygroundId = 19,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground19/1200/700",
+                            IsAvailable = true,
+                            Location = "Alexandria, Smouha",
+                            Name = "Padel Arena 19",
+                            OwnerId = 12,
+                            PricePerHour = 310m,
+                            SportType = "Padel"
+                        },
+                        new
+                        {
+                            PlaygroundId = 20,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground20/1200/700",
+                            IsAvailable = true,
+                            Location = "Giza, 6th October",
+                            Name = "Tennis Arena 20",
+                            OwnerId = 13,
+                            PricePerHour = 320m,
+                            SportType = "Tennis"
+                        },
+                        new
+                        {
+                            PlaygroundId = 21,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground21/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Nasr City",
+                            Name = "Football Arena 21",
+                            OwnerId = 4,
+                            PricePerHour = 330m,
+                            SportType = "Football"
+                        },
+                        new
+                        {
+                            PlaygroundId = 22,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground22/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Maadi",
+                            Name = "Padel Arena 22",
+                            OwnerId = 5,
+                            PricePerHour = 340m,
+                            SportType = "Padel"
+                        },
+                        new
+                        {
+                            PlaygroundId = 23,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground23/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Zamalek",
+                            Name = "Tennis Arena 23",
+                            OwnerId = 6,
+                            PricePerHour = 350m,
+                            SportType = "Tennis"
+                        },
+                        new
+                        {
+                            PlaygroundId = 24,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground24/1200/700",
+                            IsAvailable = true,
+                            Location = "Alexandria, Smouha",
+                            Name = "Football Arena 24",
+                            OwnerId = 7,
+                            PricePerHour = 360m,
+                            SportType = "Football"
+                        },
+                        new
+                        {
+                            PlaygroundId = 25,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground25/1200/700",
+                            IsAvailable = true,
+                            Location = "Giza, 6th October",
+                            Name = "Padel Arena 25",
+                            OwnerId = 8,
+                            PricePerHour = 370m,
+                            SportType = "Padel"
+                        },
+                        new
+                        {
+                            PlaygroundId = 26,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground26/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Nasr City",
+                            Name = "Tennis Arena 26",
+                            OwnerId = 9,
+                            PricePerHour = 380m,
+                            SportType = "Tennis"
+                        },
+                        new
+                        {
+                            PlaygroundId = 27,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground27/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Maadi",
+                            Name = "Football Arena 27",
+                            OwnerId = 10,
+                            PricePerHour = 390m,
+                            SportType = "Football"
+                        },
+                        new
+                        {
+                            PlaygroundId = 28,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground28/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Zamalek",
+                            Name = "Padel Arena 28",
+                            OwnerId = 11,
+                            PricePerHour = 400m,
+                            SportType = "Padel"
+                        },
+                        new
+                        {
+                            PlaygroundId = 29,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground29/1200/700",
+                            IsAvailable = true,
+                            Location = "Alexandria, Smouha",
+                            Name = "Tennis Arena 29",
+                            OwnerId = 12,
+                            PricePerHour = 410m,
+                            SportType = "Tennis"
+                        },
+                        new
+                        {
+                            PlaygroundId = 30,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground30/1200/700",
+                            IsAvailable = true,
+                            Location = "Giza, 6th October",
+                            Name = "Football Arena 30",
+                            OwnerId = 13,
+                            PricePerHour = 420m,
+                            SportType = "Football"
+                        },
+                        new
+                        {
+                            PlaygroundId = 31,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground31/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Nasr City",
+                            Name = "Padel Arena 31",
+                            OwnerId = 4,
+                            PricePerHour = 430m,
+                            SportType = "Padel"
+                        },
+                        new
+                        {
+                            PlaygroundId = 32,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground32/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Maadi",
+                            Name = "Tennis Arena 32",
+                            OwnerId = 5,
+                            PricePerHour = 440m,
+                            SportType = "Tennis"
+                        },
+                        new
+                        {
+                            PlaygroundId = 33,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground33/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Zamalek",
+                            Name = "Football Arena 33",
+                            OwnerId = 6,
+                            PricePerHour = 450m,
+                            SportType = "Football"
+                        },
+                        new
+                        {
+                            PlaygroundId = 34,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground34/1200/700",
+                            IsAvailable = true,
+                            Location = "Alexandria, Smouha",
+                            Name = "Padel Arena 34",
+                            OwnerId = 7,
+                            PricePerHour = 460m,
+                            SportType = "Padel"
+                        },
+                        new
+                        {
+                            PlaygroundId = 35,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground35/1200/700",
+                            IsAvailable = true,
+                            Location = "Giza, 6th October",
+                            Name = "Tennis Arena 35",
+                            OwnerId = 8,
+                            PricePerHour = 470m,
+                            SportType = "Tennis"
+                        },
+                        new
+                        {
+                            PlaygroundId = 36,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground36/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Nasr City",
+                            Name = "Football Arena 36",
+                            OwnerId = 9,
+                            PricePerHour = 480m,
+                            SportType = "Football"
+                        },
+                        new
+                        {
+                            PlaygroundId = 37,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground37/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Maadi",
+                            Name = "Padel Arena 37",
+                            OwnerId = 10,
+                            PricePerHour = 490m,
+                            SportType = "Padel"
+                        },
+                        new
+                        {
+                            PlaygroundId = 38,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground38/1200/700",
+                            IsAvailable = true,
+                            Location = "Cairo, Zamalek",
+                            Name = "Tennis Arena 38",
+                            OwnerId = 11,
+                            PricePerHour = 500m,
+                            SportType = "Tennis"
+                        },
+                        new
+                        {
+                            PlaygroundId = 39,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground39/1200/700",
+                            IsAvailable = true,
+                            Location = "Alexandria, Smouha",
+                            Name = "Football Arena 39",
+                            OwnerId = 12,
+                            PricePerHour = 510m,
+                            SportType = "Football"
+                        },
+                        new
+                        {
+                            PlaygroundId = 40,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://picsum.photos/seed/playground40/1200/700",
+                            IsAvailable = true,
+                            Location = "Giza, 6th October",
+                            Name = "Padel Arena 40",
+                            OwnerId = 13,
+                            PricePerHour = 520m,
+                            SportType = "Padel"
                         });
                 });
 
@@ -1999,36 +2299,60 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.User", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("PasswordHash")
-                        .IsRequired()
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Phone")
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)")
+                        .HasColumnName("Phone");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Role")
                         .IsRequired()
@@ -2037,773 +2361,187 @@ namespace Infrastructure.Migrations
                         .HasColumnType("nvarchar(20)")
                         .HasDefaultValue("Player");
 
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("UserId");
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("Email")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[Email] IS NOT NULL");
 
-                    b.ToTable("Users");
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<int>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
 
                     b.HasData(
                         new
                         {
-                            UserId = 1,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "admin1@sportsx.local",
-                            FullName = "Admin User 1",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEAdminSeedHash1",
-                            Phone = "0101000001",
-                            Role = "Admin",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Id = 1,
+                            ConcurrencyStamp = "a1b2c3d4-0000-0000-0000-000000000001",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            UserId = 2,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "admin2@sportsx.local",
-                            FullName = "Admin User 2",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEAdminSeedHash2",
-                            Phone = "0101000002",
-                            Role = "Admin",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Id = 2,
+                            ConcurrencyStamp = "a1b2c3d4-0000-0000-0000-000000000002",
+                            Name = "Owner",
+                            NormalizedName = "OWNER"
                         },
                         new
                         {
-                            UserId = 3,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "admin3@sportsx.local",
-                            FullName = "Admin User 3",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEAdminSeedHash3",
-                            Phone = "0101000003",
-                            Role = "Admin",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 4,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "owner1@sportsx.local",
-                            FullName = "Owner User 1",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash1",
-                            Phone = "0102000001",
-                            Role = "Owner",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 5,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "owner2@sportsx.local",
-                            FullName = "Owner User 2",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash2",
-                            Phone = "0102000002",
-                            Role = "Owner",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 6,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "owner3@sportsx.local",
-                            FullName = "Owner User 3",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash3",
-                            Phone = "0102000003",
-                            Role = "Owner",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 7,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "owner4@sportsx.local",
-                            FullName = "Owner User 4",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash4",
-                            Phone = "0102000004",
-                            Role = "Owner",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 8,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "owner5@sportsx.local",
-                            FullName = "Owner User 5",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash5",
-                            Phone = "0102000005",
-                            Role = "Owner",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 9,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "owner6@sportsx.local",
-                            FullName = "Owner User 6",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash6",
-                            Phone = "0102000006",
-                            Role = "Owner",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 10,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "owner7@sportsx.local",
-                            FullName = "Owner User 7",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash7",
-                            Phone = "0102000007",
-                            Role = "Owner",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 11,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "owner8@sportsx.local",
-                            FullName = "Owner User 8",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash8",
-                            Phone = "0102000008",
-                            Role = "Owner",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 12,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "owner9@sportsx.local",
-                            FullName = "Owner User 9",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash9",
-                            Phone = "0102000009",
-                            Role = "Owner",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 13,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "owner10@sportsx.local",
-                            FullName = "Owner User 10",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEOwnerSeedHash10",
-                            Phone = "0102000010",
-                            Role = "Owner",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 14,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player1@sportsx.local",
-                            FullName = "Player User 1",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash1",
-                            Phone = "0103000001",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 15,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player2@sportsx.local",
-                            FullName = "Player User 2",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash2",
-                            Phone = "0103000002",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 16,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player3@sportsx.local",
-                            FullName = "Player User 3",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash3",
-                            Phone = "0103000003",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 17,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player4@sportsx.local",
-                            FullName = "Player User 4",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash4",
-                            Phone = "0103000004",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 18,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player5@sportsx.local",
-                            FullName = "Player User 5",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash5",
-                            Phone = "0103000005",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 19,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player6@sportsx.local",
-                            FullName = "Player User 6",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash6",
-                            Phone = "0103000006",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 20,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player7@sportsx.local",
-                            FullName = "Player User 7",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash7",
-                            Phone = "0103000007",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 21,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player8@sportsx.local",
-                            FullName = "Player User 8",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash8",
-                            Phone = "0103000008",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 22,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player9@sportsx.local",
-                            FullName = "Player User 9",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash9",
-                            Phone = "0103000009",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 23,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player10@sportsx.local",
-                            FullName = "Player User 10",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash10",
-                            Phone = "0103000010",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 24,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player11@sportsx.local",
-                            FullName = "Player User 11",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash11",
-                            Phone = "0103000011",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 25,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player12@sportsx.local",
-                            FullName = "Player User 12",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash12",
-                            Phone = "0103000012",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 26,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player13@sportsx.local",
-                            FullName = "Player User 13",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash13",
-                            Phone = "0103000013",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 27,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player14@sportsx.local",
-                            FullName = "Player User 14",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash14",
-                            Phone = "0103000014",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 28,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player15@sportsx.local",
-                            FullName = "Player User 15",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash15",
-                            Phone = "0103000015",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 29,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player16@sportsx.local",
-                            FullName = "Player User 16",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash16",
-                            Phone = "0103000016",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 30,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player17@sportsx.local",
-                            FullName = "Player User 17",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash17",
-                            Phone = "0103000017",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 31,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player18@sportsx.local",
-                            FullName = "Player User 18",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash18",
-                            Phone = "0103000018",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 32,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player19@sportsx.local",
-                            FullName = "Player User 19",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash19",
-                            Phone = "0103000019",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 33,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player20@sportsx.local",
-                            FullName = "Player User 20",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash20",
-                            Phone = "0103000020",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 34,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player21@sportsx.local",
-                            FullName = "Player User 21",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash21",
-                            Phone = "0103000021",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 35,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player22@sportsx.local",
-                            FullName = "Player User 22",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash22",
-                            Phone = "0103000022",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 36,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player23@sportsx.local",
-                            FullName = "Player User 23",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash23",
-                            Phone = "0103000023",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 37,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player24@sportsx.local",
-                            FullName = "Player User 24",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash24",
-                            Phone = "0103000024",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 38,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player25@sportsx.local",
-                            FullName = "Player User 25",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash25",
-                            Phone = "0103000025",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 39,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player26@sportsx.local",
-                            FullName = "Player User 26",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash26",
-                            Phone = "0103000026",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 40,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player27@sportsx.local",
-                            FullName = "Player User 27",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash27",
-                            Phone = "0103000027",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 41,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player28@sportsx.local",
-                            FullName = "Player User 28",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash28",
-                            Phone = "0103000028",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 42,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player29@sportsx.local",
-                            FullName = "Player User 29",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash29",
-                            Phone = "0103000029",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 43,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player30@sportsx.local",
-                            FullName = "Player User 30",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash30",
-                            Phone = "0103000030",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 44,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player31@sportsx.local",
-                            FullName = "Player User 31",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash31",
-                            Phone = "0103000031",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 45,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player32@sportsx.local",
-                            FullName = "Player User 32",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash32",
-                            Phone = "0103000032",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 46,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player33@sportsx.local",
-                            FullName = "Player User 33",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash33",
-                            Phone = "0103000033",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 47,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player34@sportsx.local",
-                            FullName = "Player User 34",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash34",
-                            Phone = "0103000034",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 48,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player35@sportsx.local",
-                            FullName = "Player User 35",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash35",
-                            Phone = "0103000035",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 49,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player36@sportsx.local",
-                            FullName = "Player User 36",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash36",
-                            Phone = "0103000036",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 50,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player37@sportsx.local",
-                            FullName = "Player User 37",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash37",
-                            Phone = "0103000037",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 51,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player38@sportsx.local",
-                            FullName = "Player User 38",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash38",
-                            Phone = "0103000038",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 52,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player39@sportsx.local",
-                            FullName = "Player User 39",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash39",
-                            Phone = "0103000039",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 53,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player40@sportsx.local",
-                            FullName = "Player User 40",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash40",
-                            Phone = "0103000040",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 54,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player41@sportsx.local",
-                            FullName = "Player User 41",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash41",
-                            Phone = "0103000041",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 55,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player42@sportsx.local",
-                            FullName = "Player User 42",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash42",
-                            Phone = "0103000042",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 56,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player43@sportsx.local",
-                            FullName = "Player User 43",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash43",
-                            Phone = "0103000043",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 57,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player44@sportsx.local",
-                            FullName = "Player User 44",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash44",
-                            Phone = "0103000044",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 58,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player45@sportsx.local",
-                            FullName = "Player User 45",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash45",
-                            Phone = "0103000045",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 59,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player46@sportsx.local",
-                            FullName = "Player User 46",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash46",
-                            Phone = "0103000046",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 60,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player47@sportsx.local",
-                            FullName = "Player User 47",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash47",
-                            Phone = "0103000047",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 61,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player48@sportsx.local",
-                            FullName = "Player User 48",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash48",
-                            Phone = "0103000048",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 62,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player49@sportsx.local",
-                            FullName = "Player User 49",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash49",
-                            Phone = "0103000049",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            UserId = 63,
-                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "player50@sportsx.local",
-                            FullName = "Player User 50",
-                            IsActive = true,
-                            PasswordHash = "AQAAAAEAACcQAAAAEPlayerSeedHash50",
-                            Phone = "0103000050",
-                            Role = "Player",
-                            UpdatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            Id = 3,
+                            ConcurrencyStamp = "a1b2c3d4-0000-0000-0000-000000000003",
+                            Name = "Player",
+                            NormalizedName = "PLAYER"
                         });
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Booking", b =>
@@ -2864,6 +2602,57 @@ namespace Infrastructure.Migrations
                     b.Navigation("Player");
 
                     b.Navigation("Playground");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<int>", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
+                {
+                    b.HasOne("Domain.Entities.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
+                {
+                    b.HasOne("Domain.Entities.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<int>", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
+                {
+                    b.HasOne("Domain.Entities.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Domain.Entities.Booking", b =>

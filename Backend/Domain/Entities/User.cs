@@ -1,32 +1,19 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace Domain.Entities
 {
-    public class User
+    public class User : IdentityUser<int>
     {
-        [Key]
-        public int UserId { get; set; }
-
-        [Required, MaxLength(100)]
-        public string FullName { get; set; }
-
-        [Required, EmailAddress, MaxLength(100)]
-        public string Email { get; set; }
-
-        [Phone, MaxLength(20)]
-        public string Phone { get; set; }
-
-        [Required]
-        public string PasswordHash { get; set; }
-
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        //[Required, EmailAddress, MaxLength(100)]
+        //public string Email { get; set; }
+        //public string Phone { get; set; }
+        //[Required]
+        //public string PasswordHash { get; set; }
         [Required, MaxLength(20)]
-        public string Role { get; set; } = "Player"; // Player, Owner, Admin
-
-        public bool IsActive { get; set; } = true;
-
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-
-        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+        public string Role { get; set; } // Player, Owner, Admin
 
         // Navigation
         public ICollection<Playground> Playgrounds { get; set; }
