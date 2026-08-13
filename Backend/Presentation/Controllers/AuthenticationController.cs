@@ -16,7 +16,7 @@ namespace Presentation.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] UserForRegistrationDto userForRegistration)
+        public async Task<ActionResult> Register([FromBody] UserForRegistrationDto userForRegistration)
         {
             var result = await _serviceManager.Authentication.RegisterUser(userForRegistration);
             if (!result.Success)
@@ -28,17 +28,10 @@ namespace Presentation.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] UserForLoginDto userForAuthentication)
+        public async Task<ActionResult<LoginResponse>> Login([FromBody] UserForLoginDto userForAuthentication)
         {
-            var result = await _serviceManager.Authentication.ValidateUser(userForAuthentication);
-            if (!result)
-            {
-                return Unauthorized();
-            }
-
-            var token = _serviceManager.Authentication.CreateToken();
-            var user = _serviceManager.Authentication.GetAuthenticatedUser();
-            return Ok(new LoginResponse(true, "Login Successful", token, user));
+            var response = await _serviceManager.Authentication.LoginUser(userForAuthentication);
+            return Ok(response);
         }
     }
 }

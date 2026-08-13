@@ -1,8 +1,16 @@
 using Application.Mapping;
 using Application.ServiceInterfaces;
+using Domain.Entities;
+using Infrastructure.DatabaseContext;
+using Microsoft.AspNetCore.Identity;
 using Presentation.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// add identity services
+builder.Services.AddIdentity<User, IdentityRole<int>>()
+  .AddEntityFrameworkStores<RepositoryContext>()
+  .AddDefaultTokenProviders();
 
 builder.Services.ConfigureCors();
 builder.Services.ConfigureIISIntegration();

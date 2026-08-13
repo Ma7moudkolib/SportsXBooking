@@ -21,7 +21,7 @@ namespace Presentation.Controllers
             return Ok(reviews);
         }
         [HttpPost]
-        [Authorize]
+//        [Authorize]
         public async Task<IActionResult> AddReview([FromBody] ReviewDto review)
         {
             var createdReview = await _serviceManager.Review.AddReviewAsync(review);

@@ -8,7 +8,6 @@ namespace Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class BookingsController : ControllerBase
     {
         private readonly IServiceManager _serviceManager;
@@ -24,10 +23,10 @@ namespace Presentation.Controllers
             return Ok(bookings);
         }
 
-        [HttpGet("{id}",Name ="GetBookingById")]
+        [HttpGet("{id}", Name = "GetBookingById")]
         public async Task<IActionResult> GetBookingById(int id)
         {
-            var booking = await _serviceManager.Booking.GetBookingByIdAsync(id, trackChanges:false);
+            var booking = await _serviceManager.Booking.GetBookingByIdAsync(id, trackChanges: false);
             return Ok(booking);
         }
         [HttpPost]
@@ -39,7 +38,7 @@ namespace Presentation.Controllers
         [HttpPut("cancel/{id}")]
         public async Task<IActionResult> CancelBooking(int id)
         {
-          var result =  await _serviceManager.Booking.CancelBookingAsync(id, trackChanges: true);
+            var result = await _serviceManager.Booking.CancelBookingAsync(id, trackChanges: true);
             return Ok(result);
         }
     }
