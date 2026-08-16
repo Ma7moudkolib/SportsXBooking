@@ -1,8 +1,9 @@
-using Application.Mapping;
+﻿using Application.Mapping;
 using Application.ServiceInterfaces;
 using Domain.Entities;
 using Infrastructure.DatabaseContext;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Presentation.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -37,5 +38,21 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<RepositoryContext>();
 
+        if (context.Database.GetPendingMigrations().Any())
+        {
+            await context.Database.MigrateAsync();
+        }
+    }
+    catch (Exception ex)
+    {
+        logger.LogError($"An error occurred while migrating the database: {ex.Message}");
+    }
+}
 app.Run();
