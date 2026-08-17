@@ -268,7 +268,7 @@
   }
 
   .hero-section {
-    @apply relative overflow-hidden bg-gradient-to-br from-primary via-primary to-primary/90 py-20 text-white;
+    @apply relative overflow-hidden shadow-sm shadow-stone-400 bg-gradient-to-br from-primary via-primary/95 to-primary/85 py-20 text-white;
   }
 
   .hero-section::before {
