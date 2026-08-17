@@ -85,7 +85,7 @@ namespace Application.Services
             var token = CreateToken(existingUser);
             var userDto = new GetUserDto
             {
-                UserId = existingUser.Id,
+                Id = existingUser.Id,
                 FirstName = existingUser.FirstName,
                 LastName = existingUser.LastName,
                 Email = existingUser.Email!,

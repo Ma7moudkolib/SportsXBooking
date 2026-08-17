@@ -36,6 +36,7 @@ namespace Application.Services
             if (!usersEntities.Any())
                 throw new NotFoundException("No users found");
             var usersDto = _mapper.Map<IEnumerable<GetUserDto>>(usersEntities);
+            
             return usersDto;
         }
 
