@@ -24,7 +24,7 @@ export class PlaygroundGalleryComponent implements OnInit {
 
   filtered = computed(() => {
     let pgs = this.allPlaygrounds();
-    console.log(this.searchQuery().trim());
+
     if (this.searchQuery().trim()) {
       const q = this.searchQuery().toLowerCase();
       pgs = pgs.filter(p => p.name.toLowerCase().includes(q) || p.location.toLowerCase().includes(q));

@@ -22,7 +22,7 @@ export class AuthService {
   });
 
   private _loadUser(): User | null {
-    console.log(localStorage.getItem('sx_user'));
+
     try { return JSON.parse(localStorage.getItem('sx_user') ?? 'null'); }
     catch { return null; }
   }
