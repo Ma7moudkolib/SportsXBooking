@@ -12,6 +12,8 @@ import { ToastContainerComponent } from '../toast-container/toast-container.comp
 export class NavbarComponent {
   auth = inject(AuthService);
   private scrolled = signal(false);
+    // inside your component class
+  isMobileMenuOpen = signal(false);
 
   navbarClasses = computed(() => {
     if (this.scrolled()) {
@@ -25,6 +27,15 @@ export class NavbarComponent {
   onWindowScroll() {
     this.scrolled.set(window.scrollY > 16);
   }
+
+
+toggleMobileMenu() {
+  this.isMobileMenuOpen.update(v => !v);
+}
+
+closeMobileMenu() {
+  this.isMobileMenuOpen.set(false);
+}
 
   logout() {
     this.auth.logout();

@@ -1,54 +1,137 @@
 <header
-      class="fixed inset-x-0 top-0 z-[1000] h-18 border-b transition-all duration-300"
-      [ngClass]="navbarClasses()"
-    >
-      <div class="container flex h-full items-center justify-between">
-        <a routerLink="/" class="font-display text-xl font-extrabold tracking-tight text-secondary">
-          Sports<span class="text-accent">X</span>Booking
-        </a>
+  class="fixed inset-x-0 top-0 z-[1000] h-18 border-b transition-all duration-300"
+  [ngClass]="navbarClasses()"
+>
+  <div class="container flex h-full items-center justify-between">
+    <!-- Brand name: always visible, every device -->
+    <a routerLink="/" class="font-display text-xl font-extrabold tracking-tight text-secondary">
+      Sports<span class="text-accent">X</span>Booking
+    </a>
 
-        <nav class="flex items-center gap-3 md:gap-6" role="navigation">
+    <!-- Desktop nav: hidden on mobile + tablet, shown from lg (1024px) up -->
+    <nav class="hidden items-center gap-3 lg:flex lg:gap-6" role="navigation">
+      <a
+        routerLink="/"
+        routerLinkActive="text-accent border-accent"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="border-b-2 border-transparent pb-1 text-sm font-medium text-slate-100 transition hover:text-secondary"
+      >Playgrounds</a>
+
+      @if (auth.isAuthenticated()) {
+        <a
+          routerLink="/my-bookings"
+          routerLinkActive="text-accent border-accent"
+          class="border-b-2 border-transparent pb-1 text-sm font-medium text-slate-100 transition hover:text-secondary"
+        >My Bookings</a>
+
+        @if (auth.isOwnerOrAdmin()) {
           <a
-            routerLink="/"
+            routerLink="/management/playgrounds"
             routerLinkActive="text-accent border-accent"
-            [routerLinkActiveOptions]="{ exact: true }"
             class="border-b-2 border-transparent pb-1 text-sm font-medium text-slate-100 transition hover:text-secondary"
-          >Playgrounds</a>
+          >Manage</a>
+        }
 
-          @if (auth.isAuthenticated()) {
-            <a
-              routerLink="/my-bookings"
-              routerLinkActive="text-accent border-accent"
-              class="border-b-2 border-transparent pb-1 text-sm font-medium text-slate-100 transition hover:text-secondary"
-            >My Bookings</a>
+        @if (auth.userRole() === 'Admin') {
+          <a
+            routerLink="/management/users"
+            routerLinkActive="text-accent border-accent"
+            class="border-b-2 border-transparent pb-1 text-sm font-medium text-slate-100 transition hover:text-secondary"
+          >Admin</a>
+        }
 
-            @if (auth.isOwnerOrAdmin()) {
-              <a
-                routerLink="/management/playgrounds"
-                routerLinkActive="text-accent border-accent"
-                class="border-b-2 border-transparent pb-1 text-sm font-medium text-slate-100 transition hover:text-secondary"
-              >Manage</a>
-            }
+        <div class="flex items-center gap-3 border-l border-slate-300/40 pl-4">
+          <span class="text-sm font-semibold text-secondary">{{ auth.currentUser()?.lastName }}</span>
+          <span class="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-primary">{{ auth.userRole() }}</span>
+          <button class="btn btn-secondary btn-sm" (click)="logout()">Logout</button>
+        </div>
+      } @else {
+        <a routerLink="/login" class="btn btn-secondary btn-sm">Login</a>
+        <a routerLink="/register" class="btn btn-primary btn-sm">Sign Up</a>
+      }
+    </nav>
 
-            @if (auth.userRole() === 'Admin') {
-              <a
-                routerLink="/management/users"
-                routerLinkActive="text-accent border-accent"
-                class="border-b-2 border-transparent pb-1 text-sm font-medium text-slate-100 transition hover:text-secondary"
-              >Admin</a>
-            }
+    <!-- Hamburger: shown on mobile + tablet, hidden from lg up -->
+    <button
+      type="button"
+      class="flex h-10 w-10 items-center justify-center lg:hidden"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="isMobileMenuOpen()"
+      aria-label="Toggle navigation menu"
+    >
+      <span class="relative block h-4 w-6">
+        <span
+          class="absolute left-0 top-0 block h-0.5 w-6 rounded-full bg-slate-100 transition-all duration-300"
+          [ngClass]="isMobileMenuOpen() ? 'top-1/2 -translate-y-1/2 rotate-45' : ''"
+        ></span>
+        <span
+          class="absolute left-0 top-1/2 block h-0.5 w-6 -translate-y-1/2 rounded-full bg-slate-100 transition-all duration-300"
+          [ngClass]="isMobileMenuOpen() ? 'opacity-0' : 'opacity-100'"
+        ></span>
+        <span
+          class="absolute bottom-0 left-0 block h-0.5 w-6 rounded-full bg-slate-100 transition-all duration-300"
+          [ngClass]="isMobileMenuOpen() ? 'top-1/2 -translate-y-1/2 -rotate-45' : ''"
+        ></span>
+      </span>
+    </button>
+  </div>
 
-            <div class="hidden items-center gap-3 border-l border-slate-300/40 pl-4 sm:flex">
-              <span class="text-sm font-semibold text-secondary">{{ auth.currentUser()?.lastName }}</span>
-              <span class="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-primary">{{ auth.userRole() }}</span>
-              <button class="btn btn-secondary btn-sm" (click)="logout()">Logout</button>
-            </div>
-          } @else {
-            <a routerLink="/login" class="btn btn-secondary btn-sm">Login</a>
-            <a routerLink="/register" class="btn btn-primary btn-sm">Sign Up</a>
-          }
-        </nav>
-      </div>
-    </header>
+  <!-- Mobile/tablet dropdown panel: hidden from lg up -->
+  <nav
+    class="overflow-hidden border-b transition-all duration-300 lg:hidden"
+    [ngClass]="[navbarClasses(), isMobileMenuOpen() ? 'max-h-[26rem] opacity-100' : 'max-h-0 opacity-0 border-b-0']"
+    role="navigation"
+  >
+    <div class="container flex flex-col gap-1 py-3">
+      <a
+        routerLink="/"
+        routerLinkActive="text-accent border-accent bg-slate-100/5"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="closeMobileMenu()"
+        class="rounded-md border-l-2 border-transparent px-3 py-2.5 text-sm font-medium text-slate-100 transition hover:text-secondary"
+      >Playgrounds</a>
 
-    <app-toast-container />
+      @if (auth.isAuthenticated()) {
+        <a
+          routerLink="/my-bookings"
+          routerLinkActive="text-accent border-accent bg-slate-100/5"
+          (click)="closeMobileMenu()"
+          class="rounded-md border-l-2 border-transparent px-3 py-2.5 text-sm font-medium text-slate-100 transition hover:text-secondary"
+        >My Bookings</a>
+
+        @if (auth.isOwnerOrAdmin()) {
+          <a
+            routerLink="/management/playgrounds"
+            routerLinkActive="text-accent border-accent bg-slate-100/5"
+            (click)="closeMobileMenu()"
+            class="rounded-md border-l-2 border-transparent px-3 py-2.5 text-sm font-medium text-slate-100 transition hover:text-secondary"
+          >Manage</a>
+        }
+
+        @if (auth.userRole() === 'Admin') {
+          <a
+            routerLink="/management/users"
+            routerLinkActive="text-accent border-accent bg-slate-100/5"
+            (click)="closeMobileMenu()"
+            class="rounded-md border-l-2 border-transparent px-3 py-2.5 text-sm font-medium text-slate-100 transition hover:text-secondary"
+          >Admin</a>
+        }
+
+        <div class="mt-2 flex items-center justify-between gap-3 border-t border-slate-300/40 px-3 pt-3">
+          <div class="flex items-center gap-2">
+            <span class="text-sm font-semibold text-secondary">{{ auth.currentUser()?.lastName }}</span>
+            <span class="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-primary">{{ auth.userRole() }}</span>
+          </div>
+          <button class="btn btn-secondary btn-sm" (click)="logout(); closeMobileMenu()">Logout</button>
+        </div>
+      } @else {
+        <div class="mt-2 flex flex-col gap-2 border-t border-slate-300/40 px-3 pt-3">
+          <a routerLink="/login" (click)="closeMobileMenu()" class="btn btn-secondary btn-sm w-full text-center">Login</a>
+          <a routerLink="/register" (click)="closeMobileMenu()" class="btn btn-primary btn-sm w-full text-center">Sign Up</a>
+        </div>
+      }
+    </div>
+  </nav>
+</header>
+
+<app-toast-container />
