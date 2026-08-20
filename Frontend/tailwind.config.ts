@@ -9,7 +9,8 @@ const config: Config = {
         DEFAULT: '1rem',
         sm: '1.25rem',
         lg: '1.5rem',
-        xl: '2rem'
+        xl: '2rem',
+        xs:'480px'
       }
     },
     extend: {
