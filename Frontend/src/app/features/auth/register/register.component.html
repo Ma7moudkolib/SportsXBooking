@@ -1,86 +1,176 @@
- <div class="auth-layout">
-      <div class="surface-card mt-20 mb-20 w-full max-w-[620px] rounded-2xl p-10">
-        <div class="mb-8">
-          <a routerLink="/" class="font-display text-xl font-extrabold tracking-tight text-primary">Sports<span class="text-accent">X</span>Booking</a>
-          <h1 class="mb-1 mt-4 text-4xl">Create Account</h1>
-          <p class="text-muted">Join thousands of athletes and venue owners.</p>
+<div class="grid min-h-[screen] w-full lg:grid-cols-2">
+
+  <!-- ================= LEFT: HERO PANEL ================= -->
+  <aside class="relative hidden overflow-hidden bg-ink lg:block">
+    <img
+      src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1600&auto=format&fit=crop"
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover opacity-40"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/40"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-ink/20 via-transparent to-ink/60"></div>
+
+    <!-- Vertical bg type: hidden until there's room for it, scales with panel width -->
+    <span
+      class="pointer-events-none absolute left-4 top-0 hidden select-none font-display font-black leading-[0.8] tracking-tighter text-white/5 xl:block xl:text-[7rem] 2xl:left-6 2xl:text-[9rem]"
+      style="writing-mode: vertical-rl;"
+    >PERFORMANCE DATA</span>
+
+    <div class="relative flex h-full flex-col justify-center p-8 xl:p-12 2xl:p-16">
+      <!-- <a routerLink="/" class="font-display text-lg font-extrabold tracking-tight text-white xl:text-xl">
+        Sports<span class="text-accent">X</span>Booking
+      </a> -->
+
+      <div class="max-w-sm xl:max-w-md ">
+        <div class="mb-4 flex items-center gap-3 xl:mb-6">
+          <span class="h-px w-8 bg-accent"></span>
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-accent">Est. 2026</span>
         </div>
 
-        <form [formGroup]="form" (ngSubmit)="submit()" id="register-form">
-          <div class="mb-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div>
-              <label class="form-label" for="reg-firstName">First Name</label>
-              <div class="group rounded-xl border border-slate-300 bg-white/90 px-3 py-2 transition focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/25">
-                <input id="reg-firstName" type="text" formControlName="firstName" class="w-full border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none" placeholder="John" />
-              </div>
-              @if (form.get('firstName')?.invalid && form.get('firstName')?.touched) {
-                <p class="mt-1.5 text-xs text-rose-700">First name is required.</p>
-              }
-            </div>
+        <h2 class="font-display text-4xl font-black uppercase leading-[0.95] tracking-tight text-white xl:text-5xl 2xl:text-6xl">
+          Own the<br />
+          <span class="text-accent">Court.</span>
+        </h2>
 
-            <div>
-              <label class="form-label" for="reg-lastName">Last Name</label>
-              <div class="group rounded-xl border border-slate-300 bg-white/90 px-3 py-2 transition focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/25">
-                <input id="reg-lastName" type="text" formControlName="lastName" class="w-full border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none" placeholder="Smith" />
-              </div>
-              @if (form.get('lastName')?.invalid && form.get('lastName')?.touched) {
-                <p class="mt-1.5 text-xs text-rose-700">Last name is required.</p>
-              }
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="reg-email">Email Address</label>
-            <div class="group rounded-xl border border-slate-300 bg-white/90 px-3 py-2 transition focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/25">
-              <input id="reg-email" type="email" formControlName="email" class="w-full border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none" placeholder="you@example.com" autocomplete="email" />
-            </div>
-            @if (form.get('email')?.invalid && form.get('email')?.touched) {
-              <p class="mt-1.5 text-xs text-rose-700">A valid email is required.</p>
-            }
-          </div>
-
-           <div class="form-group">
-            <label class="form-label" for="reg-phone">Phone Number</label>
-            <div class="group rounded-xl border border-slate-300 bg-white/90 px-3 py-2 transition focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/25">
-              <input id="reg-phone" type="text" formControlName="phone" class="w-full border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none" placeholder="01234567891" autocomplete="phone" />
-            </div>
-            @if (form.get('phone')?.invalid && form.get('phone')?.touched) {
-              <p class="mt-1.5 text-xs text-rose-700">A valid phone number is required.</p>
-            }
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="reg-role">Account Type</label>
-            <div class="group rounded-xl border border-slate-300 bg-white/90 px-3 py-2 transition focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/25">
-              <select id="reg-role" formControlName="role" class="w-full cursor-pointer border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none">
-                <option value="Player">Player / Athlete</option>
-                <option value="Owner">Venue Owner</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="reg-password">Password</label>
-            <div class="group rounded-xl border border-slate-300 bg-white/90 px-3 py-2 transition focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/25">
-              <input id="reg-password" type="password" formControlName="password" class="w-full border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none" placeholder="Min. 8 characters" autocomplete="new-password" />
-            </div>
-            @if (form.get('password')?.invalid && form.get('password')?.touched) {
-              <p class="mt-1.5 text-xs text-rose-700">Password must be at least 8 characters.</p>
-            }
-          </div>
-
-          @if (error()) {
-            <div class="alert alert-error mb-4">{{ error() }}</div>
-          }
-
-          <button id="register-submit" type="submit" class="btn btn-primary btn-full btn-lg" [disabled]="loading()">
-            {{ loading() ? 'Creating Account...' : 'Create Account' }}
-          </button>
-        </form>
-
-        <div class="divider"></div>
-        <p class="text-center text-sm text-muted">
-          Already have an account? <a routerLink="/login" class="font-semibold text-accent">Log in</a>
+        <p class="mt-4 border-l-2 border-accent/40 pl-4 text-sm leading-relaxed text-white/70 xl:mt-6 xl:text-base">
+          The next generation of sports management. Book venues, host tournaments,
+          and track professional analytics with editorial precision.
         </p>
       </div>
     </div>
+  </aside>
+
+  <!-- ================= RIGHT: FORM PANEL ================= -->
+  <div class="flex items-center justify-center bg-surface px-4 py-8 sm:px-8 sm:py-12 lg:px-10 xl:px-16 mt-20 ">
+    <div class="w-full max-w-md">
+
+       <!-- Mobile-only logo -->
+      <a routerLink="/" class="font-display text-lg font-extrabold tracking-tight text-primary sm:text-xl lg:hidden">
+        Sports<span class="text-accent">X</span>Booking
+      </a>
+
+      <div class="mb-6 mt-5 sm:mb-8 sm:mt-6 lg:mt-0">
+        <h1 class="mb-1 font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">Create your account</h1>
+        <p class="text-sm text-muted sm:text-base">Join the elite network of players and owners.</p>
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="submit()" id="register-form">
+
+        <!-- Role toggle -->
+        <div class="form-group mb-4 sm:mb-5">
+          <label class="form-label mb-2 block">Select Your Role</label>
+          <div class="grid grid-cols-2 gap-2.5 sm:gap-3">
+            <label
+              class="flex cursor-pointer items-center justify-center gap-2 rounded-xl border py-2.5 text-xs font-semibold transition sm:py-3 sm:text-sm"
+              [ngClass]="form.get('role')?.value === 'Player'
+                ? 'border-accent bg-white text-ink shadow-sm'
+                : 'border-slate-200 bg-slate-100/60 text-muted hover:border-slate-300'"
+            >
+              <input type="radio" formControlName="role" value="Player" class="sr-only" />
+              <span aria-hidden="true">🏃</span> Player
+            </label>
+
+            <label
+              class="flex cursor-pointer items-center justify-center gap-2 rounded-xl border py-2.5 text-xs font-semibold transition sm:py-3 sm:text-sm"
+              [ngClass]="form.get('role')?.value === 'Owner'
+                ? 'border-accent bg-white text-ink shadow-sm'
+                : 'border-slate-200 bg-slate-100/60 text-muted hover:border-slate-300'"
+            >
+              <input type="radio" formControlName="role" value="Owner" class="sr-only" />
+              <span aria-hidden="true">🏟️</span> Owner
+            </label>
+          </div>
+        </div>
+
+        <!-- Name -->
+        <div class="mb-4 grid grid-cols-1 gap-3 xs:grid-cols-2 sm:mb-5 sm:gap-4">
+          <div>
+            <label class="form-label" for="reg-firstName">First Name</label>
+            <div class="group rounded-xl border border-slate-200 bg-slate-100/60 px-3 py-2 transition focus-within:border-accent focus-within:bg-white focus-within:ring-2 focus-within:ring-accent/25">
+              <input id="reg-firstName" type="text" formControlName="firstName" class="w-full border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none placeholder:text-muted/60" placeholder="John" />
+            </div>
+            @if (form.get('firstName')?.invalid && form.get('firstName')?.touched) {
+              <p class="mt-1.5 text-xs text-rose-700">First name is required.</p>
+            }
+          </div>
+
+          <div>
+            <label class="form-label" for="reg-lastName">Last Name</label>
+            <div class="group rounded-xl border border-slate-200 bg-slate-100/60 px-3 py-2 transition focus-within:border-accent focus-within:bg-white focus-within:ring-2 focus-within:ring-accent/25">
+              <input id="reg-lastName" type="text" formControlName="lastName" class="w-full border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none placeholder:text-muted/60" placeholder="Doe" />
+            </div>
+            @if (form.get('lastName')?.invalid && form.get('lastName')?.touched) {
+              <p class="mt-1.5 text-xs text-rose-700">Last name is required.</p>
+            }
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label class="form-label" for="reg-email">Email Address</label>
+          <div class="group rounded-xl border border-slate-200 bg-slate-100/60 px-3 py-2 transition focus-within:border-accent focus-within:bg-white focus-within:ring-2 focus-within:ring-accent/25">
+            <input id="reg-email" type="email" formControlName="email" class="w-full border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none placeholder:text-muted/60" placeholder="john@example.com" autocomplete="email" />
+          </div>
+          @if (form.get('email')?.invalid && form.get('email')?.touched) {
+            <p class="mt-1.5 text-xs text-rose-700">A valid email is required.</p>
+          }
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+          <label class="form-label" for="reg-phone">Phone Number</label>
+          <div class="group rounded-xl border border-slate-200 bg-slate-100/60 px-3 py-2 transition focus-within:border-accent focus-within:bg-white focus-within:ring-2 focus-within:ring-accent/25">
+            <input id="reg-phone" type="text" formControlName="phone" class="w-full border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none placeholder:text-muted/60" placeholder="01234567891" autocomplete="tel" />
+          </div>
+          @if (form.get('phone')?.invalid && form.get('phone')?.touched) {
+            <p class="mt-1.5 text-xs text-rose-700">A valid phone number is required.</p>
+          }
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label class="form-label" for="reg-password">Password</label>
+          <div class="group rounded-xl border border-slate-200 bg-slate-100/60 px-3 py-2 transition focus-within:border-accent focus-within:bg-white focus-within:ring-2 focus-within:ring-accent/25">
+            <input id="reg-password" type="password" formControlName="password" class="w-full border-none bg-transparent px-1 py-1.5 text-sm text-ink outline-none placeholder:text-muted/60" placeholder="Min. 8 characters" autocomplete="new-password" />
+          </div>
+          @if (form.get('password')?.invalid && form.get('password')?.touched) {
+            <p class="mt-1.5 text-xs text-rose-700">Password must be at least 8 characters.</p>
+          }
+        </div>
+
+        <!-- Terms -->
+        <label class="mb-4 mt-1 flex cursor-pointer items-start gap-2.5 sm:mb-5">
+          <input type="checkbox" formControlName="agreeToTerms" class="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 text-accent focus:ring-accent/40" />
+          <span class="text-xs text-muted sm:text-sm">
+            By registering, you agree to our
+            <a href="#" class="font-semibold text-ink underline hover:text-accent">Terms of Service</a>
+            and
+            <a href="#" class="font-semibold text-ink underline hover:text-accent">Privacy Policy</a>.
+          </span>
+        </label>
+
+        @if (error()) {
+          <div class="alert alert-error mb-4">{{ error() }}</div>
+        }
+
+        <button id="register-submit" type="submit" class="btn btn-primary btn-full btn-lg" [disabled]="loading()">
+          {{ loading() ? 'Creating Account...' : 'Create Account' }}
+        </button>
+      </form>
+
+      <div class="divider my-5 sm:my-6"></div>
+
+      <p class="text-center text-sm text-muted">
+        Already have an account? <a routerLink="/login" class="font-semibold text-accent">Sign In</a>
+      </p>
+
+      <div class="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[11px] font-medium uppercase tracking-wide text-muted/70 sm:mt-6">
+        <a href="#" class="hover:text-ink">Help Center</a>
+        <span class="hidden xs:inline">·</span>
+        <a href="#" class="hover:text-ink">Safety</a>
+        <span class="hidden xs:inline">·</span>
+        <a href="#" class="hover:text-ink">Partnerships</a>
+      </div>
+    </div>
+  </div>
+</div>
