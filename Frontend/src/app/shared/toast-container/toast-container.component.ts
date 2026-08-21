@@ -7,7 +7,7 @@ import { ToastService } from '../../core/services/toast.service';
   template: `
     <div class="toast-container" role="status" aria-live="polite">
       @for (toast of toastService.toasts(); track toast.id) {
-        <div class="toast" [class]="'toast-' + toast.type">
+        <div class="toast toast-success" [class]="'toast-' + toast.type" >
           <span>{{ toast.type === 'success' ? '✓' : '✕' }}</span>
           {{ toast.message }}
         </div>

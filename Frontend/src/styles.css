@@ -212,7 +212,7 @@
   }
 
   .toast-success {
-    @apply bg-primary text-secondary;
+    @apply bg-secondary text-accent;
   }
 
   .toast-error {
