@@ -40,6 +40,16 @@ export interface Playground {
   imageUrl: string;
   sport?: string;
 }
+export interface CreatePlayground {
+  id: string;
+  name: string;
+  location: string;
+  pricePerHour: number;
+  ownerId: string;
+  description: string;
+  imageFile: File;
+  sport?: string;
+}
 
 export interface Review {
   id: string;

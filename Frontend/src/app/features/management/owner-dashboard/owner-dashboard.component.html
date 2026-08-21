@@ -22,6 +22,54 @@
           <div class="surface-card p-6 mb-8">
             <h3 class="mb-6">{{ editing() ? 'Edit Playground' : 'Add New Venue' }}</h3>
             <form [formGroup]="form" (ngSubmit)="submitForm()" id="create-playground-form">
+
+              <!-- Image upload -->
+              <div class="form-group">
+                <label class="form-label">Venue Photo</label>
+
+                <input
+                  #fileInput
+                  id="pg-image"
+                  type="file"
+                  accept="image/png, image/jpeg, image/webp"
+                  class="hidden"
+                  (change)="onImageSelected($event)"
+                />
+
+                @if (imagePreview()) {
+                  <!-- Preview state -->
+                  <div class="group relative overflow-hidden rounded-xl border border-slate-300">
+                    <img [src]="imagePreview()" alt="Venue preview" class="h-48 w-full object-cover sm:h-56" />
+                    <div class="absolute inset-0 flex items-center justify-center gap-2 bg-ink/60 opacity-0 transition-opacity group-hover:opacity-100">
+                      <button type="button" class="btn btn-secondary btn-sm" (click)="fileInput.click()">Change</button>
+                      <button type="button" class="btn btn-sm bg-white/90 text-rose-700 hover:bg-white" (click)="removeImage()">Remove</button>
+                    </div>
+                  </div>
+                } @else {
+                  <!-- Empty dropzone state -->
+                  <div
+                    class="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-slate-300 bg-white/60 px-4 py-10 text-center transition hover:border-accent hover:bg-accent/5"
+                    (click)="fileInput.click()"
+                    (dragover)="onDragOver($event)"
+                    (dragleave)="onDragLeave($event)"
+                    (drop)="onImageDrop($event)"
+                    [ngClass]="isDragging() ? 'border-accent bg-accent/5' : ''"
+                  >
+                    <svg class="h-8 w-8 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
+                    </svg>
+                    <p class="text-sm font-medium text-ink">
+                      <span class="font-semibold text-accent">Click to upload</span> or drag and drop
+                    </p>
+                    <p class="text-xs text-muted">PNG, JPG or WEBP (max. 5MB)</p>
+                  </div>
+                }
+
+                @if (imageError()) {
+                  <p class="mt-1.5 text-xs text-rose-700">{{ imageError() }}</p>
+                }
+              </div>
+
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="pg-name">Venue Name</label>
