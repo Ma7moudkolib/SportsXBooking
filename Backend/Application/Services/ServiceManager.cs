@@ -2,6 +2,7 @@
 using Application.ServiceInterfaces;
 using AutoMapper;
 using Domain.Entities;
+using Domain.RepositoryInterfaces;
 using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -20,13 +21,13 @@ namespace Application.Services
         private readonly Lazy<IPaymentService> _paymentService;
         private readonly Lazy<IAuthenticationService> _authenticationService;
 
-        public ServiceManager(IRepositoryManager repositoryManager,UserManager<User> userManager , IMapper mapper,ILoggerManager logger ,IConfiguration configuration )
+        public ServiceManager(IRepositoryManager repositoryManager,UserManager<User> userManager , IMapper mapper,ILoggerManager logger,IFileStorage fileStorage ,IConfiguration configuration )
         {
             _mapper = mapper;
             _repositoryManager = repositoryManager;
             _userManager = userManager;
             _userService = new Lazy<IUserService>(() => new UserService(_repositoryManager, _mapper));
-            _playgroundService = new Lazy<IPlaygroundService>(() => new PlaygroundService(_repositoryManager, _mapper));
+            _playgroundService = new Lazy<IPlaygroundService>(() => new PlaygroundService(_repositoryManager, _mapper,fileStorage));
             _bookingService = new Lazy<IBookingService>(() => new BookingService(_repositoryManager, _mapper));
             _reviewService = new Lazy<IReviewService>(() => new ReviewService(_repositoryManager, _mapper));
             _paymentService = new Lazy<IPaymentService>(() => new PaymentService(_repositoryManager, _mapper));

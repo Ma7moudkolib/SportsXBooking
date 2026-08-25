@@ -4,6 +4,7 @@ using Application.ServiceInterfaces;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Exceptions;
+using Domain.RepositoryInterfaces;
 using Infrastructure.Repositories;
 
 namespace Application.Services
@@ -12,15 +13,19 @@ namespace Application.Services
     {
         private readonly IRepositoryManager _repositoryManager;
         private readonly IMapper _mapper;
-        public PlaygroundService(IRepositoryManager repositoryManager , IMapper mapper)
+        private readonly IFileStorage _fileStorage;
+        public PlaygroundService(IRepositoryManager repositoryManager , IMapper mapper , IFileStorage fileStorage)
         {
             _mapper = mapper;
             _repositoryManager = repositoryManager;
+            _fileStorage = fileStorage;
         }
 
         public async Task<ServiceResponse> CreatePlaygroundAsync(CreatePlaygroundDto createPlayground)
         {
-           var playgroundEntity = _mapper.Map<Playground>(createPlayground);
+            var imageUrl = await _fileStorage.SaveFileAsync(createPlayground.Image, "playgroundImages");
+            var playgroundEntity = _mapper.Map<Playground>(createPlayground);
+            playgroundEntity.ImageUrl = imageUrl;
             _repositoryManager.Playground.CreatePlayground(playgroundEntity);
           await  _repositoryManager.SaveAsync();
           
@@ -32,8 +37,15 @@ namespace Application.Services
            var playground = await _repositoryManager.Playground.GetPlaygroundByIdAsync(id, trackChanges);
             if (playground == null)
                return new ServiceResponse(false, $"Playground with id {id} not found.");
+
+            var imageUrl = playground.ImageUrl;
             _repositoryManager.Playground.DeletePlayground(playground);
             await _repositoryManager.SaveAsync();
+
+            if (!string.IsNullOrEmpty(imageUrl))
+            {
+                _fileStorage.DeleteFile(imageUrl);
+            }
             return new ServiceResponse(true, "Playground deleted successfully");
         }
 
@@ -57,7 +69,7 @@ namespace Application.Services
         {
            var playgrounds =await _repositoryManager.Playground.GetPlaygroundsByOwnerAsync(ownerId, trackChanges);
            if (!playgrounds.Any())
-                throw new NotFoundException($"No playgrounds found for owner with id {ownerId}.");
+                return new List<GetPlaygroundDto>();
             var playgroundsDto = _mapper.Map<IEnumerable<GetPlaygroundDto>>(playgrounds);
             return playgroundsDto;
         }
@@ -66,7 +78,7 @@ namespace Application.Services
         {
             var playgrounds = await _repositoryManager.Playground.SearchAsync(sportType, city, trackChanges);
             if (!playgrounds.Any())
-                throw new NotFoundException($"No playgrounds found for sport type {sportType} in city {city}.");
+                new List<GetPlaygroundDto>();
             var playgroundsDto = _mapper.Map<IEnumerable<GetPlaygroundDto>>(playgrounds);
             return playgroundsDto;
         }

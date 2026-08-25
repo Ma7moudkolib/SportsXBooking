@@ -1,8 +1,10 @@
 ﻿using Application.LoggerService;
 using Application.ServiceInterfaces;
 using Application.Services;
+using Domain.RepositoryInterfaces;
 using Infrastructure.DatabaseContext;
 using Infrastructure.Repositories;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -15,7 +17,9 @@ namespace Presentation.Extensions
         public static void ConfigureCors(this IServiceCollection services) => services.AddCors(options =>
         {
             options.AddPolicy("CorsPolicy", builder =>
-                builder.WithOrigins("http://localhost:4200", "https://localhost:4200")
+                builder.WithOrigins("http://localhost:4200",
+                 "https://localhost:4200",
+                 "https://sports-x-booking.vercel.app")
                 .AllowAnyMethod()
                 .AllowAnyHeader());
         });
@@ -34,7 +38,8 @@ namespace Presentation.Extensions
 
         public static void ConfigureSqlContext(this IServiceCollection services, IConfiguration configuration) =>
            services.AddDbContext<RepositoryContext>(opts => opts.UseSqlServer(configuration.GetConnectionString("sqlConnection")));
-
+        public static void ConfigureFileStorageService(this IServiceCollection services) =>
+            services.AddScoped<IFileStorage, FileStorageService>();
         public static void ConfigureJWT(this IServiceCollection services, IConfiguration configuration)
         {
             var jwtSettings = configuration.GetSection("JwtSettings");
