@@ -7,12 +7,17 @@
         </div>
 
         <button class="sidebar-item active">
-          🏟️ My Playgrounds
+           My Playgrounds
         </button>
         <button class="sidebar-item" (click)="showForm.set(!showForm())">
-          ➕ Add New Venue
+           Add New Venue
         </button>
-        <a routerLink="/" class="sidebar-item">← Back to Gallery</a>
+        <a routerLink="/" class="sidebar-item gap-0.5">
+          <svg class="w-5 h-5 text-gray-800 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+            </svg>
+           Back to Gallery
+          </a>
       </aside>
 
       <!-- Content -->
@@ -115,7 +120,7 @@
           <h2>My Playgrounds <span class="text-muted text-sm">({{ myPlaygrounds().length }})</span></h2>
           @if (!showForm()) {
             <button class="btn btn-primary btn-sm" (click)="showForm.set(true)" id="add-playground-btn">
-              + Add Venue
+               Add Venue
             </button>
           }
         </div>
@@ -124,42 +129,52 @@
           <p class="text-muted">Loading...</p>
         } @else if (myPlaygrounds().length === 0) {
           <div class="surface-card p-8 text-center">
-            <p style="font-size:3rem">🏟️</p>
+            <!-- <p style="font-size:3rem">🏟️</p> -->
             <h4 class="mb-2">No venues yet</h4>
             <p class="text-muted mb-4">Create your first venue to start accepting bookings.</p>
             <button class="btn btn-primary" (click)="showForm.set(true)">Add First Venue</button>
           </div>
         } @else {
-          <div class="pg-table-wrapper">
-            <table class="data-table">
-              <thead>
+         <div class="pg-table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Venue Name</th>
+                <th>Sport</th>
+                <th>Location</th>
+                <th>Price/hr</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (pg of myPlaygrounds(); track pg.id) {
                 <tr>
-                  <th>Venue Name</th>
-                  <th>Sport</th>
-                  <th>Location</th>
-                  <th>Price/hr</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                @for (pg of myPlaygrounds(); track pg.id) {
-                  <tr>
-                    <td class="font-semi">{{ pg.name }}</td>
-                    <td>
-                      <span class="badge" style="background:var(--surface-container);color:var(--on-surface-variant);">
-                        {{ pg.sport }}
-                      </span>
-                    </td>
-                    <td class="text-muted text-sm">{{ pg.location }}</td>
-                    <td class="font-semi" style="color:var(--color-primary-fixed);">{{ pg.pricePerHour }} EGP</td>
-                    <td>
+                  <td class="font-semi">{{ pg.name }}</td>
+                  <td>
+                    <span class="badge" style="background:var(--surface-container);color:var(--on-surface-variant);">
+                      {{ pg.sport }}
+                    </span>
+                  </td>
+                  <td class="text-muted text-sm">{{ pg.location }}</td>
+                  <td class="font-semi" style="color:var(--color-primary-fixed);">{{ pg.pricePerHour }} EGP</td>
+                  <td>
+                    <div class="flex gap-2">
                       <button class="btn btn-secondary btn-sm" (click)="editPlayground(pg)" [id]="'edit-pg-' + pg.id">Edit</button>
-                    </td>
-                  </tr>
-                }
-              </tbody>
-            </table>
-          </div>
+                      <button
+                        class="btn btn-sm bg-rose-50 text-rose-700 hover:bg-rose-100"
+                        (click)="deletePlayground(pg)"
+                        [id]="'delete-pg-' + pg.id"
+                        [disabled]="deletingId() === pg.id"
+                      >
+                        {{ deletingId() === pg.id ? 'Deleting...' : 'Delete' }}
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
         }
       </main>
     </div>

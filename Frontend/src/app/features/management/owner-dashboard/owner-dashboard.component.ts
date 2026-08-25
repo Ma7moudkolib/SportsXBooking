@@ -29,6 +29,7 @@ export class OwnerDashboardComponent implements OnInit {
   imagePreview = signal<string | null>(null);
   imageError = signal<string | null>(null);
   isDragging = signal(false);
+  deletingId = signal<string | null>(null);
 
   private readonly maxFileSizeBytes = 5 * 1024 * 1024; // 5MB
   private readonly allowedTypes = ['image/png', 'image/jpeg', 'image/webp'];
@@ -126,29 +127,48 @@ removeImage(): void {
     this.showForm.set(false);
   }
 
- submitForm() {
-  this.form.markAllAsTouched();
+  submitForm() {
+    this.form.markAllAsTouched();
 
-  if (this.form.invalid) return;
-  this.formLoading.set(true);
-  const editPg = this.editing();
+    if (this.form.invalid) return;
+    this.formLoading.set(true);
+    const editPg = this.editing();
 
-  const obs = editPg
-    ? this.pgService.update(editPg.id, this.form.value)
-    : this.pgService.create(this.form.value);
+    const obs = editPg
+      ? this.pgService.update(editPg.id, this.form.value)
+      : this.pgService.create(this.form.value);
 
-  obs.subscribe({
-    next: () => {
-      this.formLoading.set(false);
-      const ownerId = this.auth.currentUser()?.id ?? 'u_owner1';
-      this.pgService.getByOwner(ownerId).subscribe(pgs => this.myPlaygrounds.set(pgs));
-      this.toast.show(editPg ? 'Venue updated!' : 'Venue created! 🎉', 'success');
-      this.cancelForm();
-    },
-    error: () => {
-      this.formLoading.set(false);
-      this.toast.show('Error saving venue.', 'error');
-    }
-  });
-}
+    obs.subscribe({
+      next: () => {
+        this.formLoading.set(false);
+        const ownerId = this.auth.currentUser()?.id ?? 'u_owner1';
+        this.pgService.getByOwner(ownerId).subscribe(pgs => this.myPlaygrounds.set(pgs));
+        this.toast.show(editPg ? 'Venue updated!' : 'Venue created! 🎉', 'success');
+        this.cancelForm();
+      },
+      error: () => {
+        this.formLoading.set(false);
+        this.toast.show('Error saving venue.', 'error');
+      }
+    });
+  }
+  deletePlayground(pg: Playground): void {
+    const confirmed = confirm(`Delete "${pg.name}"? This can't be undone.`);
+    if (!confirmed) return;
+
+    this.deletingId.set(pg.id);
+
+    this.pgService.delete(pg.id).subscribe({
+      next: () => {
+        this.deletingId.set(null);
+        this.myPlaygrounds.update(list => list.filter(p => p.id !== pg.id));
+        this.toast.show('Venue deleted.', 'success');
+      },
+      error: () => {
+        this.deletingId.set(null);
+        this.toast.show('Error deleting venue.', 'error');
+      }
+    });
+  }
+
 }

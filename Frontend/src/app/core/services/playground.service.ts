@@ -57,4 +57,8 @@ export class PlaygroundService {
     };
     return this.http.put(`${this.apiUrl}/${id}`, payload);
   }
+
+   delete(id: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
 }
