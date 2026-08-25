@@ -5,7 +5,7 @@
             <h1 class="mb-1">My Bookings</h1>
             <p class="text-muted">Manage your upcoming and past reservations.</p>
           </div>
-          <a routerLink="/" class="btn btn-primary btn-action">+ Book a Venue</a>
+          <a routerLink="/" class="btn btn-primary btn-action">Book a Venue</a>
         </div>
 
         <div class="mb-8 grid gap-4 md:grid-cols-3">
@@ -21,7 +21,6 @@
           <div class="text-center text-muted">Loading bookings...</div>
         } @else if (bookings().length === 0) {
           <div class="surface-card p-8 text-center">
-            <p class="mb-4 text-5xl">📅</p>
             <h3 class="mb-2">No bookings yet</h3>
             <p class="mb-6 text-muted">Head to the gallery to find and book your next venue.</p>
             <a routerLink="/" class="btn btn-primary">Browse Playgrounds</a>
@@ -34,7 +33,7 @@
                   <div>
                     <h4 class="mb-1">{{ b.playgroundName }}</h4>
                     <p class="text-sm text-muted">
-                      📅 {{ formatDate(b.startTime) }} — {{ formatTime(b.startTime) }} to {{ formatTime(b.endTime) }}
+                      {{ formatDate(b.startTime) }} — {{ formatTime(b.startTime) }} to {{ formatTime(b.endTime) }}
                     </p>
                   </div>
                   <span [class]="statusBadgeClass(b.status)">{{ b.status }}</span>
