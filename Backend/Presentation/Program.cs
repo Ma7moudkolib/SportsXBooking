@@ -22,6 +22,7 @@ builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddAuthentication();
 builder.Services.ConfigureJWT(builder.Configuration);
+builder.Services.ConfigureFileStorageService();
 builder.Services.AddControllers();
 
 var app = builder.Build();
@@ -30,29 +31,31 @@ app.ConfigureExceptionHandler(logger);
 if (app.Environment.IsProduction())
 {
     app.UseHsts();
+    using (var scope = app.Services.CreateScope())
+    {
+        var services = scope.ServiceProvider;
+        try
+        {
+            var context = services.GetRequiredService<RepositoryContext>();
+
+            if (context.Database.GetPendingMigrations().Any())
+            {
+                await context.Database.MigrateAsync();
+            }
+        }
+        catch (Exception ex)
+        {
+            logger.LogError($"An error occurred while migrating the database: {ex.Message}");
+        }
+    }
+
 }
 
 app.UseHttpsRedirection();
 app.UseCors("CorsPolicy");
+app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-using (var scope = app.Services.CreateScope())
-{
-    var services = scope.ServiceProvider;
-    try
-    {
-        var context = services.GetRequiredService<RepositoryContext>();
-
-        if (context.Database.GetPendingMigrations().Any())
-        {
-            await context.Database.MigrateAsync();
-        }
-    }
-    catch (Exception ex)
-    {
-        logger.LogError($"An error occurred while migrating the database: {ex.Message}");
-    }
-}
 app.Run();

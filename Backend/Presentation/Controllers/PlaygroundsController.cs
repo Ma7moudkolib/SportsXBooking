@@ -37,16 +37,16 @@ namespace Presentation.Controllers
             return Ok(playgrounds);
         }
 
-        [HttpPost]
-        //     [Authorize(Roles = "Owner,Admin")]
-        public async Task<IActionResult> CreatePlayground([FromBody] CreatePlaygroundDto createPlayground)
+        [HttpPost("create")]
+        [Authorize(Roles = "Owner,Admin")]
+        public async Task<IActionResult> CreatePlayground([FromForm] CreatePlaygroundDto createPlayground)
         {
             var playgroundResponse = await _serviceManager.Playground.CreatePlaygroundAsync(createPlayground);
             return Ok(playgroundResponse);
         }
 
         [HttpDelete("{id}")]
-        //     [Authorize(Roles = "Owner,Admin")]
+        [Authorize(Roles = "Owner,Admin")]
         public async Task<IActionResult> DeletePlayground(int id)
         {
             var result = await _serviceManager.Playground.DeletePlaygroundAsync(id, trackChanges: false);
