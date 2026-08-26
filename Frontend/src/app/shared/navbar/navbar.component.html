@@ -46,8 +46,10 @@
           <button class="btn btn-secondary btn-sm" (click)="logout()">Logout</button>
         </div>
       } @else {
-        <a routerLink="/login" class="btn btn-secondary btn-sm">Login</a>
-        <a routerLink="/register" class="btn btn-primary btn-sm">Sign Up</a>
+        @if (!isAuthPage()) {
+          <a routerLink="/login" class="btn btn-secondary btn-sm">Login</a>
+          <a routerLink="/register" class="btn btn-primary btn-sm">Sign Up</a>
+        }
       }
     </nav>
 
@@ -125,10 +127,12 @@
           <button class="btn btn-secondary btn-sm" (click)="logout(); closeMobileMenu()">Logout</button>
         </div>
       } @else {
-        <div class="mt-2 flex flex-col gap-2 border-t border-slate-300/40 px-3 pt-3">
-          <a routerLink="/login" (click)="closeMobileMenu()" class="btn btn-secondary btn-sm w-full text-center">Login</a>
-          <a routerLink="/register" (click)="closeMobileMenu()" class="btn btn-primary btn-sm w-full text-center">Sign Up</a>
-        </div>
+        @if (!isAuthPage()) {
+          <div class="mt-2 flex flex-col gap-2 border-t border-slate-300/40 px-3 pt-3">
+            <a routerLink="/login" (click)="closeMobileMenu()" class="btn btn-secondary btn-sm w-full text-center">Login</a>
+            <a routerLink="/register" (click)="closeMobileMenu()" class="btn btn-primary btn-sm w-full text-center">Sign Up</a>
+          </div>
+        }
       }
     </div>
   </nav>
