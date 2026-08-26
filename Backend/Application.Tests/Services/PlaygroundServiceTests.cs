@@ -13,8 +13,9 @@ namespace Application.Tests.Services
 {
     public class PlaygroundServiceTests
     {
+        private readonly Mock<IFileStorage> _fileStorageMock; 
         private readonly Mock<IRepositoryManager> _repositoryManagerMock;
-        private readonly Mock<IUserRepository> _userRepositoryMock;        // ← NEW
+        private readonly Mock<IUserRepository> _userRepositoryMock;        
         private readonly Mock<IPlaygroundRepository> _playgroundRepositoryMock;
         private readonly Mock<IMapper> _mapperMock;
         private readonly IFixture _fixture;
@@ -23,9 +24,10 @@ namespace Application.Tests.Services
         public PlaygroundServiceTests()
         {
             _repositoryManagerMock = new Mock<IRepositoryManager>();
-            _userRepositoryMock = new Mock<IUserRepository>();            // ← NEW
+            _userRepositoryMock = new Mock<IUserRepository>();           
             _playgroundRepositoryMock = new Mock<IPlaygroundRepository>();
             _mapperMock = new Mock<IMapper>();
+            _fileStorageMock = new Mock<IFileStorage>();
             _fixture = new Fixture();
             _fixture.Behaviors.OfType<ThrowingRecursionBehavior>().ToList()
                 .ForEach(b => _fixture.Behaviors.Remove(b));
@@ -36,7 +38,8 @@ namespace Application.Tests.Services
             .Returns(_playgroundRepositoryMock.Object);
             _sut = new PlaygroundService(
                 _repositoryManagerMock.Object,
-                _mapperMock.Object);
+                _mapperMock.Object,
+                _fileStorageMock.Object);
         }
 
         // #region CreatePlaygroundAsync Tests
