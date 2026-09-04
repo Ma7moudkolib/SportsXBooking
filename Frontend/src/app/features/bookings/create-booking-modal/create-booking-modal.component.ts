@@ -59,7 +59,7 @@ export class CreateBookingModalComponent implements OnInit {
     }).subscribe({
       next: () => {
         this.loading.set(false);
-        this.toast.show('Booking created successfully! 🎉', 'success');
+        this.toast.show('Booking created successfully! ', 'success');
         this.close.emit();
       },
       error: () => {

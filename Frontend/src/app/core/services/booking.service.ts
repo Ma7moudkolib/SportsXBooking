@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, map, switchMap } from 'rxjs';
-import { Booking } from '../../models/types';
+import { Booking, OwnerBooking, OwnerBookingFilters, PlaygroundAnalytics } from '../../models/types';
 import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
@@ -49,5 +49,25 @@ export class BookingService {
 
   cancel(id: string): Observable<any> {
     return this.http.put(`${this.apiUrl}/cancel/${id}`, {});
+  }
+
+  getOwnerBookings(filters?: OwnerBookingFilters): Observable<OwnerBooking[]> {
+    let params = new HttpParams();
+    if (filters?.playgroundId) params = params.set('playgroundId', String(filters.playgroundId));
+    if (filters?.status) params = params.set('status', filters.status);
+    if (filters?.date) params = params.set('date', filters.date);
+    return this.http.get<OwnerBooking[]>(`${this.apiUrl}/owner`, { params });
+  }
+
+  getOwnerBookingDetails(id: number): Observable<OwnerBooking> {
+    return this.http.get<OwnerBooking>(`${this.apiUrl}/owner/${id}`);
+  }
+
+  confirmBooking(id: number): Observable<any> {
+    return this.http.put(`${this.apiUrl}/owner/confirm/${id}`, {});
+  }
+
+  getOwnerAnalytics(): Observable<PlaygroundAnalytics> {
+    return this.http.get<PlaygroundAnalytics>(`${this.apiUrl}/owner/analytics`);
   }
 }

@@ -1,6 +1,7 @@
 export type UserRole = 'Guest' | 'User' | 'Player' | 'Owner' | 'Admin';
 export type BookingStatus = 'Confirmed' | 'Pending' | 'Cancelled';
 export type PaymentStatus = 'Completed' | 'Failed' | 'Refunded';
+export type DashboardTab = 'playgrounds' | 'bookings' | 'analytics';
 
 export interface UserForLoginDto {
   email: string;
@@ -78,4 +79,53 @@ export interface Payment {
   amount: number;
   status: PaymentStatus;
   transactionDate: string;
+}
+
+export interface OwnerBooking {
+  bookingId: number;
+  playerId: number;
+  customerName: string;
+  customerEmail: string;
+  playgroundId: number;
+  playgroundName: string;
+  bookingDate: string;
+  startTime: string;
+  endTime: string;
+  totalPrice: number;
+  status: string;
+  createdAt: string;
+}
+
+export interface OwnerBookingFilters {
+  playgroundId?: number;
+  status?: string;
+  date?: string;
+}
+
+export interface PlaygroundPerformance {
+  playgroundId: number;
+  playgroundName: string;
+  sportType: string;
+  totalBookings: number;
+  confirmedBookings: number;
+  cancelledBookings: number;
+  revenue: number;
+}
+
+export interface BookingsByMonth {
+  month: string;
+  count: number;
+  revenue: number;
+}
+
+export interface PlaygroundAnalytics {
+  totalBookings: number;
+  confirmedBookings: number;
+  pendingBookings: number;
+  cancelledBookings: number;
+  cancellationRate: number;
+  totalRevenue: number;
+  confirmedRevenue: number;
+  playgroundStats: PlaygroundPerformance[];
+  bookingsByMonth: BookingsByMonth[];
 }
