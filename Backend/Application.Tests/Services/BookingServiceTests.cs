@@ -5,6 +5,7 @@ using AutoFixture;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Exceptions;
+using Domain.RepositoryInterfaces;
 using Infrastructure.Repositories;
 using Moq;
 
@@ -13,6 +14,7 @@ namespace Application.Tests.Services
     public class BookingServiceTests
     {
         private readonly Mock<IRepositoryManager> _repositoryManagerMock;
+        private readonly Mock<IPlaygroundRepository> _playgroundRepositoryMock;
         private readonly Mock<IMapper> _mapperMock;
         private readonly IFixture _fixture;
         private readonly BookingService _sut;
@@ -20,11 +22,14 @@ namespace Application.Tests.Services
         public BookingServiceTests()
         {
             _repositoryManagerMock = new Mock<IRepositoryManager>();
+            _playgroundRepositoryMock = new Mock<IPlaygroundRepository>();
             _mapperMock = new Mock<IMapper>();
             _fixture = new Fixture();
             _fixture.Behaviors.OfType<ThrowingRecursionBehavior>().ToList()
                 .ForEach(b => _fixture.Behaviors.Remove(b));
             _fixture.Behaviors.Add(new OmitOnRecursionBehavior());
+            _repositoryManagerMock.Setup(r => r.Playground)
+                .Returns(_playgroundRepositoryMock.Object);
             _sut = new BookingService(
                 _repositoryManagerMock.Object,
                 _mapperMock.Object);
@@ -90,18 +95,18 @@ namespace Application.Tests.Services
             };
 
             var bookingEntity = _fixture.Create<Booking>();
-            var bookingDto = _fixture.Create<GetBookingDto>();
+            var playground = _fixture.Create<Playground>();
 
             _repositoryManagerMock.Setup(r => r.Booking
                 .IsTimeSlotAvailable(createBooking.PlaygroundId, createBooking.BookingDate, 
                     createBooking.StartTime, createBooking.EndTime))
                 .ReturnsAsync(true);
 
+            _playgroundRepositoryMock.Setup(r => r.GetPlaygroundByIdAsync(createBooking.PlaygroundId, false))
+                .ReturnsAsync(playground);
+
             _mapperMock.Setup(m => m.Map<Booking>(createBooking))
                 .Returns(bookingEntity);
-
-            _mapperMock.Setup(m => m.Map<GetBookingDto>(bookingEntity))
-                .Returns(bookingDto);
 
             _repositoryManagerMock.Setup(r => r.SaveAsync())
                 .Returns(Task.CompletedTask);

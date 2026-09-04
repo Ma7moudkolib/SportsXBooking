@@ -27,10 +27,14 @@ namespace Infrastructure.Repositories
 
         public async Task<bool> IsTimeSlotAvailable(int playgroundId, DateTime date, TimeSpan start, TimeSpan end)
         {
-            var booking = FindByCondition(b => b.PlaygroundId == playgroundId && b.BookingDate == date &&
-           ((b.EndTime == end || b.StartTime == start)), false);
-            return await booking.AnyAsync() ? false : true;
-
+            var hasOverlap = await FindByCondition(
+                b => b.PlaygroundId == playgroundId
+                  && b.BookingDate == date
+                  && b.Status != "Cancelled"
+                  && start < b.EndTime
+                  && end > b.StartTime,
+                trackChanges: false).AnyAsync();
+            return !hasOverlap;
         }
     }
 }

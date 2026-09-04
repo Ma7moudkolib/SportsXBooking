@@ -4,6 +4,7 @@ using Application.ServiceInterfaces;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Exceptions;
+using Domain.RepositoryInterfaces;
 using Infrastructure.Repositories;
 
 namespace Application.Services
@@ -37,11 +38,17 @@ namespace Application.Services
             if (!isAvailable)
                 throw new Exception("The selected time slot is not available for booking.");
 
+            var playground = await _repositoryManager.Playground.GetPlaygroundByIdAsync(createBooking.PlaygroundId, trackChanges: false);
+            if (playground is null)
+                throw new NotFoundException($"Playground with id {createBooking.PlaygroundId} not found.");
+
+            var duration = createBooking.EndTime - createBooking.StartTime;
             var bookingEntity = _mapper.Map<Booking>(createBooking);
+            bookingEntity.TotalPrice = (decimal)duration.TotalHours * playground.PricePerHour;
+
             _repositoryManager.Booking.CreateBooking(bookingEntity);
-          await  _repositoryManager.SaveAsync();
-            var bookingDto = _mapper.Map<GetBookingDto>(bookingEntity);
-            return new ServiceResponse(true, $"Booking created successfully form {createBooking.StartTime} to {createBooking.EndTime}");
+            await _repositoryManager.SaveAsync();
+            return new ServiceResponse(true, $"Booking created successfully from {createBooking.StartTime} to {createBooking.EndTime}");
         }
 
         public async Task<IEnumerable<GetBookingDto>> GetAllBookingAsync(bool trackChanges)
