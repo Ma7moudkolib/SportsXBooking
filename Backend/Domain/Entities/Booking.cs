@@ -40,6 +40,6 @@ namespace Domain.Entities
         [ForeignKey("PlaygroundId")]
         public Playground Playground { get; set; }
 
-        public Payment Payment { get; set; }
+        public Payment? Payment { get; set; }
     }
 }

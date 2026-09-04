@@ -16,8 +16,8 @@ namespace Domain.Entities
         public string Role { get; set; } // Player, Owner, Admin
 
         // Navigation
-        public ICollection<Playground> Playgrounds { get; set; }
-        public ICollection<Booking> Bookings { get; set; }
-        public ICollection<Review> Reviews { get; set; }
+        public ICollection<Playground> Playgrounds { get; set; } = new List<Playground>();
+        public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
+        public ICollection<Review> Reviews { get; set; } = new List<Review>();
     }
 }

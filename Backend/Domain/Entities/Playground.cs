@@ -36,8 +36,8 @@ namespace Domain.Entities
         [ForeignKey("OwnerId")]
         public User Owner { get; set; }
 
-        public ICollection<Booking> Bookings { get; set; }
-        public ICollection<Review> Reviews { get; set; }
+        public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
+        public ICollection<Review> Reviews { get; set; } = new List<Review>();
     }
 }
 
