@@ -29,7 +29,8 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       phone: ['',[Validators.required]],
       role: ['Player' as UserRole],
-      password: ['', [Validators.required, Validators.minLength(8)]]
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      agreeToTerms: [false, Validators.requiredTrue]
     });
     if (this.auth.isAuthenticated()) this.router.navigate(['/']);
   }

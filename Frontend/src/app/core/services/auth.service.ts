@@ -40,7 +40,7 @@ export class AuthService {
           token: res.token,
           user: {
             id: String(res.user.id),
-            firstName: res.user.firstname,
+            firstName: res.user.firstName,
             lastName: res.user.lastName,
             email: res.user.email,
             role
