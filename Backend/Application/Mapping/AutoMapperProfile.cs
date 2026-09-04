@@ -25,6 +25,10 @@ namespace Application.Mapping
             // BOOKING
             CreateMap<Booking, GetBookingDto>();
             CreateMap<CreateBooking, Booking>();
+            CreateMap<Booking, GetOwnerBookingDto>()
+                .ForMember(dest => dest.CustomerName, opt => opt.MapFrom(src => src.Player != null ? $"{src.Player.FirstName} {src.Player.LastName}" : ""))
+                .ForMember(dest => dest.CustomerEmail, opt => opt.MapFrom(src => src.Player != null ? src.Player.Email : ""))
+                .ForMember(dest => dest.PlaygroundName, opt => opt.MapFrom(src => src.Playground != null ? src.Playground.Name : ""));
 
             // PAYMENT
             CreateMap<Payment, GetPaymentDto>();

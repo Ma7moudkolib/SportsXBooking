@@ -12,5 +12,13 @@ namespace Domain.RepositoryInterfaces
         void CreateBooking(Booking booking);
         void DeleteBooking(Booking booking);
         void UpdateBooking(Booking booking);
+
+        Task<IEnumerable<Booking>> GetBookingsByOwnerAsync(int ownerId, bool trackChanges);
+        Task<Booking?> GetBookingByOwnerAsync(int ownerId, int bookingId, bool trackChanges);
+        Task<int> GetBookingsCountByOwnerAsync(int ownerId, string? status);
+        Task<Dictionary<string, int>> GetBookingStatusCountsByOwnerAsync(int ownerId);
+        Task<Dictionary<string, int>> GetBookingsByMonthAsync(int ownerId);
+        Task<decimal> GetRevenueByOwnerAsync(int ownerId, bool confirmedOnly);
+        Task<IEnumerable<object>> GetPlaygroundStatsByOwnerAsync(int ownerId);
     }
 }
