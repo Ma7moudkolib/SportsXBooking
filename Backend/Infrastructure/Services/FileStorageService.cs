@@ -24,14 +24,15 @@ namespace Infrastructure.Services
             var uniqueFileName = $"{Guid.NewGuid()}_{file.FileName}";
             var filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
+            if(!filePath.StartsWith(_environment.WebRootPath))
+            {
+                throw new InvalidOperationException("File path is outside the web root.");
+            }
+
             
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
                 await file.CopyToAsync(stream);
-            }
-            if(!filePath.StartsWith(_environment.WebRootPath))
-            {
-                throw new InvalidOperationException("File path is outside the web root.");
             }
             string ProdUrl = "https://sportsxbooking.runasp.net";
             if (_environment.IsProduction())
