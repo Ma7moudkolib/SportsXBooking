@@ -51,7 +51,7 @@ namespace Application.Services
                 Email = userForRegistration.Email,
                 PhoneNumber = userForRegistration.Phone,
                 Role = userForRegistration.Role,
-                UserName = userForRegistration.FirstName
+                UserName = userForRegistration.Email
             };
 
             var result = await _userManager.CreateAsync(user, userForRegistration.Password);

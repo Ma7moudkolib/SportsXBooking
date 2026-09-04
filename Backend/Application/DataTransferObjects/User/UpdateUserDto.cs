@@ -14,8 +14,7 @@ namespace Application.DataTransferObjects.User
         [Required, Phone]
         public string PhoneNumber { get; set; }
 
-        [Required]
-        public string Password { get; set; }
+        public string? Password { get; set; }
 
         public string Role { get; set; } = "Player";
     }

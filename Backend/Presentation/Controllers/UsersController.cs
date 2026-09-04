@@ -16,21 +16,21 @@ namespace Presentation.Controllers
         }
 
         [HttpGet]
-//        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllUsers()
         {
             var users = await _serviceManager.User.GetUsersAsync(trackChanges: false);
             return Ok(users);
         }
         [HttpDelete("{id}")]
-//        [Authorize]
-        public IActionResult DeleteUser(int id)
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> DeleteUser(int id)
         {
-            var result = _serviceManager.User.DeleteUserAsync(id, trackChanges: false);
+            var result = await _serviceManager.User.DeleteUserAsync(id, trackChanges: false);
             return Ok(result);
         }
         [HttpPut("{id}")]
-//        [Authorize]
+        [Authorize]
         public async Task<IActionResult> UpdateUser(int id, [FromBody] UpdateUserDto updateUser)
         {
             var result = await _serviceManager.User.UpdateUserAsync(id, updateUser, true);

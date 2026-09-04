@@ -31,6 +31,8 @@ namespace Presentation.Controllers
         public async Task<ActionResult<LoginResponse>> Login([FromBody] UserForLoginDto userForAuthentication)
         {
             var response = await _serviceManager.Authentication.LoginUser(userForAuthentication);
+            if (!response.Success)
+                return Unauthorized(response);
             return Ok(response);
         }
     }
