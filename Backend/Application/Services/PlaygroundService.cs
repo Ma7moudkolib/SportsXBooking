@@ -78,7 +78,7 @@ namespace Application.Services
         {
             var playgrounds = await _repositoryManager.Playground.SearchAsync(sportType, city, trackChanges);
             if (!playgrounds.Any())
-                new List<GetPlaygroundDto>();
+                return new List<GetPlaygroundDto>();
             var playgroundsDto = _mapper.Map<IEnumerable<GetPlaygroundDto>>(playgrounds);
             return playgroundsDto;
         }

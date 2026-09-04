@@ -23,7 +23,7 @@ namespace Infrastructure.Repositories
 
 
         public async Task<IEnumerable<Playground>> SearchAsync(string sportType, string city, bool trackChanges) =>
-          await FindByCondition(p => p.SportType.Contains(sportType) && p.Equals(city), trackChanges)
+          await FindByCondition(p => p.SportType.Contains(sportType) && p.Location.Contains(city), trackChanges)
             .ToListAsync();
 
         public void UpdatePlayground(Playground playground) => Update(playground);

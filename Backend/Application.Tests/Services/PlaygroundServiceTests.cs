@@ -261,7 +261,7 @@ namespace Application.Tests.Services
         }
 
         [Fact]
-        public async Task GetPlaygroundsByOwnerAsync_WithNoPlaygrounds_ShouldThrowNotFoundException()
+        public async Task GetPlaygroundsByOwnerAsync_WithNoPlaygrounds_ShouldReturnEmptyList()
         {
             // Arrange
             int ownerId = 999;
@@ -270,8 +270,12 @@ namespace Application.Tests.Services
             _repositoryManagerMock.Setup(r => r.Playground.GetPlaygroundsByOwnerAsync(ownerId, false))
                 .ReturnsAsync(playgrounds);
 
-            // Act & Assert
-            await Assert.ThrowsAsync<NotFoundException>(() => _sut.GetPlaygroundsByOwnerAsync(ownerId, false));
+            // Act
+            var result = await _sut.GetPlaygroundsByOwnerAsync(ownerId, false);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Empty(result);
         }
 
         #endregion
@@ -302,7 +306,7 @@ namespace Application.Tests.Services
         }
 
         [Fact]
-        public async Task SearchForPlaygroundAsync_WithNoMatches_ShouldThrowNotFoundException()
+        public async Task SearchForPlaygroundAsync_WithNoMatches_ShouldReturnEmptyList()
         {
             // Arrange
             string sportType = "Football";
@@ -312,10 +316,12 @@ namespace Application.Tests.Services
             _repositoryManagerMock.Setup(r => r.Playground.SearchAsync(sportType, city, false))
                 .ReturnsAsync(playgrounds);
 
-            // Act & Assert
-            var exception = await Assert.ThrowsAsync<NotFoundException>(() => 
-                _sut.SearchForPlaygroundAsync(sportType, city, false));
-            Assert.Contains("No playgrounds found", exception.Message);
+            // Act
+            var result = await _sut.SearchForPlaygroundAsync(sportType, city, false);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Empty(result);
         }
 
         #endregion

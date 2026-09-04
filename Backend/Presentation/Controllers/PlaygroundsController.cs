@@ -54,7 +54,7 @@ namespace Presentation.Controllers
         }
 
         [HttpPut("{id}")]
-        //     [Authorize(Roles = "Owner,Admin")]
+        [Authorize(Roles = "Owner,Admin")]
         public async Task<IActionResult> UpdatePlayground(int id, [FromBody] UpdatePlaygroundDto updatePlayground)
         {
             var result = await _serviceManager.Playground.UpdatePlaygroundAsync(id, updatePlayground, trackChanges: true);
