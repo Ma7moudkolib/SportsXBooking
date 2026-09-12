@@ -5,10 +5,11 @@ import { AuthService } from '../../../core/services/auth.service';
 import { ToastService } from '../../../core/services/toast.service';
 import { Booking, Payment } from '../../../models/types';
 import { RouterLink } from '@angular/router';
+import { SpinnerComponent } from '../../../shared/spinner/spinner.component';
 
 @Component({
   selector: 'app-my-bookings',
-  imports: [RouterLink],
+  imports: [RouterLink, SpinnerComponent],
   templateUrl:'./my-bookings.component.html',
   styleUrl:'./my-bookings.component.css'
 })

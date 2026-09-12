@@ -3,10 +3,11 @@ import { UserService } from '../../../core/services/user.service';
 import { ToastService } from '../../../core/services/toast.service';
 import { User } from '../../../models/types';
 import { RouterLink } from '@angular/router';
+import { SpinnerComponent } from '../../../shared/spinner/spinner.component';
 
 @Component({
   selector: 'app-admin-users',
-  imports: [RouterLink],
+  imports: [RouterLink, SpinnerComponent],
   templateUrl:'./admin-users.component.html',
   styleUrl:'./admin-users.component.css'
 })

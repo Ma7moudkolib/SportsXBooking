@@ -105,7 +105,7 @@
       </div>
 
       @if (pgLoading()) {
-        <p class="text-muted">Loading...</p>
+        <app-spinner message="Loading playgrounds..."></app-spinner>
       } @else if (myPlaygrounds().length === 0) {
         <div class="surface-card p-8 text-center">
           <h4 class="mb-2">No venues yet</h4>
@@ -202,7 +202,7 @@
 
       <!-- Bookings Table -->
       @if (bookingsLoading()) {
-        <p class="text-muted">Loading bookings...</p>
+        <app-spinner message="Loading bookings..."></app-spinner>
       } @else if (bookings().length === 0) {
         <div class="surface-card p-8 text-center">
           <h4 class="mb-2">No bookings found</h4>
@@ -262,7 +262,7 @@
       </div>
 
       @if (analyticsLoading()) {
-        <p class="text-muted">Loading analytics...</p>
+        <app-spinner message="Loading analytics..."></app-spinner>
       } @else if (!analytics()) {
         <div class="surface-card p-8 text-center">
           <h4 class="mb-2">No analytics data</h4>

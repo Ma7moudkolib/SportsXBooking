@@ -86,11 +86,7 @@
     </div>
 
     @if (loading()) {
-      <div class="grid grid-3">
-        @for (i of [1,2,3,4,5]; track i) {
-          <div class="surface-card skeleton skeleton-card"></div>
-        }
-      </div>
+      <app-spinner message="Loading playgrounds..."></app-spinner>
     } @else if (filtered().length === 0) {
       <div class="empty-state text-center">
         <h3 class="mb-2">No playgrounds found</h3>

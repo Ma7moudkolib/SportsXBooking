@@ -18,7 +18,7 @@
         </div>
 
         @if (loading()) {
-          <div class="text-center text-muted">Loading bookings...</div>
+          <app-spinner message="Loading bookings..."></app-spinner>
         } @else if (bookings().length === 0) {
           <div class="surface-card p-8 text-center">
             <h3 class="mb-2">No bookings yet</h3>

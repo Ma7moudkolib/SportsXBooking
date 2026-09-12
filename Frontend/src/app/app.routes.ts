@@ -38,7 +38,7 @@ export const routes: Routes = [
     path: 'management/playgrounds',
     loadComponent: () =>
       import('./features/management/owner-dashboard/owner-dashboard.component').then(m => m.OwnerDashboardComponent),
-    canActivate: [roleGuard('Owner', 'Admin')],
+    canActivate: [roleGuard('Owner', 'Admin', 'User')],
     title: 'SportsXBooking — Manage Playgrounds'
   },
   {

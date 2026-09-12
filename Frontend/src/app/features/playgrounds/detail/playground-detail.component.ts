@@ -5,10 +5,11 @@ import { ReviewService } from '../../../core/services/review.service';
 import { AuthService } from '../../../core/services/auth.service';
 import { Playground, Review } from '../../../models/types';
 import { CreateBookingModalComponent } from '../../bookings/create-booking-modal/create-booking-modal.component';
+import { SpinnerComponent } from '../../../shared/spinner/spinner.component';
 
 @Component({
   selector: 'app-playground-detail',
-  imports: [RouterLink, CreateBookingModalComponent],
+  imports: [RouterLink, CreateBookingModalComponent, SpinnerComponent],
   templateUrl:'./playground-detail.component.html',
   styleUrl:'./playground-detail.component.css'
 

@@ -6,10 +6,11 @@ import { FormsModule, NgModel } from '@angular/forms';
 import { AuthService } from '../../../core/services/auth.service';
 import { RouterLink } from '@angular/router';
 import { NgClass } from '@angular/common';
+import { SpinnerComponent } from '../../../shared/spinner/spinner.component';
 
 @Component({
   selector: 'app-playground-gallery',
-  imports: [PlaygroundCardComponent, FormsModule, RouterLink,NgClass],
+  imports: [PlaygroundCardComponent, FormsModule, RouterLink, NgClass, SpinnerComponent],
   templateUrl:'./playground-gallery.component.html',
   styleUrl:'./playground-gallery.component.css'
 })

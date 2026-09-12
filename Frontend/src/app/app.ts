@@ -11,7 +11,6 @@ import { Footer } from "./shared/footer/footer";
     <app-navbar />
     <router-outlet />
     <app-footer/>
-  `,
-  styles: []
+  `
 })
 export class App {}

@@ -7,10 +7,11 @@ import { ToastService } from '../../../core/services/toast.service';
 import { CreatePlayground, Playground, OwnerBooking, OwnerBookingFilters, PlaygroundAnalytics, DashboardTab } from '../../../models/types';
 import { RouterLink } from '@angular/router';
 import { NgClass, DecimalPipe } from '@angular/common';
+import { SpinnerComponent } from '../../../shared/spinner/spinner.component';
 
 @Component({
   selector: 'app-owner-dashboard',
-  imports: [ReactiveFormsModule, RouterLink, NgClass, DecimalPipe],
+  imports: [ReactiveFormsModule, RouterLink, NgClass, DecimalPipe, SpinnerComponent],
   templateUrl: './owner-dashboard.component.html',
   styleUrl: './owner-dashboard.component.css'
 })

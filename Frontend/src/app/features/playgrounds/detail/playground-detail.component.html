@@ -1,7 +1,6 @@
  @if (loading()) {
       <div class="page-wrapper container" style="padding-top: 8rem;">
-        <div class="skeleton skeleton-title mb-4" style="width:40%;height:2.5rem;"></div>
-        <div class="skeleton skeleton-card" style="height:400px;border-radius:var(--radius-xl);"></div>
+        <app-spinner message="Loading playground details..."></app-spinner>
       </div>
     } @else if (!playground()) {
       <div class="page-wrapper container text-center" style="padding-top:8rem;">
@@ -64,7 +63,7 @@
                 </div>
 
                 @if (reviewLoading()) {
-                  <p class="text-muted">Loading reviews...</p>
+                  <app-spinner message="Loading reviews..." [inline]="true"></app-spinner>
                 } @else if (reviews().length === 0) {
                   <p class="text-muted">No reviews yet. Be the first to book!</p>
                 } @else {
