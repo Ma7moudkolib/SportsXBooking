@@ -4,17 +4,19 @@ A full-stack SaaS platform for booking and managing sports playgrounds, connecti
 
 ## Tech Stack
 
-**Backend:** ASP.NET Core 9, Entity Framework Core, SQL Server, JWT Authentication  
-**Frontend:** Angular 21, Signals, RxJS, Tailwind CSS
+| Layer | Technologies |
+|-------|-------------|
+| **Backend** | ASP.NET Core 9, Entity Framework Core, SQL Server, JWT Authentication |
+| **Frontend** | Angular 21, Signals, RxJS, Tailwind CSS |
+| **Infrastructure** | Docker, GitHub Actions (CI/CD) |
 
-## Features
+## Project Workflow
 
-- User authentication with JWT and role-based access (Player, Owner, Admin)
-- Playground search, listing, and facility management
-- Real-time booking with availability checks and conflict resolution
-- Booking confirmation and cancellation workflows
-- Owner analytics dashboard with revenue and performance metrics
-- Review and rating system for playgrounds
+1. **User** registers or logs in via the frontend, receiving a JWT token for authenticated access.
+2. **Frontend** sends HTTP requests (with the JWT) to the backend API for all operations — searching playgrounds, creating bookings, managing venues, and viewing analytics.
+3. **Backend** validates the token, enforces role-based authorization (Player, Owner, Admin), processes business logic, and interacts with the database through Entity Framework Core.
+4. **Database** stores users, playgrounds, bookings, payments, and reviews, ensuring data integrity and availability checks for time-slot conflicts.
+5. **Booking Flow** — A Player selects a playground and time slot; the backend validates availability, creates the booking, and tracks its status through confirmation, completion, or cancellation.
 
 ## Live Demo
 
@@ -22,7 +24,13 @@ A full-stack SaaS platform for booking and managing sports playgrounds, connecti
 
 ## Getting Started
 
-### Backend
+### Docker
+
+```bash
+docker-compose up --build
+```
+
+### Backend (Manual)
 
 ```bash
 cd Backend
@@ -30,7 +38,7 @@ dotnet ef database update --project Infrastructure --startup-project Presentatio
 dotnet run --project Presentation
 ```
 
-### Frontend
+### Frontend (Manual)
 
 ```bash
 cd Frontend
