@@ -1455,7 +1455,7 @@ namespace Infrastructure.Migrations
                         {
                             PlaygroundId = 3,
                             CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://images.unsplash.com/photo-1575279355017-5afe464a4fa1?auto=format&fit=crop&w=1200&h=700&q=80",
+                            ImageUrl = "https://i.ibb.co/z3kD6PD/misir-kahire-sporcity-mini-hali-saha-1.jpg",
                             IsAvailable = true,
                             Location = "Cairo, Zamalek",
                             Name = "Football Arena 3",
@@ -1491,7 +1491,7 @@ namespace Infrastructure.Migrations
                         {
                             PlaygroundId = 6,
                             CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://images.unsplash.com/photo-1735587310850-f89774730c3d?auto=format&fit=crop&w=1200&h=700&q=80",
+                            ImageUrl = "https://i.ibb.co/4gN95QV3/service-football-AT-01.webp",
                             IsAvailable = true,
                             Location = "Cairo, Nasr City",
                             Name = "Football Arena 6",
@@ -1527,7 +1527,7 @@ namespace Infrastructure.Migrations
                         {
                             PlaygroundId = 9,
                             CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://images.unsplash.com/photo-1714213450890-3f465d40ed46?auto=format&fit=crop&w=1200&h=700&q=80",
+                            ImageUrl = "https://i.ibb.co/ZzQ2V9Nn/images-1.jpg",
                             IsAvailable = true,
                             Location = "Alexandria, Smouha",
                             Name = "Football Arena 9",
@@ -1563,7 +1563,7 @@ namespace Infrastructure.Migrations
                         {
                             PlaygroundId = 12,
                             CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://images.unsplash.com/photo-1729008014101-d1df17135730?auto=format&fit=crop&w=1200&h=700&q=80",
+                            ImageUrl = "https://i.ibb.co/4gTTn52h/images-2.jpg",
                             IsAvailable = true,
                             Location = "Cairo, Maadi",
                             Name = "Football Arena 12",
@@ -1599,7 +1599,7 @@ namespace Infrastructure.Migrations
                         {
                             PlaygroundId = 15,
                             CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://images.unsplash.com/photo-1642278236229-88563b9145cd?auto=format&fit=crop&w=1200&h=700&q=80",
+                            ImageUrl = "https://i.ibb.co/cS7YFmBs/images-3.jpg",
                             IsAvailable = true,
                             Location = "Giza, 6th October",
                             Name = "Football Arena 15",
@@ -1635,7 +1635,7 @@ namespace Infrastructure.Migrations
                         {
                             PlaygroundId = 18,
                             CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://images.unsplash.com/photo-1682795773426-f4e2e3e93288?auto=format&fit=crop&w=1200&h=700&q=80",
+                            ImageUrl = "https://i.ibb.co/ccBS4TWw/images-4.jpg",
                             IsAvailable = true,
                             Location = "Cairo, Zamalek",
                             Name = "Football Arena 18",
@@ -1671,7 +1671,7 @@ namespace Infrastructure.Migrations
                         {
                             PlaygroundId = 21,
                             CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://images.unsplash.com/photo-1783428935019-920a18221d31?auto=format&fit=crop&w=1200&h=700&q=80",
+                            ImageUrl = "https://i.ibb.co/p6dnShdt/images-5.jpg",
                             IsAvailable = true,
                             Location = "Cairo, Nasr City",
                             Name = "Football Arena 21",
@@ -1707,7 +1707,7 @@ namespace Infrastructure.Migrations
                         {
                             PlaygroundId = 24,
                             CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://images.unsplash.com/photo-1505391610862-c63dde65ae97?auto=format&fit=crop&w=1200&h=700&q=80",
+                            ImageUrl = "https://i.ibb.co/bMc5JhSP/images-6.jpg",
                             IsAvailable = true,
                             Location = "Alexandria, Smouha",
                             Name = "Football Arena 24",
@@ -1743,7 +1743,7 @@ namespace Infrastructure.Migrations
                         {
                             PlaygroundId = 27,
                             CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://images.unsplash.com/photo-1760885985017-af7a49dcfb48?auto=format&fit=crop&w=1200&h=700&q=80",
+                            ImageUrl = "https://i.ibb.co/S7nHLK4R/images-7.jpg",
                             IsAvailable = true,
                             Location = "Cairo, Maadi",
                             Name = "Football Arena 27",
@@ -1779,7 +1779,7 @@ namespace Infrastructure.Migrations
                         {
                             PlaygroundId = 30,
                             CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://images.unsplash.com/photo-1518905332052-b6cfda20ee45?auto=format&fit=crop&w=1200&h=700&q=80",
+                            ImageUrl = "https://i.ibb.co/CLXbHp2/images-8.jpg",
                             IsAvailable = true,
                             Location = "Giza, 6th October",
                             Name = "Football Arena 30",
@@ -1815,7 +1815,7 @@ namespace Infrastructure.Migrations
                         {
                             PlaygroundId = 33,
                             CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&h=700&q=80",
+                            ImageUrl = "https://i.ibb.co/sJXbvhvx/images.jpg",
                             IsAvailable = true,
                             Location = "Cairo, Zamalek",
                             Name = "Football Arena 33",
@@ -1851,7 +1851,7 @@ namespace Infrastructure.Migrations
                         {
                             PlaygroundId = 36,
                             CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://images.unsplash.com/photo-1751394215257-83688082bd2d?auto=format&fit=crop&w=1200&h=700&q=80",
+                            ImageUrl = "https://i.ibb.co/99pFV5Mv/jonathan-petersson-ARU18-Gp-F6-QQ-unsplash.jpg",
                             IsAvailable = true,
                             Location = "Cairo, Nasr City",
                             Name = "Football Arena 36",
@@ -1887,7 +1887,7 @@ namespace Infrastructure.Migrations
                         {
                             PlaygroundId = 39,
                             CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://images.unsplash.com/photo-1528118533868-6baca5373044?auto=format&fit=crop&w=1200&h=700&q=80",
+                            ImageUrl = "https://i.ibb.co/z3kD6PD/misir-kahire-sporcity-mini-hali-saha-1.jpg",
                             IsAvailable = true,
                             Location = "Alexandria, Smouha",
                             Name = "Football Arena 39",
@@ -2657,8 +2657,7 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.Booking", b =>
                 {
-                    b.Navigation("Payment")
-                        .IsRequired();
+                    b.Navigation("Payment");
                 });
 
             modelBuilder.Entity("Domain.Entities.Playground", b =>

@@ -15,21 +15,21 @@ namespace Infrastructure.Services
         }
         public async Task<string> SaveFileAsync(IFormFile file, string folderName)
         {
-            
+
             var uploadsFolder = Path.Combine(_environment.WebRootPath, folderName);
             if (!Directory.Exists(uploadsFolder))
                 Directory.CreateDirectory(uploadsFolder);
 
-            
+
             var uniqueFileName = $"{Guid.NewGuid()}_{file.FileName}";
             var filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
-            if(!filePath.StartsWith(_environment.WebRootPath))
+            if (!filePath.StartsWith(_environment.WebRootPath))
             {
                 throw new InvalidOperationException("File path is outside the web root.");
             }
 
-            
+
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
                 await file.CopyToAsync(stream);
@@ -39,7 +39,7 @@ namespace Infrastructure.Services
             {
                 return $"{ProdUrl}/{folderName}/{uniqueFileName}";
             }
-            string DevUrl = "https://localhost:7172";
+            string DevUrl = "http://localhost:5212";
             return $"{DevUrl}/{folderName}/{uniqueFileName}";
         }
 
@@ -50,10 +50,10 @@ namespace Infrastructure.Services
 
             string relativePath = fileUrl;
 
-  
+
             if (Uri.TryCreate(fileUrl, UriKind.Absolute, out Uri? uriResult))
             {
-             
+
                 relativePath = uriResult.AbsolutePath;
             }
 

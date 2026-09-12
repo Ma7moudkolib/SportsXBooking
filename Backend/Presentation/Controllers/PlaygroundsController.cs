@@ -2,6 +2,7 @@
 using Application.ServiceInterfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Presentation.Controllers
 {
@@ -38,9 +39,11 @@ namespace Presentation.Controllers
         }
 
         [HttpPost("create")]
-        [Authorize(Roles = "Owner,Admin")]
+        [Authorize(Roles = "Owner,Admin,Player")]
         public async Task<IActionResult> CreatePlayground([FromForm] CreatePlaygroundDto createPlayground)
         {
+            var ownerId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+            createPlayground.OwnerId = ownerId;
             var playgroundResponse = await _serviceManager.Playground.CreatePlaygroundAsync(createPlayground);
             return Ok(playgroundResponse);
         }
